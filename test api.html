@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1 v-for="i in 265">{{data.bodies[i-1].englishName}} {{i-1}}</h1>
+	</div>
+
+
+</body>
+<script>
+	fetch('https://api.le-systeme-solaire.net/rest/bodies/')
+			.then(response => response.json())
+			.then(json => {
+				app.data = json
+				console.log(json)
+			})
+	let app = new Vue({
+			el: '#app',
+			data: {
+				data:{}
+			}, 
+			methods:{
+				req_json:function(num){
+					this.data2 = {}
+					this.link = this.data.results[num].url
+					fetch(this.link)
+					.then(response => response.json())
+					.then(json => {
+						this.data2 = json
+						this.check = num
+					})
+				}
+			}
+		})
+
+</script>
+</html>

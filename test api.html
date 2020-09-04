@@ -11,7 +11,7 @@
 		<div v-for="i in req_data">
 			<h1>Name : {{data.bodies[i].englishName}}</h1><!--ชื่อดาว-->
 			<h1>Gravity : {{data.bodies[i].gravity}} m.s <sup>-2</sup> </h1><!--แรงโน้มถ่วง-->
-			<h1>Weight on Planet : {{calculate_weight(data.bodies[i].gravity)}} kg.</h1><br><!--แรงโน้มถ่วง-->
+			<h1>Weight on Planet : {{calculate_weight(data.bodies[i].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 		</div>
 	</div>
 
@@ -27,11 +27,11 @@
 	let app = new Vue({
 			el: '#app',
 			data: {
-				data:{},
-				req_data:[0, 240, 244, 243, 239, 238, 241, 199, 219, 208],//ตำแหน่งในList bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
-				weight:0,
-				weight_on_planet:0,
-				name:""
+				data:{},//ข้อมูล JSON
+				req_data:[0, 240, 244, 243, 239, 238, 241, 199, 219, 208],//ตำแหน่งใน List bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
+				weight:0,//น้ำหนักของผู้ใช้
+				weight_on_planet:0,//น้ำหนักบนดาวเคราะห์นั้น
+				name:""//ชื่อผู้ใช้
 			}, 
 			methods:{
 				calculate_weight:function(gravity){//คำนวณน้ำหนักบนดาวต่างๆ

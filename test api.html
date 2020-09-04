@@ -6,8 +6,8 @@
 </head>
 <body>
 	<div id="app">
-		<input type="number" v-model="weight">
-		<input type="text" v-model="name">
+		<b>ชื่อ : <input type="text" v-model="name"></b>
+		<b>น้ำหนัก : <input type="number" v-model="weight"></b><br>
 		<div v-for="i in req_data">
 			<h1>Name : {{data.bodies[i].englishName}}</h1><!--ชื่อดาว-->
 			<h1>Gravity : {{data.bodies[i].gravity}} m.s <sup>-2</sup> </h1><!--แรงโน้มถ่วง-->

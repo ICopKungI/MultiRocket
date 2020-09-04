@@ -6,7 +6,13 @@
 </head>
 <body>
 	<div id="app">
-		<h1 v-for="i in 265">{{data.bodies[i-1].englishName}} {{i-1}}</h1>
+		<input type="number" v-model="weight">
+		<input type="text" v-model="name">
+		<div v-for="i in req_data">
+			<h1>Name : {{data.bodies[i].englishName}}</h1><!--ชื่อดาว-->
+			<h1>Gravity : {{data.bodies[i].gravity}} m.s <sup>-2</sup> </h1><!--แรงโน้มถ่วง-->
+			<h1>Weight on Planet : {{calculate_weight(data.bodies[i].gravity)}} kg.</h1><br><!--แรงโน้มถ่วง-->
+		</div>
 	</div>
 
 
@@ -21,18 +27,16 @@
 	let app = new Vue({
 			el: '#app',
 			data: {
-				data:{}
+				data:{},
+				req_data:[0, 240, 244, 243, 239, 238, 241, 199, 219, 208],//ตำแหน่งในList bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
+				weight:0,
+				weight_on_planet:0,
+				name:""
 			}, 
 			methods:{
-				req_json:function(num){
-					this.data2 = {}
-					this.link = this.data.results[num].url
-					fetch(this.link)
-					.then(response => response.json())
-					.then(json => {
-						this.data2 = json
-						this.check = num
-					})
+				calculate_weight:function(gravity){//คำนวณน้ำหนักบนดาวต่างๆ
+					this.weight_on_planet = (gravity*this.weight)/9.8
+					return this.weight_on_planet.toFixed(2)//toFixed = ทศนิยม...ตำแหน่ง
 				}
 			}
 		})

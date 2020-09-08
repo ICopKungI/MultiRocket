@@ -9,11 +9,11 @@
 	<center>
 		<div id="app">
 			<!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-			<div class="popup">
+			<div v-if="status_popup" class="popup">
 				<div class="popup-content">
 					<b>ชื่อ : <input type="text" v-model="name"></b>
 					<b>น้ำหนัก : <input type="number" v-model="weight" min="0"> kg.</b>
-					<button @click="close()">ตกลง</button>
+					<button @click="change_status()">ตกลง</button>
 				</div>
 			</div>
 
@@ -23,7 +23,7 @@
 			<!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> --><!--แรงโน้มถ่วง-->
 			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
-			<button @click="open()">กรอกข้อมูลใหม่</button><br>
+			<button @click="change_status()">กรอกข้อมูลใหม่</button><br>
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
 			<button v-for="i in 10" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
@@ -51,7 +51,8 @@
 				weight:0,//น้ำหนักของผู้ใช้
 				weight_on_planet:0,//น้ำหนักบนดาวเคราะห์นั้น
 				name:"",//ชื่อผู้ใช้
-				point:2//ตำแหน่งในlist req_data
+				point:2,//ตำแหน่งในlist req_data
+				status_popup:true//สถานะหน้าpopup
 			},
 
 			methods:{
@@ -59,14 +60,8 @@
 					this.weight_on_planet = (gravity*this.weight)/9.8
 					return this.weight_on_planet.toFixed(2)//toFixed = ทศนิยม...ตำแหน่ง
 				},
-
-				close:function(){//ปิดป๊อปอัพ
-  					document.querySelector('.popup').style.display = "none";
-				},
-
-				open:function(){//เปิดป๊อปอัพ
-					this.point = 3;
-  					document.querySelector('.popup').style.display = "flex";
+				change_status:function(){//เปิดปิดป๊อปอัพ
+					this.status_popup = !this.status_popup;
 				}
 			}
 		})

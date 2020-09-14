@@ -9,32 +9,24 @@
 	<center>
 		<div id="app">
 			<!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-			<div class="popup">
+			<div v-if="status_popup" class="popup">
 				<div class="popup-content">
 					<b>ชื่อ : <input type="text" v-model="name"></b>
 					<b>น้ำหนัก : <input type="number" v-model="weight" min="0"> kg.</b>
-					<button @click="close()">ตกลง</button>
+					<button @click="change_status()">ตกลง</button>
 				</div>
 			</div>
 
 			<h1>Planet : {{data.bodies[req_data[point]].englishName}}</h1><!--ชื่อดาว-->
+
 			<h1>Name : {{name}}</h1><!--ชื่อผู้ใช้-->
 			<!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> --><!--แรงโน้มถ่วง-->
 			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
-			<button @click="open()">กรอกข้อมูลใหม่</button><br>
+			<button @click="change_status()">กรอกข้อมูลใหม่</button><br>
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
-			<button @click="point = 0" class="planet">Moon</button>
-			<button @click="point = 1" class="planet">Mercury</button>
-			<button @click="point = 2" class="planet">Venus</button>
-			<button @click="point = 3" class="planet">Earth</button>
-			<button @click="point = 4" class="planet">Mars</button>
-			<button @click="point = 5" class="planet">Jupiter</button>
-			<button @click="point = 6" class="planet">Saturn</button>
-			<button @click="point = 7" class="planet">Uranus</button>
-			<button @click="point = 8" class="planet">Neptune</button>
-			<button @click="point = 9" class="planet">Pluto</button>
+			<button v-for="i in 10" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
 
 		</div>
 	</center>
@@ -48,17 +40,19 @@
 			.then(json => {
 				app.data = json
 				console.log(json)
+				console.log("โหลด json เสร็จแล้ว")
 			})
 
 	let app = new Vue({
 			el: '#app',
 			data: {
 				data:{},//ข้อมูล JSON
-				req_data:[0, 240, 244, 243, 239, 238, 241, 199, 219, 208],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
+				req_data:[240, 244, 243, 0, 239, 238, 241, 199, 219, 208],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
 				weight:0,//น้ำหนักของผู้ใช้
 				weight_on_planet:0,//น้ำหนักบนดาวเคราะห์นั้น
 				name:"",//ชื่อผู้ใช้
-				point:3//ตำแหน่งในlist req_data
+				point:2,//ตำแหน่งในlist req_data
+				status_popup:true//สถานะหน้าpopup
 			},
 
 			methods:{
@@ -66,14 +60,8 @@
 					this.weight_on_planet = (gravity*this.weight)/9.8
 					return this.weight_on_planet.toFixed(2)//toFixed = ทศนิยม...ตำแหน่ง
 				},
-
-				close:function(){//ปิดป๊อปอัพ
-  					document.querySelector('.popup').style.display = "none";
-				},
-
-				open:function(){//เปิดป๊อปอัพ
-					this.point = 3;
-  					document.querySelector('.popup').style.display = "flex";
+				change_status:function(){//เปิดปิดป๊อปอัพ
+					this.status_popup = !this.status_popup;
 				}
 			}
 		})

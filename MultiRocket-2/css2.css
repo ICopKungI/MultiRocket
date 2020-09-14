@@ -63,13 +63,14 @@ html {
 #horizon {
   position: absolute;
   width: 160%;
-  height: 70%;
+  height: 60%;
   border-radius: 100%/100%;
   background: #038bff;
   -webkit-filter: blur(30px);
   left: 50%;
   bottom: -20%;
   margin-left: -80%;
+  z-index: -1;
 }
 #horizon:before {
   content: " ";
@@ -107,7 +108,7 @@ html {
 #earth {
   position: absolute;
   width: 200%;
-  height: 100%;
+  height: 90%;
   background: black;
   border-radius: 100%/100%;
   left: 50%;
@@ -142,7 +143,7 @@ html {
   font-family: 'Poiret One', cursive;
   position: absolute;
   font-weight: 300;
-  top: 40%;
+  top: 35%;
   left: 0;
   right: 0;
   margin-top: -80px;
@@ -157,6 +158,7 @@ html {
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-name: animGravity;
+  z-index: 0;
 }
 
 #subtitle {
@@ -455,25 +457,30 @@ html {
 /*------------------------------------------------------------------------------------*/
 
 
-
-
-
 button{
   border-radius: 15px;
   font-size: 22px;
 }
 button:hover{
-  background-color: rgba(0,0,0,0.1); /* ทำให้พื้นหลังมืดลง */
+  background-color: black; /* ทำให้พื้นหลังมืดลง */
+  color: white;
 }
 
 .planet:hover{
 	font-size: 66px;
 	transition: 0.25s;
-  background-color: rgba(0,0,0,0); /* ทำให้พื้นหลังสว่างเหมื่อนเดิม */
+  margin-bottom: 0px;
+  margin-top: 30px;
+  margin-top: -5px;
+}
+.rst{
+  margin-top: 9%;
+  margin-bottom: 25px;
 }
 .planet{
 	display: inline-block; /* ทำให้ปุ่มดาวเคราะห์อยู่แถวเดี่ยวกัน */
 	transition: 0.25s;
+  margin-top: 30px;
 }
 
 .popup {
@@ -486,8 +493,8 @@ button:hover{
   width: 100%;
   height: 100%;
   overflow: auto;
-  /*background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,1); /* ทำให้พื้นหลังมืด */
+  background-color: white;
+  /*background-color: rgba(0,0,0,0); /* ทำให้พื้นหลังมืด */
 }
 
 .popup-content {

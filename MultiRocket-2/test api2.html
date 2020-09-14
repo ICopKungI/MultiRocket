@@ -91,7 +91,7 @@
 			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br>
 			<!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
-			<button @click="open()">Restart </button><br>
+			<button @click="open()" class="rst">Restart </button><br>
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
 			<button v-for="i in 10" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button>

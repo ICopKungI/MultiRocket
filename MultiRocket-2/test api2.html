@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<link href="https://fonts.googleapis.com/css2?Zfamily=Comfortaa:wght@600&family=Kanit:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css2.css">
+</head>
+
+<body>
+	<transition>
+		<button v-if="docState === 'saved'" key="saved">
+			Edit
+		</button>
+		<button v-if="docState === 'edited'" key="edited">
+			Save
+		</button>
+		<button v-if="docState === 'editing'" key="editing">
+			Cancel
+		</button>
+
+	</transition>
+
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+	<div id='horizon'>
+		<div class='glow'></div>
+	</div>
+	<div id='earth'></div>
+	<div id='title'>
+		What weight are you on planet ?
+	</div>
+
+	<div id='subtitle'>
+		<span>
+			DONT
+		</span>
+		<span>
+			LET
+		</span>
+		<span>
+			GO
+		</span>
+	</div>
+
+	<center>
+		<div id="app">
+			<!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
+			<div class="popup">
+				<div class="popup-content">
+					<form>
+						<div class="group">
+							<input type="text"  v-model="name" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Name</label>
+						</div>
+
+						<div class="group">
+							<input type="number" v-model="weight" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Weight</label>
+						</div>
+					</form>
+					<div class='container'>
+						<div class="button-container">
+
+										<!-- ... the buttons ... -->
+										<button class='button -flower' @click="close()">Start</button>
+
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<h1>Planet : {{data.bodies[req_data[point]].englishName}}</h1>
+			<!--ชื่อดาว-->
+
+			<h1>Name : {{name}}</h1>
+			<!--ชื่อผู้ใช้-->
+			<!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> -->
+			<!--แรงโน้มถ่วง-->
+			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br>
+			<!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
+
+			<button @click="open()">Restart </button><br>
+
+			<!-- แถบปุ่มดาวเคราะห์ -->
+			<button v-for="i in 10" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button>
+			<!--***ใส่รูปแทนชื่อดาวด้วย***-->
+
+		</div>
+	</center>
+
+
+</body>
+<script>
+
+
+
+
+
+
+
+	fetch('https://api.le-systeme-solaire.net/rest/bodies/')
+		.then(response => response.json())
+		.then(json => {
+			app.data = json
+			console.log(json)
+			console.log("โหลด json เสร็จแล้ว")
+		})
+
+	let app = new Vue({
+		el: '#app',
+		data: {
+			data: {},//ข้อมูล JSON
+			req_data: [240, 244, 243, 0, 239, 238, 241, 199, 219, 208],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
+			weight: '',//น้ำหนักของผู้ใช้
+			weight_on_planet: 0,//น้ำหนักบนดาวเคราะห์นั้น
+			name: "",//ชื่อผู้ใช้
+			point: 2//ตำแหน่งในlist req_data
+		},
+
+		methods: {
+			calculate_weight: function (gravity) {//คำนวณน้ำหนักบนดาวต่างๆ
+				this.weight_on_planet = (gravity * this.weight) / 9.8
+				return this.weight_on_planet.toFixed(2)//toFixed = ทศนิยม...ตำแหน่ง
+			},
+
+			close: function () {//ปิดป๊อปอัพ
+				document.querySelector('.popup').style.display = "none";
+			},
+
+			open: function () {//เปิดป๊อปอัพ
+				this.point = 3;
+				document.querySelector('.popup').style.display = "flex";
+			}
+		},
+
+	})
+
+
+</script>
+
+</html>

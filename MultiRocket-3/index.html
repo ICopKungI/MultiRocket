@@ -11,8 +11,8 @@
 			<!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
 			<div v-if="status_popup" class="popup">
 				<div class="popup-content">
-					<b>ชื่อ : <input type="text" v-model="name"></b>
-					<b>น้ำหนัก : <input type="number" v-model="weight" min="0"> kg.</b>
+					<b>name : <input type="text" v-model="name"></b>
+					<b>weight : <input type="number" v-model="weight" min="0"> kg.</b>
 					<button @click="change_status()">ตกลง</button>
 				</div>
 			</div>
@@ -24,9 +24,9 @@
 			<!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> --><!--แรงโน้มถ่วง-->
 			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
-			<button class="again" @click="change_status()">กรอกข้อมูลใหม่</button><br>
+			<button class="again" @click="change_status()">Restart</button><br>
 
-			<!-- แถวตาวเคราะห์ -->
+			<!-- แถวดาวเคราะห์ -->
 			<div v-for="i in 9">
 				<div v-if="(i-1) == 1" class="img_planet left_screen" :id="name_id+(i-1)">
 					<img :src="img_data[i-1]">
@@ -50,7 +50,7 @@
 					{{data.bodies[req_data[i-1]].englishName}}
 				</div>
 			</div>
-			<!-- แถวตาวเคราะห์ -->
+			<!-- แถวดาวเคราะห์ -->
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
 			<div v-for="i in 9" @click="point = i-1, status = true, direction()" class="planet">

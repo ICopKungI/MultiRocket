@@ -4,6 +4,8 @@
   --Negative_from:-41%;/*จากตรงกลาง*/
   --Positive_from:41%;/*จากตรงกลาง*/
   --Time_anime:0.7s;/*เวลาที่ใช้ในการสไลด์*/
+  --Size_img: 125px;
+  --Size_img_mini: 45px;
 }
 
 html{
@@ -20,7 +22,12 @@ button{
   font-size: 22px;
 }
 button:hover{
-  background-color: rgba(0,0,0,0.1); /* ทำให้พื้นหลังมืดลง */
+  background-color: rgba(200,200,200); /* ทำให้พื้นหลังมืดลง */
+}
+
+img{
+  width: var(--Size_img);
+  height: var(--Size_img);
 }
 
 /*---------------------------------แถว ดาวเคราะห์-------------------------------------*/
@@ -125,15 +132,33 @@ button:hover{
 /*---------------------------------แถว ดาวเคราะห์-------------------------------------*/
 
 /*---------------------------------แถบ ดาวเคราะห์-------------------------------------*/
-.planet:hover{
+/*.planet:hover{
   font-size: 66px;
   transition: 0.25s;
-  background-color: rgba(0,0,0,0); /* ทำให้พื้นหลังสว่างเหมื่อนเดิม */
+  background-color: rgba(0,0,0,0);*/ /* ทำให้พื้นหลังสว่างเหมื่อนเดิม */
+/*}*/
+
+.again{
+  margin-bottom: 50px;
 }
 .planet{
   display: inline-block; /* ทำให้ปุ่มดาวเคราะห์อยู่แถวเดี่ยวกัน */
+  margin-left: 30px;
+  margin-top: 100px;
+}
+
+.img_mini{
+  height: var(--Size_img_mini);
+  width: var(--Size_img_mini);
   transition: 0.25s;
 }
+
+.img_mini:hover{
+  transition: 0.25s;
+  height: var(--Size_img);
+  width: var(--Size_img);
+}
+
 /*---------------------------------แถบ ดาวเคราะห์-------------------------------------*/
 
 /*---------------------------------Popup-------------------------------------*/
@@ -158,6 +183,7 @@ button:hover{
   border: 1px solid #888;
   width: 80%;
   border-radius: 15px;
+  color: black;
 }
 
 /*ทำให้ลูกศรขึ้นลงในช่องinputน้ำหนักหายไป*/

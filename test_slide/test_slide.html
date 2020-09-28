@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<title>Test!!!!!!!!!!!</title>
+<link rel="stylesheet" href="test_css.css">
+<body>
+	<center>
+	<div class="invisible" id="img_planet_0">
+	  <h1>Animation is Fun!0</h1>
+	  <p>00000000000000000000000</p>
+	</div>
+	<div class="img_planet left_screen" id="img_planet_1">
+	  <h1>Anim1</h1>
+	  <p>111111111111111111111</p>
+	</div>
+	<div class="img_planet" id="img_planet_2">
+	 <h1>Animation is Fun!2</h1>
+		  <p>222222222222222222222</p>
+	</div>
+	<div class="img_planet right_screen" id="img_planet_3">
+	  <h1>Animation 3</h1>
+	  <p>333333333333333333333</p>
+	</div>
+	<div class="invisible" id="img_planet_4">
+	  <h1>is Fun!4</h1>
+	  <p>444444444444444444444</p>
+	</div>
+	<div class="invisible" id="img_planet_5">
+	  <h1>Animation is Fun!5</h1>
+	  <p>555555555555555555555</p>
+	</div>
+	<div class="invisible" id="img_planet_6">
+	  <h1>Ani6</h1>
+	  <p>666666666666666666666</p>
+	</div>
+	<div class="invisible" id="img_planet_7">
+	  <h1>Animation7</h1>
+	  <p>777777777777777777777</p>
+	</div>
+	<div class="invisible" id="img_planet_8">
+	  <h1>is Fun!8</h1>
+	  <p>888888888888888888888</p>
+	</div>
+	<div class="invisible" id="img_planet_9">
+	  <h1>Animation is Fun!9</h1>
+	  <p>999999999999999999999</p>
+	</div>
+	</center>
+
+	<div id='stars'></div><!-- ดาวเล็ก -->
+	<div id='stars2'></div><!-- ดาวกลาง -->
+	<div id='stars3'></div><!-- ดาวใหญ่ -->
+
+<script>
+	document.querySelector('html').addEventListener("wheel", direction);//เช็คว่าเลื่อน scroll mouse ขึ้นหรือลง
+
+	let point = 2;
+	let name_id = "img_planet_";
+	let L_or_R = "";
+
+
+	function direction() {
+		status = false;
+		if (point > 0 && event.deltaY > 0) {//เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
+			L_or_R = "left";
+			point -= 1;
+			status = true;
+		}else if (point < 9 && event.deltaY < 0) {//เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
+			L_or_R = "right";
+			point += 1;
+			status = true;
+		}
+		if (status) {//มีการเลื่อนไหม
+			delete_class();
+			document.getElementById(name_id+point).className = "img_planet w3-animate-" + L_or_R;
+			if (point != 0) {//ตัวซ้ายสุดหรือยัง
+				document.getElementById(name_id+(point-1)).className = "img_planet left_screen direction_" + L_or_R + "_screen_left";
+			}
+			if (point != 9) {//ตัวขวาสุดหรือยัง
+				document.getElementById(name_id+(point+1)).className = "img_planet right_screen direction_" + L_or_R + "_screen_right";
+			}
+		}
+	}
+
+	function delete_class(){//ซ้อนดาวที่ไม่ใช้
+		for (var i = 0; i <= 9; i++) {
+			if (i < point-1 || i > point+1) {//ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
+				document.getElementById(name_id+i).className = "invisible";//ซ้อน
+			}
+		}
+	}
+
+</script>
+</body>
+</html>

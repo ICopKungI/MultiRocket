@@ -31,6 +31,7 @@
             <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
             <button class="again" @click="change_status()">Restart</button><br>
+            <div class="human" id="human"></div>
 
             <!-- แถวดาวเคราะห์ -->
             <div v-for="i in 9" style="height: 0px;">
@@ -55,11 +56,10 @@
             <!-- แถวดาวเคราะห์ -->
 
             <!-- แถบปุ่มดาวเคราะห์ -->
-            <div v-for="i in 9" @click="point = i-1, status = true, direction()" class="planet">
+            <div v-for="i in 9" @click="point = i-1, status = true, direction(), jump()" class="planet">
                 <img class="img_mini" :src="img_data[i-1]">
                 <br> {{data.bodies[req_data[i-1]].englishName}}
             </div>
-            <!--***ใส่รูปแทนชื่อดาวด้วย***-->
             <!-- แถบปุ่มดาวเคราะห์ -->
 
         </div>
@@ -82,6 +82,7 @@
             console.log("โหลด json เสร็จแล้ว")
         })
 
+
     let app = new Vue({
         el: '#app',
         data: {
@@ -95,25 +96,44 @@
             status_popup: true, //สถานะหน้าpopup
             name_id: "img_planet_",
             L_or_R: "",
-            status: false
+            status: false,
+            jump_time:0.53,
+            jump_h:50
         },
 
         methods: {
-            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
+            calculate_weight: function (gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function() { //เปิดปิดป๊อปอัพ
+            change_status: function () { //เปิดปิดป๊อปอัพ
+            	if (this.status_popup) {
+            		this.point = 2;
+                    this.status = true;
+            		this.direction();
+            	}
                 this.status_popup = !this.status_popup;
             },
-            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
+            jump: function () {//ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว
+            	// document.getElementById("human").className = "human";
+            	this.jump_time = ((0.53*9.8)/this.data.bodies[this.req_data[this.point]].gravity);
+            	this.jump_h = ((50*9.8)/this.data.bodies[this.req_data[this.point]].gravity)/1.7;
+                document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
+            	document.getElementById("human").style.animation = "";
+            	document.getElementById("human").style.animation = "jump " + this.jump_time.toFixed(1) + "s  ease-in-out";
+                // document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
+                // document.documentElement.style.setProperty("--status_play", "paused");
+                // document.documentElement.style.setProperty("--status_play", "running");
+            	// document.getElementById("human").className = "human jumpping";
+            },
+            delete_class: function () { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 8; i++) {
                     if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
                         document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
                     }
                 }
             },
-            direction: function() {
+            direction: function () {//ตั้ง class ทิศทางการเคลื่อนที่
                 if (this.point > 0 && event.deltaY > 0) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;
@@ -126,7 +146,7 @@
                 if (this.status) { //มีการเลื่อนไหม
                     this.status = false;
                     this.delete_class();
-                    document.getElementById(this.name_id + this.point).className = "img_planet w3-animate-" + this.L_or_R;
+                    document.getElementById(this.name_id + this.point).className = " img_planet w3-animate-" + this.L_or_R + " center_planet";
                     if (this.point != 0) { //ตัวซ้ายสุดหรือยัง
                         document.getElementById(this.name_id + (this.point - 1)).className = "img_planet left_screen direction_" + this.L_or_R + "_screen_left";
                     }
@@ -139,6 +159,7 @@
     })
 
     document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
+    document.querySelector('html').addEventListener("wheel", app.jump); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
 </script>
 
 </html>

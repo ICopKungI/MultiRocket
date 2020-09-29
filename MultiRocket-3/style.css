@@ -9,8 +9,12 @@
     /*จากตรงกลาง*/
     --Time_anime: 1s;
     /*เวลาที่ใช้ในการสไลด์*/
-    --Size_img: 125px;
+    --Size_img: 200px;
     --Size_img_mini: 45px;
+    --Size_img_big: 300px;
+    --Jump_time:0.53s;/*เวลาที่ใช้ในการกระโดด*/
+    --Jump_height:50px;/*ความสูงในการกระโดด*/
+    --status_play:running;
 }
 
 html {
@@ -41,12 +45,51 @@ img {
 
 
 /*---------------------------------แถว ดาวเคราะห์-------------------------------------*/
+.human{
+  height: 60px;
+  width: 20px;
+  background: yellow;
+}
+
+.jumpping{/*ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว*/
+  /*animation-play-state: var(--status_play);*/
+  animation: jump var(--Jump_time) ease-in-out;/*กระโดดขึ้นแล้วร่วงลงมา*/
+}
+
+@keyframes jump {/*ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว*/
+    0% {
+        margin-bottom: 0;
+        background: red;
+    }
+    46% {
+        margin-bottom: var(--Jump_height);
+        background: green;
+    }
+    54% {
+        margin-bottom: var(--Jump_height);
+        background: blue;
+    }
+    100%{
+        margin-bottom: 0;
+        background: yellow;
+    }
+}
 
 .img_planet {
     display: inline-block;
     /*ทำให้อยู่ในแถวเดี่ยวกัน*/
     color: white;
     /*สีตัวอักษร*/
+}
+
+.img_planet img{
+    transition: 0.5s;
+}
+
+.center_planet img{
+  width: var(--Size_img_big);
+  height: var(--Size_img_big);
+  transition: 0.5s;
 }
 
 .invisible {
@@ -178,7 +221,7 @@ img {
     display: inline-block;
     /* ทำให้ปุ่มดาวเคราะห์อยู่แถวเดี่ยวกัน */
     margin-left: 30px;
-    margin-top: 250px;
+    margin-top: 350px;
 }
 
 .img_mini {

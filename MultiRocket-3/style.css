@@ -14,7 +14,6 @@
     --Size_img_big: 300px;
     --Jump_time:0.53s;/*เวลาที่ใช้ในการกระโดด*/
     --Jump_height:50px;/*ความสูงในการกระโดด*/
-    --status_play:running;
 }
 
 html {
@@ -52,7 +51,6 @@ img {
 }
 
 .jumpping{/*ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว*/
-  /*animation-play-state: var(--status_play);*/
   animation: jump var(--Jump_time) ease-in-out;/*กระโดดขึ้นแล้วร่วงลงมา*/
 }
 

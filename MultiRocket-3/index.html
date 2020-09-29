@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html onkeydown="check_keyboard(event)">
+
 
 <head>
     <title></title>
@@ -11,7 +12,7 @@
     <center>
         <div id="app">
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-            <div v-if="status_popup" class="popup">
+            <div v-if="status_popup" class="popup" onkeydown="check_keyboard(event)">
                 <div class="popup-content">
                     <b>Name : <input type="text" v-model="name"></b>
                     <b>Weight : <input type="number" v-model="weight" min="0"> kg.</b>
@@ -20,14 +21,14 @@
             </div>
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
 
-            <h1>Planet : {{data.bodies[req_data[point]].englishName}}</h1>
+            <h1>Planet : {{data.bodies[point_data[point]].englishName}}</h1>
             <!--ชื่อดาว-->
 
             <h1>Name : {{name}}</h1>
             <!--ชื่อผู้ใช้-->
-            <!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> -->
+            <!-- <h1>Gravity : {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup> </h1> -->
             <!--แรงโน้มถ่วง-->
-            <h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br>
+            <h1>Weight on Planet : {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.</h1><br>
             <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
             <button class="again" @click="change_status()">Restart</button><br>
@@ -37,20 +38,20 @@
             <div v-for="i in 9" style="height: 0px;">
                 <div v-if="(i-1) == 1" class="img_planet left_screen" :id="name_id+(i-1)">
                     <img :src="img_data[i-1]">
-                    <br> {{data.bodies[req_data[i-1]].englishName}}
+                    <br> {{data.bodies[point_data[i-1]].englishName}}
                 </div>
 
                 <div v-else-if="(i-1) == 2" class="img_planet" :id="name_id+(i-1)">
                     <img :src="img_data[i-1]">
-                    <br> {{data.bodies[req_data[i-1]].englishName}}
+                    <br> {{data.bodies[point_data[i-1]].englishName}}
                 </div>
                 <div v-else-if="(i-1) == 3" class="img_planet right_screen" :id="name_id+(i-1)">
                     <img :src="img_data[i-1]">
-                    <br> {{data.bodies[req_data[i-1]].englishName}}
+                    <br> {{data.bodies[point_data[i-1]].englishName}}
                 </div>
                 <div v-else class="invisible" :id="name_id+(i-1)">
                     <img :src="img_data[i-1]">
-                    <br> {{data.bodies[req_data[i-1]].englishName}}
+                    <br> {{data.bodies[point_data[i-1]].englishName}}
                 </div>
             </div>
             <!-- แถวดาวเคราะห์ -->
@@ -58,9 +59,15 @@
             <!-- แถบปุ่มดาวเคราะห์ -->
             <div v-for="i in 9" @click="point = i-1, status = true, direction(), jump()" class="planet">
                 <img class="img_mini" :src="img_data[i-1]">
-                <br> {{data.bodies[req_data[i-1]].englishName}}
+                <br> {{data.bodies[point_data[i-1]].englishName}}
             </div>
             <!-- แถบปุ่มดาวเคราะห์ -->
+            <div>
+                <h1 v-if="status_sort" >Sort By Solar</h1>
+                <h1 v-else >Sort By Gravity</h1>
+                <button v-if="status_sort" @click="sort_by()">Gravity</button>
+                <button v-else @click="sort_by()">Solar</button>
+            </div>
 
         </div>
     </center>
@@ -87,18 +94,21 @@
         el: '#app',
         data: {
             data: {}, //ข้อมูล JSON
-            req_data: [240, 244, 243, 0, 239, 238, 241, 199, 219], //ตำแหน่งใน List bodies [Mercury", "Venus", "Earth","Moon", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
+            point_data: [240, 244, 243, 0, 239, 238, 241, 199, 219],//เหมือน solar_data
+            solar_data: [240, 244, 243, 0, 239, 238, 241, 199, 219], //ตำแหน่งใน List bodies ["Mercury", "Venus", "Earth","Moon", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"] ชื่อดาวตามตำแหน่งใน solar_data เรียงตามลำดับระบบสุริยะ
+            g_data: [0, 240, 239, 244, 199, 243, 241, 219, 238], //ตำแหน่งใน List bodies ["Moon", "Mercury", "Mars", "Uranus", "Venus", "Earth", "Saturn", "Neptune", "Jupiter"] ชื่อดาวตามตำแหน่งใน g_data เรียงตามค่าแรงโน้มถ่วง
             img_data: ["https://png2.cleanpng.com/dy/a2e5183a49e3799ad8de2718705af324/L0KzQYm3VMIzN6ZwfZH0aYP2gLBuTf1me6Rqhtlucj3occP7iL1ubaNojeRELYDvcbBslL10d51mip98eYP3db60jfVza6Z3kZ8AYXTnQ4K5VMNkOmhqTJCAM0i2Q4aAVcE2OmU5TKc9N0a1RIe7TwBvbz==/kisspng-messenger-earth-mercury-planet-solar-system-mercury-5add31243c27e4.5383357515244454762464.png", "https://png2.cleanpng.com/dy/94fcceb58e41a17cb4d60351fdbb1300/L0KzQYm3U8I5N51piZH0aYP2gLBuTflkbV51hNN3ZYSwhcPojwV0NZ5qitVAcomwfrb3lQVvbV51hNN3ZYT2PYbogvI6O5Q5eqUEMEW8Poe5UcUxOGgASac7MkK3Qoa3UMc0PWYziNDw/kisspng-ice-planet-uranus-mercury-neptune-planets-5abb93c4b39059.6215007915222425007355.png", "https://png2.cleanpng.com/dy/3bfe5cf3c9d443a553ac34c8a83c8d48/L0KzQYm3V8A4N6F8gpH0aYP2gLBuTgNxcJZ3gdVqbD3occP7iL1maaN5gJ98Y3nofrTsTfZtaaUyfdN7dHiwg7FqifV1gV51hNN3ZYTkPcXwhgJzaV46eqY5Ykbodbe3gfFjOl86TqYANEO0SIK8U8A6Pmg8UaIEOEW7PsH1h5==/kisspng-spherical-earth-earth-science-flat-earth-society-planeta-tierra-5b40b6eef0aab2.5645431815309677909858.png", "https://png2.cleanpng.com/dy/41e3b9c4e207ed68342edbc5bd1865e1/L0KzQYm3U8I4N5ZAiZH0aYP2gLBuTfVieqVtRdVxYX7qPba0U710d51mip9uY3zsgMTsTf1wd58yeeV9ZYLyebW0VfFjaZdpS6g9N0Hodoe1WMczQGI3S6U6NUK1QoG6WcU5Omo2S5D5bne=/kisspng-earth-chang-e-3-solar-eclipse-moon-asteroid-5abafd36471ef6.8728123315222039582913.png", "https://png2.cleanpng.com/dy/c026173666a85c3612cf4e75f08b2aed/L0KzQYm3U8MyN6Zpj5H0aYP2gLBuTfVieqVtReZucoLog8X5ifFtNaFxedDudD3wccP6TgNwdJJ3ReVEc4TofX70ggJ0NWZme6I8YUS0SIiBUvM3NmQATaQ6OEG0QYa5UsU1P2M7TacANUGxgLBu/kisspng-earth-terrestrial-planet-mars-solar-system-mars-5ac03a418782c6.3952181115225472655551.png", "https://png2.cleanpng.com/dy/ed038060e96c9a5bafa12c91c82331a8/L0KzQYm3V8E3N516gZH0aYP2gLBuTfp2eJp5feQ2dHjoPbBwjvUueJ1mhtd9cz32f73okr10gaR5fd82c3H3hcP1TgJwdJJzfJ9zdYDshLb5TcQuPZM5fKZqMUO3doXsgsQvOWk9UKc6Nkm0RYS4V8kyQGo2S6Q9OT7zfri=/kisspng-jupiter-the-nine-planets-solar-system-saturn-roland-jupiter-4-5b4d4a134f4eb4.1888516915317918913249.png", "https://png2.cleanpng.com/dy/791594eaa67c76eeb3c17bdd348a6fce/L0KzQYm3U8MyN5l0j5H0aYP2gLBuTfVieqVtReVqdIX1fn73jPFvbaUyi9H1YYKwg8r6lPVuNaNuhtk2c4n2hLb0Tfp2eJp5feQ2NXHldofqUskzPZQ8TKI3Nka3R4m7UMUyPWM3TKs9NUC4QYa7WL5xdpg=/kisspng-earth-saturn-planet-solar-system-ring-system-jupiter-5abf6c2925c740.6647840515224945051548.png", "https://png2.cleanpng.com/dy/1fc82137278e4291a6ee76c2971fc88d/L0KzQYm3UsE6N6pvj5H0aYP2gLBuTf5meKV6htc2cHzkfrb7TgNwdJJ3ReVEc4TofX73jCN1a5J3fJ95YYDogn78kvFvfaQye9N7dHByfn7qjPlxaaN5i58AYUjlQofqUPI4PmI3SJCAMEGzRIO9WcE2OWo1TqoDNkS6RYK4TwBvbz==/kisspng-neptune-planet-solar-system-postcard-paper-uranus-cartoon-cliparts-5a8b26c0b76120.5010426915190688647511.png", "https://png2.cleanpng.com/dy/d2a5c0b1063f51a5d422cf5a7ba14316/L0KzQYm3U8E5N5RufZH0aYP2gLBuTgNicZ10ip93ZYD3hbBsTfVieqVtRed7YX74g373jPFvbaUye95ycHH1hMS0kPxidpZ5RdR1dXWwRbLohfJlOmU4SNM7NEWxRYi4Ucc3Pmk2TaQ6NEC0QYO7Uck6Ol91htk=/kisspng-sailor-neptune-earth-uranus-planet-cliparts-planet-blue-5aaebd2430a245.5711766815214011241992.png"], // [Mercury", "Venus", "Earth","Moon", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน img_data
             weight: 0, //น้ำหนักของผู้ใช้
             weight_on_planet: 0, //น้ำหนักบนดาวเคราะห์นั้น
             name: "", //ชื่อผู้ใช้
-            point: 2, //ตำแหน่งในlist req_data
+            point: 2, //ตำแหน่งในlist point_data
             status_popup: true, //สถานะหน้าpopup
             name_id: "img_planet_",
             L_or_R: "",
             status: false,
-            jump_time:0.53,
-            jump_h:50
+            status_sort: true,
+            jump_time: 0.53,
+            jump_h: 50
         },
 
         methods: {
@@ -106,25 +116,35 @@
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function () { //เปิดปิดป๊อปอัพ
-            	if (this.status_popup) {
-            		this.point = 2;
+            change_status: function () { //เปิดปิดป๊อปอัพ และรีเซ็ตดาว
+                if (this.status_popup) {
+                    this.point = 2;
                     this.status = true;
-            		this.direction();
-            	}
+                    this.direction();
+                }
                 this.status_popup = !this.status_popup;
             },
+            sort_by: function () {//เรืยงตามที่ต้องการ
+                this.status_sort = !this.status_sort;
+                if (this.status_sort) {
+                    this.point_data = this.solar_data;
+                	this.point = 2;
+                } else {
+                    this.point_data = this.g_data;
+                	this.point = 5;
+                }
+                this.status = true;
+                this.direction();
+            },
             jump: function () {//ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว
-            	// document.getElementById("human").className = "human";
-            	this.jump_time = ((0.53*9.8)/this.data.bodies[this.req_data[this.point]].gravity);
-            	this.jump_h = ((50*9.8)/this.data.bodies[this.req_data[this.point]].gravity)/1.7;
+                // document.getElementById("human").className = "human";
+                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity);
+                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7;
                 document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
-            	document.getElementById("human").style.animation = "";
-            	document.getElementById("human").style.animation = "jump " + this.jump_time.toFixed(1) + "s  ease-in-out";
+                document.getElementById("human").style.animation = "";
+                document.getElementById("human").style.animation = "jump " + this.jump_time + "s  ease-in-out";
                 // document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
-                // document.documentElement.style.setProperty("--status_play", "paused");
-                // document.documentElement.style.setProperty("--status_play", "running");
-            	// document.getElementById("human").className = "human jumpping";
+                // document.getElementById("human").className = "human jumpping";
             },
             delete_class: function () { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 8; i++) {
@@ -159,7 +179,17 @@
     })
 
     document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
-    document.querySelector('html').addEventListener("wheel", app.jump); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
+    // document.querySelector('html').addEventListener("wheel", app.jump); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods jump
+
+    function check_keyboard(event) {//รับค่าจาก keyboard มาเช็ค
+        var button = event.keyCode;
+        if (button == 13) {//เปิดปิด popup
+        	app.change_status();
+        }
+        if (button == 32) {//สั่งกระโดดแต่ยังบัคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคค
+        	app.jump();
+        }
+    }
 </script>
 
 </html>

@@ -64,8 +64,8 @@
 
             <!-- ปุ่มรูปแบบการเรียง -->
             <div>
-                <h1 v-if="status_sort" >Sort By Solar</h1>
-                <h1 v-else >Sort By Gravity</h1>
+                <h1 v-if="status_sort">Sort By Solar</h1>
+                <h1 v-else>Sort By Gravity</h1>
                 <button v-if="status_sort" @click="sort_by()">Gravity</button>
                 <button v-else @click="sort_by()">Solar</button>
             </div>
@@ -128,12 +128,12 @@
             },
             sort_by: function () {//เรืยงตามที่ต้องการ
                 this.status_sort = !this.status_sort;
-                if (this.status_sort) {
+                if (this.status_sort) {//เปลี่ยนเป็นระบบสุริยะ
                     this.point_data = this.solar_data;
-                	this.point = 2;
-                } else {
+                    this.point = 2;
+                } else {//เปลี่ยนเป็นแรงโน้มถ่วง
                     this.point_data = this.g_data;
-                	this.point = 5;
+                    this.point = 5;
                 }
                 this.status = true;
                 this.direction();
@@ -146,15 +146,15 @@
                 document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
 
                 document.getElementById("human").className = "human jumpping";
-                console.log(this.jump_time + ", " + (this.jump_time*1000))
+                console.log(this.jump_time + ", " + (this.jump_time * 1000))
 
-                setTimeout(function playing(){
+                setTimeout(function playing() {
 
-                	document.getElementById("human").style = null;//ล้างประวัติการเล่น animation
-                	document.getElementById("human").className = "human";
-                	clearTimeout();
+                    document.getElementById("human").style = null;//ล้างประวัติการเล่น animation
+                    document.getElementById("human").className = "human";
+                    clearTimeout();
 
-				},this.jump_time*1000)
+                }, this.jump_time * 1000)
             },
             delete_class: function () { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 8; i++) {
@@ -193,10 +193,10 @@
     function check_keyboard(event) {//รับค่าจาก keyboard มาเช็ค
         var button = event.keyCode;
         if (button == 13) {//ปุ่ม Enter เปิดปิด popup
-        	app.change_status();
+            app.change_status();
         }
         if (button == 32) {//ปุ่ม Spacebar สั่งกระโดด
-        	app.jump();
+            app.jump();
         }
     }
 </script>

@@ -26,7 +26,7 @@
 			<button @click="change_status()">กรอกข้อมูลใหม่</button><br>
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
-			<button v-for="i in 10" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
+			<button v-for="i in 8" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
 
 		</div>
 	</center>
@@ -47,7 +47,7 @@
 			el: '#app',
 			data: {
 				data:{},//ข้อมูล JSON
-				req_data:[240, 244, 243, 0, 239, 238, 241, 199, 219, 208],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
+				req_data:[240, 244, 243, 239, 238, 241, 199, 219],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
 				weight:0,//น้ำหนักของผู้ใช้
 				weight_on_planet:0,//น้ำหนักบนดาวเคราะห์นั้น
 				name:"",//ชื่อผู้ใช้
@@ -66,5 +66,26 @@
 			}
 		})
 
+		function find() {
+			var true_data = [];
+			var data_data = [];
+			for (var i in app.req_data) {
+				console.log(app.data.bodies[app.req_data[i]].englishName);
+				data_data = [];
+				for (var j in app.data.bodies){
+					if (app.data.bodies[j].aroundPlanet != null) {
+						if (app.data.bodies[app.req_data[i]].id == app.data.bodies[j].aroundPlanet.planet && app.data.bodies[j].gravity != 0) {
+							// console.log(app.data.bodies[j].englishName);
+							data_data.push([app.data.bodies[j].englishName, j]);
+							// data_data.push(j);
+						}
+					}
+				}
+				console.log(data_data);
+				true_data.push(data_data);
+			}
+			console.log(true_data);
+					
+		}
 </script>
 </html>

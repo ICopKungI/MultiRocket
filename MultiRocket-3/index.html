@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html onkeydown="check_keyboard(event)">
+<html onkeypress="check_keyboard(event)">
 
 
 <head>
@@ -12,7 +12,7 @@
     <center>
         <div id="app">
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-            <div v-if="status_popup" class="popup" onkeydown="check_keyboard(event)">
+            <div v-if="status_popup" class="popup" onkeypress="check_keyboard(event)">
                 <div class="popup-content">
                     <b>Name : <input type="text" v-model="name"></b>
                     <b>Weight : <input type="number" v-model="weight" min="0"> kg.</b>
@@ -23,16 +23,15 @@
 
             <h1>Planet : {{data.bodies[point_data[point]].englishName}}</h1>
             <!--ชื่อดาว-->
-
+            <h1>Gravity : {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup> </h1>
+            <!--แรงโน้มถ่วง-->
             <h1>Name : {{name}}</h1>
             <!--ชื่อผู้ใช้-->
-            <!-- <h1>Gravity : {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup> </h1> -->
-            <!--แรงโน้มถ่วง-->
             <h1>Weight on Planet : {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.</h1><br>
             <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
             <button class="again" @click="change_status()">Restart</button><br>
-            <div class="human" id="human"></div>
+            <div class="human" id="human">กด Spacebar</div>
 
             <!-- แถวดาวเคราะห์ -->
             <div v-for="i in 9" style="height: 0px;">
@@ -57,17 +56,20 @@
             <!-- แถวดาวเคราะห์ -->
 
             <!-- แถบปุ่มดาวเคราะห์ -->
-            <div v-for="i in 9" @click="point = i-1, status = true, direction(), jump()" class="planet">
+            <div v-for="i in 9" @click="point = i-1, status = true, direction()" class="planet">
                 <img class="img_mini" :src="img_data[i-1]">
                 <br> {{data.bodies[point_data[i-1]].englishName}}
             </div>
             <!-- แถบปุ่มดาวเคราะห์ -->
+
+            <!-- ปุ่มรูปแบบการเรียง -->
             <div>
                 <h1 v-if="status_sort" >Sort By Solar</h1>
                 <h1 v-else >Sort By Gravity</h1>
                 <button v-if="status_sort" @click="sort_by()">Gravity</button>
                 <button v-else @click="sort_by()">Solar</button>
             </div>
+            <!-- ปุ่มรูปแบบการเรียง -->
 
         </div>
     </center>
@@ -104,11 +106,11 @@
             point: 2, //ตำแหน่งในlist point_data
             status_popup: true, //สถานะหน้าpopup
             name_id: "img_planet_",
-            L_or_R: "",
-            status: false,
-            status_sort: true,
-            jump_time: 0.53,
-            jump_h: 50
+            L_or_R: "",//บอกว่าไปทางซ้ายหรือขวา
+            status: false,//สถานะการเลื่อนดาวเคราห์
+            status_sort: true,//สถานะรูปแบบการเรียง
+            jump_time: 0.53,//เวลาที่ใช้ในการกระโดด
+            jump_h: 50//ความสูงในการกระโดด px
         },
 
         methods: {
@@ -116,7 +118,7 @@
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function () { //เปิดปิดป๊อปอัพ และรีเซ็ตดาว
+            change_status: function () { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
                 if (this.status_popup) {
                     this.point = 2;
                     this.status = true;
@@ -136,15 +138,23 @@
                 this.status = true;
                 this.direction();
             },
-            jump: function () {//ยังมีบัคไม่ยอมกระโดดตอนเปลี่ยนดาว
-                // document.getElementById("human").className = "human";
-                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity);
-                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7;
+            jump: function () {//กระโดด!!!
+                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity);//เวลาในการกระโดด
+                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7;//ความสูงที่กระโดดได้
+
                 document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
-                document.getElementById("human").style.animation = "";
-                document.getElementById("human").style.animation = "jump " + this.jump_time + "s  ease-in-out";
-                // document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
-                // document.getElementById("human").className = "human jumpping";
+                document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
+
+                document.getElementById("human").className = "human jumpping";
+                console.log(this.jump_time + ", " + (this.jump_time*1000))
+
+                setTimeout(function playing(){
+
+                	document.getElementById("human").style = null;//ล้างประวัติการเล่น animation
+                	document.getElementById("human").className = "human";
+                	clearTimeout();
+
+				},this.jump_time*1000)
             },
             delete_class: function () { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 8; i++) {
@@ -179,14 +189,13 @@
     })
 
     document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
-    // document.querySelector('html').addEventListener("wheel", app.jump); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods jump
 
     function check_keyboard(event) {//รับค่าจาก keyboard มาเช็ค
         var button = event.keyCode;
-        if (button == 13) {//เปิดปิด popup
+        if (button == 13) {//ปุ่ม Enter เปิดปิด popup
         	app.change_status();
         }
-        if (button == 32) {//สั่งกระโดดแต่ยังบัคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคคค
+        if (button == 32) {//ปุ่ม Spacebar สั่งกระโดด
         	app.jump();
         }
     }

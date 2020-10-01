@@ -17,16 +17,16 @@
 				</div>
 			</div>
 
-			<h1>Planet : {{data.bodies[req_data[point]].englishName}}</h1><!--ชื่อดาว-->
+			<h1>Planet : {{test_data.bodies[point].name}}</h1><!--ชื่อดาว-->
 
 			<h1>Name : {{name}}</h1><!--ชื่อผู้ใช้-->
 			<!-- <h1>Gravity : {{data.bodies[req_data[point]].gravity}} m.s <sup>-2</sup> </h1> --><!--แรงโน้มถ่วง-->
-			<h1>Weight on Planet : {{calculate_weight(data.bodies[req_data[point]].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
+			<h1>Weight on Planet : {{calculate_weight(test_data.bodies[point].gravity)}} kg.</h1><br><!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
 
 			<button @click="change_status()">กรอกข้อมูลใหม่</button><br>
 
 			<!-- แถบปุ่มดาวเคราะห์ -->
-			<button v-for="i in 8" @click="point = i-1" class="planet">{{data.bodies[req_data[i-1]].englishName}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
+			<button v-for="i in 8" @click="point = i-1" class="planet">{{test_data.bodies[i-1].name}}</button><!--***ใส่รูปแทนชื่อดาวด้วย***-->
 
 		</div>
 	</center>
@@ -34,13 +34,11 @@
 
 </body>
 <script>
-	let test_data;
 	let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             var myJSON = JSON.parse(request.responseText);
-            test_data = myJSON;
-            console.log(myJSON);
+            app.test_data = myJSON;
         }
     };
     request.open("GET", 'Rocket_Api.json', true);
@@ -56,6 +54,7 @@
 	let app = new Vue({
 			el: '#app',
 			data: {
+				test_data:{},//ข้อมูล JSON ผ่าน live server
 				data:{},//ข้อมูล JSON
 				req_data:[240, 244, 243, 239, 238, 241, 199, 219],//ตำแหน่งใน List bodies ["Moon", Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"] ชื่อดาวตามตำแหน่งใน req_data
 				weight:0,//น้ำหนักของผู้ใช้

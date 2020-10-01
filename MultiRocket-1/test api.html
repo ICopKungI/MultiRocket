@@ -34,14 +34,24 @@
 
 </body>
 <script>
-
-	fetch('https://api.le-systeme-solaire.net/rest/bodies/')
-			.then(response => response.json())
-			.then(json => {
-				app.data = json
-				console.log(json)
-				console.log("โหลด json เสร็จแล้ว")
-			})
+	let test_data;
+	let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var myJSON = JSON.parse(request.responseText);
+            test_data = myJSON;
+            console.log(myJSON);
+        }
+    };
+    request.open("GET", 'Rocket_Api.json', true);
+    request.send();
+	// fetch('https://api.le-systeme-solaire.net/rest/bodies/')
+	// 		.then(response => response.json())
+	// 		.then(json => {
+	// 			app.data = json
+	// 			console.log(json)
+	// 			console.log("โหลด json เสร็จแล้ว")
+	// 		})
 
 	let app = new Vue({
 			el: '#app',

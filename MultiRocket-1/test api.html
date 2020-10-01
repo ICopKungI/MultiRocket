@@ -69,22 +69,31 @@
 		function find() {
 			var true_data = [];
 			var data_data = [];
+			// console.log("{");
 			for (var i in app.req_data) {
-				console.log(app.data.bodies[app.req_data[i]].englishName);
+				console.log("[\"" + app.data.bodies[app.req_data[i]].englishName + "\"");
+				console.log(", " + app.data.bodies[app.req_data[i]].gravity);
+				console.log(", " + app.data.bodies[app.req_data[i]].density + "], ");
 				data_data = [];
 				for (var j in app.data.bodies){
 					if (app.data.bodies[j].aroundPlanet != null) {
 						if (app.data.bodies[app.req_data[i]].id == app.data.bodies[j].aroundPlanet.planet && app.data.bodies[j].gravity != 0) {
 							// console.log(app.data.bodies[j].englishName);
-							data_data.push([app.data.bodies[j].englishName, j]);
+							// data_data.push([app.data.bodies[j].englishName, j]);
+							// data_data.push([app.data.bodies[j]]);
 							// data_data.push(j);
+							// console.log("[\"" + app.data.bodies[j].englishName+"\"");
+							// console.log(", " + app.data.bodies[j].gravity);
+							// console.log(", " + app.data.bodies[j].density + "], ");
 						}
 					}
 				}
-				console.log(data_data);
+				// console.log(data_data);
+				// console.log("], ");
 				true_data.push(data_data);
 			}
-			console.log(true_data);
+			// console.log("}");
+			// console.log(true_data);
 					
 		}
 </script>

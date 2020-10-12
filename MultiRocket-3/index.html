@@ -55,6 +55,31 @@
             </div>
             <!-- แถวดาวเคราะห์ -->
 
+
+
+
+
+            <!-- ว่าจะทำลูก -->
+            <!-- <div class="planet"> -->
+            <div v-if="point == 2" style="margin: 300px;">
+                <img class="img_mini" :src="data.bodies[point].moons[0].img">
+                <br> Name:{{data.bodies[point].moons[0].name}}
+                <br> Gravity:{{data.bodies[point].moons[0].gravity}} m.s <sup>-2</sup>
+            </div>
+            <!-- </div> -->
+            <div v-if="point == 3" style="margin: 300px;">
+                <div v-for="i in 2" style="display: inline-block; margin-right: 30px;">
+                    <img class="img_mini" :src="data.bodies[point].moons[0].img">
+                    <br> Name:{{data.bodies[point].moons[0].name}}
+                    <br> Gravity:{{data.bodies[point].moons[0].gravity}} m.s <sup>-2</sup>
+                </div>
+            </div>
+            <br>
+
+
+
+
+
             <!-- แถบปุ่มดาวเคราะห์ -->
             <div v-for="i in 8" @click="point = i-1, status = true, direction()" class="planet">
                 <img class="img_mini" :src="data.bodies[point_data[i-1]].img">
@@ -84,7 +109,7 @@
 </body>
 <script>
     let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var myJSON = JSON.parse(request.responseText);
             app.data = myJSON;
@@ -105,7 +130,7 @@
         el: '#app',
         data: {
             data: {}, //ข้อมูล JSON
-            point_data: [0, 1, 2, 3, 4, 5, 6, 7],//เหมือน solar_data
+            point_data: [0, 1, 2, 3, 4, 5, 6, 7], //เหมือน solar_data
             solar_data: [0, 1, 2, 3, 4, 5, 6, 7], //ตำแหน่งใน List bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"] ชื่อดาวตามตำแหน่งใน solar_data เรียงตามลำดับระบบสุริยะ
             g_data: [0, 3, 1, 6, 2, 5, 7, 4], //ตำแหน่งใน List bodies ["Mercury", "Mars", "Uranus", "Venus", "Earth", "Saturn", "Neptune", "Jupiter"] ชื่อดาวตามตำแหน่งใน g_data เรียงตามค่าแรงโน้มถ่วง
             weight: 0, //น้ำหนักของผู้ใช้
@@ -114,19 +139,19 @@
             point: 2, //ตำแหน่งในlist point_data
             status_popup: true, //สถานะหน้าpopup
             name_id: "img_planet_",
-            L_or_R: "",//บอกว่าไปทางซ้ายหรือขวา
-            status: false,//สถานะการเลื่อนดาวเคราห์
-            status_sort: true,//สถานะรูปแบบการเรียง
-            jump_time: 0.53,//เวลาที่ใช้ในการกระโดด
-            jump_h: 50//ความสูงในการกระโดด px
+            L_or_R: "", //บอกว่าไปทางซ้ายหรือขวา
+            status: false, //สถานะการเลื่อนดาวเคราห์
+            status_sort: true, //สถานะรูปแบบการเรียง
+            jump_time: 0.53, //เวลาที่ใช้ในการกระโดด
+            jump_h: 50 //ความสูงในการกระโดด px
         },
 
         methods: {
-            calculate_weight: function (gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
+            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function () { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
+            change_status: function() { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
                 if (this.status_popup) {
                     this.point = 2;
                     this.status = true;
@@ -134,21 +159,21 @@
                 }
                 this.status_popup = !this.status_popup;
             },
-            sort_by: function () {//เรืยงตามที่ต้องการ
+            sort_by: function() { //เรืยงตามที่ต้องการ
                 this.status_sort = !this.status_sort;
-                if (this.status_sort) {//เปลี่ยนเป็นระบบสุริยะ
+                if (this.status_sort) { //เปลี่ยนเป็นระบบสุริยะ
                     this.point_data = this.solar_data;
                     this.point = 2;
-                } else {//เปลี่ยนเป็นแรงโน้มถ่วง
+                } else { //เปลี่ยนเป็นแรงโน้มถ่วง
                     this.point_data = this.g_data;
                     this.point = 4;
                 }
                 this.status = true;
                 this.direction();
             },
-            jump: function () {//กระโดด!!!
-                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity);//เวลาในการกระโดด
-                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7;//ความสูงที่กระโดดได้
+            jump: function() { //กระโดด!!!
+                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity); //เวลาในการกระโดด
+                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7; //ความสูงที่กระโดดได้
 
                 document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
                 document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
@@ -157,20 +182,20 @@
 
                 setTimeout(function playing() {
 
-                    document.getElementById("human").style = null;//ล้างประวัติการเล่น animation
+                    document.getElementById("human").style = null; //ล้างประวัติการเล่น animation
                     document.getElementById("human").className = "human";
                     clearTimeout();
 
                 }, this.jump_time * 1000)
             },
-            delete_class: function () { //ซ้อนดาวที่ไม่ใช้
+            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 7; i++) {
                     if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
                         document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
                     }
                 }
             },
-            direction: function () {//ตั้ง class ทิศทางการเคลื่อนที่
+            direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
                 if (this.point > 0 && event.deltaY > 0) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;
@@ -197,12 +222,12 @@
 
     document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
 
-    function check_keyboard(event) {//รับค่าจาก keyboard มาเช็ค
+    function check_keyboard(event) { //รับค่าจาก keyboard มาเช็ค
         var button = event.keyCode;
-        if (button == 13) {//ปุ่ม Enter เปิดปิด popup
+        if (button == 13) { //ปุ่ม Enter เปิดปิด popup
             app.change_status();
         }
-        if (button == 32) {//ปุ่ม Spacebar สั่งกระโดด
+        if (button == 32) { //ปุ่ม Spacebar สั่งกระโดด
             app.jump();
         }
     }

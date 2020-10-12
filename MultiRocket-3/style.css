@@ -12,13 +12,15 @@
     --Size_img: 150px;
     --Size_img_mini: 45px;
     --Size_img_big: 250px;
-    --Jump_time:0.53s;/*เวลาที่ใช้ในการกระโดด*/
-    --Jump_height:50px;/*ความสูงในการกระโดด*/
-    --Status_play:running;
+    --Jump_time: 0.53s;
+    /*เวลาที่ใช้ในการกระโดด*/
+    --Jump_height: 50px;
+    /*ความสูงในการกระโดด*/
+    --Status_play: running;
 }
 
 html {
-    overflow: hidden;
+    /* overflow: hidden; */
     /*ซ้อน scrool bar*/
     color: white;
 }
@@ -45,17 +47,21 @@ img {
 
 
 /*---------------------------------แถว ดาวเคราะห์-------------------------------------*/
-.human{
-  height: 60px;
-  width: 20px;
-  background: yellow;
-  color: gray;
-  font-size: 30px;
+
+.human {
+    height: 60px;
+    width: 20px;
+    background: yellow;
+    color: gray;
+    font-size: 30px;
 }
 
-.jumpping{/*กระโดด*/
-  animation-play-state: running !important;/*ให้ run animation !important บังคับให้ run code ส่วนนี้*/
-  animation: jump var(--Jump_time) ease-in-out !important;/*กระโดดขึ้นแล้วร่วงลงมา*/
+.jumpping {
+    /*กระโดด*/
+    animation-play-state: running !important;
+    /*ให้ run animation !important บังคับให้ run code ส่วนนี้*/
+    animation: jump var(--Jump_time) ease-in-out !important;
+    /*กระโดดขึ้นแล้วร่วงลงมา*/
 }
 
 @keyframes jump {
@@ -71,7 +77,7 @@ img {
         margin-bottom: var(--Jump_height);
         background: blue;
     }
-    100%{
+    100% {
         margin-bottom: 0;
         background: yellow;
     }
@@ -84,14 +90,14 @@ img {
     /*สีตัวอักษร*/
 }
 
-.img_planet img{
+.img_planet img {
     transition: 0.5s;
 }
 
-.center_planet img{
-  width: var(--Size_img_big);
-  height: var(--Size_img_big);
-  transition: 0.5s;
+.center_planet img {
+    width: var(--Size_img_big);
+    height: var(--Size_img_big);
+    transition: 0.5s;
 }
 
 .invisible {

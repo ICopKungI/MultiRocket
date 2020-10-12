@@ -1,6 +1,5 @@
 {
-    "bodies": [
-        {
+    "bodies": [{
             "name": "Mercury",
             "gravity": 3.7,
             "density": 5.4291,
@@ -19,29 +18,26 @@
             "gravity": 9.8,
             "density": 5.5136,
             "img": "http://www.pngall.com/wp-content/uploads/2016/06/Earth-Free-Download-PNG.png",
-            "moons": [
-                {
-                    "name": "Moon",
-                    "gravity": 1.62,
-                    "density": 3.344,
-                    "img": "http://pngimg.com/uploads/moon/moon_PNG46.png"
-                }
-            ]
+            "moons": [{
+                "name": "Moon",
+                "gravity": 1.62,
+                "density": 3.344,
+                "img": "http://pngimg.com/uploads/moon/moon_PNG46.png"
+            }]
         },
         {
             "name": "Mars",
             "gravity": 3.71,
             "density": 3.9341,
             "img": "http://pngimg.com/uploads/mars_planet/mars_planet_PNG38.png",
-            "moons": [
-                {
+            "moons": [{
                     "name": "Phobos",
                     "gravity": 0.0057,
                     "density": 1.9,
                     "img": "https://vignette.wikia.nocookie.net/starpath/images/4/4d/Mars_Moon_Phobos.png/revision/latest?cb=20161025105923"
                 },
                 {
-                    "name": "Phobos",
+                    "name": "Deimos",
                     "gravity": 0.003,
                     "density": 1.75,
                     "img": "https://vignette.wikia.nocookie.net/starpath/images/a/a6/Mars_Moon_Deimos.png/revision/latest?cb=20161031190053"
@@ -53,8 +49,7 @@
             "gravity": 24.79,
             "density": 1.3262,
             "img": "https://www.transparentpng.com/thumb/jupiter/jupiter-cut-out-png-10.png",
-            "moons": [
-                {
+            "moons": [{
                     "name": "Io",
                     "gravity": 1.79,
                     "density": 3.53,
@@ -159,8 +154,7 @@
             "gravity": 11.15,
             "density": 1.638,
             "img": "https://img.pngeasy.com/lrtk/down/png/1309/veyratom_icons_pack01_by_zairaam-d6kmlfv/010neptune.png",
-            "moons": [
-                {
+            "moons": [{
                     "name": "Triton",
                     "gravity": 0.78,
                     "density": 2.05,

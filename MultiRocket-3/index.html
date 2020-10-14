@@ -62,12 +62,14 @@
             <!-- ว่าจะทำลูก -->
 
             <div style="margin-top: 350px; margin-bottom: 100px;">
+                <!-- EARTH -->
                 <div v-if="point == 2">
                     <img class="img_mini" :src="data.bodies[point].moons[0].img">
                     <br> Name: {{data.bodies[point].moons[0].name}}
                     <br> Gravity: {{data.bodies[point].moons[0].gravity}} m.s <sup>-2</sup>
                     <br> Weight on Planet: {{calculate_weight(data.bodies[point].moons[0].gravity)}} kg.
                 </div>
+                <!-- Mars -->
                 <div v-if="point == 3">
                     <div v-for="i in 2" style="display: inline-block; margin-right: 30px;">
                         <img class="img_mini" :src="data.bodies[point].moons[i-1].img">
@@ -76,6 +78,7 @@
                         <br> Weight on Planet: {{calculate_weight(data.bodies[point].moons[i-1].gravity)}} kg.
                     </div>
                 </div>
+                <!-- Jupiter -->
                 <div v-if="point == 4">
                     <div v-for="i in 14" style="display: inline-block; margin-right: 30px;">
                         <img class="img_mini" :src="data.bodies[point].moons[i-1].img">
@@ -84,6 +87,7 @@
                         <br> Weight on Planet: {{calculate_weight(data.bodies[point].moons[i-1].gravity)}} kg.
                     </div>
                 </div>
+                <!-- Neptune -->
                 <div v-if="point == 7">
                     <div v-for="i in 3" style="display: inline-block; margin-right: 30px;">
                         <img class="img_mini" :src="data.bodies[point].moons[i-1].img">

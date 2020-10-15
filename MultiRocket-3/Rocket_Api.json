@@ -48,7 +48,7 @@
             "name": "Jupiter",
             "gravity": 24.79,
             "density": 1.3262,
-            "img": "https://www.transparentpng.com/thumb/jupiter/jupiter-cut-out-png-10.png",
+            "img": "http://www.pngmart.com/files/4/Jupiter-Transparent-PNG.png",
             "moons": [{
                     "name": "Io",
                     "gravity": 1.79,
@@ -65,7 +65,7 @@
                     "name": "Ganymede",
                     "gravity": 1.428,
                     "density": 1.94,
-                    "img": "http://clipart-library.com/images_k/moons-transparent/moons-transparent-14.png"
+                    "img": "https://space-facts.com/wp-content/uploads/ganymede.png"
                 },
                 {
                     "name": "Callisto",

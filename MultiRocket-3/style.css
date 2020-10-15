@@ -23,6 +23,17 @@ html {
     /* overflow: hidden; */
     /*ซ้อน scrool bar*/
     color: white;
+
+
+
+}
+
+h1{
+    color: white;
+    font-family: 'Neucha', cursive;
+    text-shadow: rgb(148, 148, 148) 0.1em 0.1em 0.2em;
+    /**text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,0 0 0.2em #87F**/
+
 }
 
 body {
@@ -30,15 +41,165 @@ body {
     /*สีพื้นหลัง*/
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+/*กรอกข้อมูล*/
+.container 		{
+    font-family:'Roboto';
+    width:600px;
+    margin:30px auto 0;
+    display:block;
+
+    padding:10px 50px 50px;
+  }
+
+
+  /* form starting stylings ------------------------------- */
+  .group 			  {
+    position:relative;
+    margin-bottom:45px;
+  }
+  input 				{
+    background: transparent;
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid rgb(70, 69, 69);
+  }
+  input:focus 		{ outline:none; }
+
+  /* LABEL ======================================= */
+  label 				 {
+    color:rgb(70, 69, 69);
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:15%;
+    top:20px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    font-size:16px;
+    color:#363062;
+  }
+
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:300px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#363062;
+
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%;
+  }
+
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:15%;
+    pointer-events:none;
+    opacity:0.5;
+  }
+
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#363062; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+      from { background:#363062; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+      from { background:#363062; }
+    to 	{ width:0; background:transparent; }
+  }
+/*end*/
+
+
+/* ปุ่ม button */
+.submit{
+    background: #4d4c7d;
+}
 button {
-    border-radius: 15px;
+    background: #4d4c7d;
+    /*background-image: linear-gradient(to right, #74a7fa 0%, #62cdff 51%, #3581fa 100%);*/
+    flex: 1 1 auto;
+    border: none;
+  /*margin: 10px;
+  padding: 30px;*/
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  /*box-shadow: 0 0 20px #eee;*/
+  border-radius: 10px;
+
+
+    margin: 4px 2px;
+    padding: 8px 15px;
+    /*background-color: #d489ffb7;*/
+    /*color: white;
+
+    border-radius: 12px;
+    border: 2px solid #d489ffb7;*/
+
     font-size: 22px;
+    font-family: 'Abel', sans-serif;
 }
 
 button:hover {
-    background-color: rgba(200, 200, 200);
+    background: #363062;
+    /*background-position: right center;*/
+    /*background-color: rgb(245, 134, 255);
+    color: black;
+
+
+    /*background-color: rgba(200, 200, 200);
     /* ทำให้พื้นหลังมืดลง */
 }
+/* end ปุ่ม button */
+
 
 img {
     width: var(--Size_img);
@@ -54,6 +215,7 @@ img {
     background: yellow;
     color: gray;
     font-size: 30px;
+
 }
 
 .jumpping {
@@ -248,9 +410,7 @@ img {
 
 /*---------------------------------แถบ ดาวเคราะห์-------------------------------------*/
 
-
 /*---------------------------------Popup-------------------------------------*/
-
 .popup {
     display: flex;
     position: fixed;
@@ -260,21 +420,199 @@ img {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 1);
+    /*background-color: rgb(255, 255, 255);
+
     /* ทำให้พื้นหลังมืด */
+    background: #4d4c7d;
 }
 
 .popup-content {
-    background-color: #fefefe;
+    background: #d8b9c38c;
     text-align: center;
+    position: relative;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 15px;
+    padding:20px ;
+    border-radius: 10px;
+
+    width: 30%;
+
     color: black;
 }
+
+
+
+
+/* what weight */
+.txt{
+    top:12%;
+    left:0px;
+
+    margin:0px;
+    padding:0px;
+    height:100%;
+    width:100%;
+
+    font-family : verdana;
+    position: absolute;
+    justify-content : center;
+    align-items : center;
+    height : 100vh;
+    font-size : 10px;
+    letter-spacing : 2px;
+    color : #fff;
+
+    transition : 4s;
+}
+ul li{
+    display: block;
+    height:10%;
+  }
+ul{
+    position: absolute;
+    top:0px;
+    left:0px;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    height:100%;
+    width:100%;
+
+
+
+    flex-direction: column-reverse;
+}
+li{
+      list-style : none;
+      font-size : 60px;
+      letter-spacing : 5px;
+      color : #fff;
+
+      transition : 4s;
+}
+
+li:hover,li:hover ~ li{
+      transform : rotate(180deg) translateY(-200px);
+      transition: 2s;
+      filter : blur(20px);
+      opacity : 0;
+}
+/* end what weight */
+
+
+/* smoke bg*/
+.smoke {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 20%;
+    background-image: url(https://s.cdpn.io/21555/smoke.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-filter:blur(3px) brightness(0.5);
+    -webkit-transform-origin: top left;
+    -webkit-transform: scale(5);
+    opacity:0.3;
+  }
+  .static{
+    z-index:-1;
+    position:absolute;
+    content:' ';
+    width:20%;
+    height:20%;
+    background-image: url(https://s.cdpn.io/21555/static.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-filter: brightness(0.2);
+    -webkit-transform-origin: top left;
+    -webkit-transform: scale(5);
+    opacity:0.15;
+
+  }
+/*end smoke bg*/
+
+/* mountain bg */
+.mountain:before{
+    content:' ';
+    background:transparent;
+
+    position:absolute;
+    top:-100px;
+    left:35%;
+    border-radius:50%;
+    z-index:-1;
+    box-shadow: inset 0px 0px 100px 10px rgba(243,107,245,0.3), 0px -29px 90px 0px #f36bf5;
+    }
+
+  .mountain{
+    height:180px;
+    padding-top:30px;
+    position:absolute;
+    top:28%;
+    left:-15%;
+    width:115%;
+    min-width:1932px;
+    background:url(https://s.cdpn.io/21555/mountain_2.svg);
+    background-repeat: repeat-x;
+    animation: slowLeft 200s;
+    animation-iteration-count: infinite;
+    -webkit-animation: slowLeft 200s;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    -webkit-animation-timing-function:linear;
+
+    -webkit-transform: translate3d(0,0,0);
+      -webkit-backface-visibility: hidden;
+  }
+
+  @keyframes slowLeft {
+  0%   { background-position:0px 0px ;}
+  100% { background-position:1932px 0px ;}
+  }
+  @-webkit-keyframes slowLeft {
+  0%   { background-position:0px 0px ;}
+  100% { background-position:1932px 0px ;}
+  }
+  /* end mountain bg */
+
+
+/* lightning */
+.lightning{
+    z-index:1;
+    position:absolute;
+    width:100%;
+    min-height:635px;
+    left:5%;
+    background:transparent url(https://s.cdpn.io/21555/lightning_1.png) no-repeat;
+   animation: flash 7s;
+    animation-iteration-count: infinite;
+    -webkit-animation: flash 7s;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    -webkit-animation-timing-function:linear;
+  }
+
+  @keyframes flash {
+  0%   { opacity:0.0;}
+  2%   { opacity:1.0;}
+  3%   { opacity:0.5;}
+  4%   { opacity:0.2;}
+  10%  { opacity:0.0;}
+  100% { opacity:0.0;}
+  }
+  @-webkit-keyframes flash {
+  0%   { opacity:0.0;}
+  2%   { opacity:1.0;}
+  3%   { opacity:0.5;}
+  4%   { opacity:0.2;}
+  10%  { opacity:0.0;}
+  100% { opacity:0.0;}
+  }
+
+
+
 
 
 /*ทำให้ลูกศรขึ้นลงในช่องinputน้ำหนักหายไป*/

@@ -6,35 +6,81 @@
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <center>
         <div id="app">
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
             <div v-if="status_popup" class="popup" onkeypress="check_keyboard(event)">
-                <div class="popup-content">
-                    <b>Name : <input type="text" v-model="name"></b>
-                    <b>Weight : <input type="number" v-model="weight" min="0"> kg.</b>
-                    <button @click="change_status()">OK</button>
+                <!--text bg-->
+                <div class="txt">
+                    <h1>
+                        <ul>
+                            <li>What weight are you on planet ?</li>
+                        </ul>
+
+                    </h1>
                 </div>
+                <!--smoke bg-->
+                <div class="smoke"></div>
+                <!--mountain bg-->
+                <div class="mountain"></div>
+
+
+
+                <div class="popup-content">
+                    <!--กรอกข้อมูล-->
+                    <center>
+
+                        <form>
+                            <div class="group">
+                                <input type="text" required v-model="name">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Name</label>
+                            </div>
+
+                            <div class="group">
+                                <input type="number" required v-model="weight" min="0">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Weight</label>
+                            </div>
+
+                        </form>
+                        <button class="submit" @click="change_status()">SUBMIT</button>
+
+                    </center><div class="lightning"></div>
+
+
+                    <!-- <h2>Name : <input type="text" v-model="name"></h2>
+                    <h2>Weight : <input type="number" v-model="weight" min="0"> kg.</h2> -->
+
+                </div>
+
             </div>
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
+            <div class="text">
+                <h1>Planet : {{data.bodies[point_data[point]].name}}</h1>
+                <!--ชื่อดาว-->
+                <h1>Gravity : {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup> </h1>
+                <!--แรงโน้มถ่วง-->
+                <h1>Name : {{name}}</h1>
+                <!--ชื่อผู้ใช้-->
+                <h1>Weight on Planet : {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.</h1><br>
+                <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
+            </div>
 
-            <h1>Planet : {{data.bodies[point_data[point]].name}}</h1>
-            <!--ชื่อดาว-->
-            <h1>Gravity : {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup> </h1>
-            <!--แรงโน้มถ่วง-->
-            <h1>Name : {{name}}</h1>
-            <!--ชื่อผู้ใช้-->
-            <h1>Weight on Planet : {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.</h1><br>
-            <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
-
-            <button class="again" @click="change_status()">Restart</button><br>
+            <button class="again" @click="change_status()">RESTART</button><br>
             <div class="human" id="human">กด Spacebar</div>
 
             <!-- แถวดาวเคราะห์ -->
-            <div v-for="i in 8" style="height: 0px;">
+            <div v-for="i in 8" style="height: 0px; font-family: 'Neucha', cursive; font-size: 24px">
                 <div v-if="(i-1) == 1" class="img_planet left_screen" :id="name_id+(i-1)">
                     <img :src="data.bodies[point_data[i-1]].img">
                     <br> {{data.bodies[point_data[i-1]].name}}
@@ -61,7 +107,7 @@
 
             <!-- ว่าจะทำลูก -->
 
-            <div style="margin-top: 350px; margin-bottom: 100px;">
+            <div style="margin-top: 350px; margin-bottom: 100px; font-family: 'Patrick Hand', cursive; font-size: 18px">
                 <!-- EARTH -->
                 <div v-if="point == 2">
                     <img class="img_mini" :src="data.bodies[point].moons[0].img">
@@ -111,7 +157,7 @@
 
             <!-- ปุ่มรูปแบบการเรียง -->
             <div>
-                <h1 v-if="status_sort">Sort By Solar</h1>
+                <h1 v-if="status_sort" style="font-family: 'Neucha', cursive">Sort By Solar</h1>
                 <h1 v-else>Sort By Gravity</h1>
                 <button v-if="status_sort" @click="sort_by()">Gravity</button>
                 <button v-else @click="sort_by()">Solar</button>
@@ -131,7 +177,7 @@
 </body>
 <script>
     let request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
+    request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             var myJSON = JSON.parse(request.responseText);
             app.data = myJSON;
@@ -169,11 +215,11 @@
         },
 
         methods: {
-            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
+            calculate_weight: function (gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function() { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
+            change_status: function () { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
                 if (this.status_popup) {
                     this.point = 2;
                     this.status = true;
@@ -181,7 +227,7 @@
                 }
                 this.status_popup = !this.status_popup;
             },
-            sort_by: function() { //เรืยงตามที่ต้องการ
+            sort_by: function () { //เรืยงตามที่ต้องการ
                 this.status_sort = !this.status_sort;
                 if (this.status_sort) { //เปลี่ยนเป็นระบบสุริยะ
                     this.point_data = this.solar_data;
@@ -193,7 +239,7 @@
                 this.status = true;
                 this.direction();
             },
-            jump: function() { //กระโดด!!!
+            jump: function () { //กระโดด!!!
                 this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity); //เวลาในการกระโดด
                 this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7; //ความสูงที่กระโดดได้
 
@@ -210,14 +256,14 @@
 
                 }, this.jump_time * 1000)
             },
-            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
+            delete_class: function () { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 7; i++) {
                     if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
                         document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
                     }
                 }
             },
-            direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
+            direction: function () { //ตั้ง class ทิศทางการเคลื่อนที่
                 if (this.point > 0 && event.deltaY > 0) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;

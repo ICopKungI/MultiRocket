@@ -257,8 +257,8 @@
             <div>
                 <h1 v-if="status_sort" style="font-family: 'Neucha', cursive">Sort By Solar</h1>
                 <h1 v-else>Sort By Gravity</h1>
-                <button v-if="status_sort" @click="sort_by()">Gravity</button>
-                <button v-else @click="sort_by()">Solar</button>
+                <button type="button" class = "btn btn-body btn-lg text-white"v-if="status_sort" @click="sort_by()">Gravity</button>
+                <button type="button" class = "btn btn-body btn-lg text-white"v-else @click="sort_by()">Solar</button>
             </div>
             <!-- ปุ่มรูปแบบการเรียง -->
 

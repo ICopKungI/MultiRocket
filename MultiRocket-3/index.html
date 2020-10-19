@@ -174,7 +174,8 @@
     <!-- ดาวกลาง-->
     <div id='stars3'></div>
     <!-- ดาวใหญ่-->
-
+    
+<center>
     <div class="view view-ninth">
         <img src="earth.jpg" style="width:300px;height:200px;"/>
         <div class="mask mask-1"></div>
@@ -255,6 +256,7 @@
             
         </div>
     </div>
+</center>
 
 </body>
 
@@ -294,7 +296,8 @@
             status: false, //สถานะการเลื่อนดาวเคราห์
             status_sort: true, //สถานะรูปแบบการเรียง
             jump_time: 0.53, //เวลาที่ใช้ในการกระโดด
-            jump_h: 50 //ความสูงในการกระโดด px
+            jump_h: 50, //ความสูงในการกระโดด px
+            button: 50 //ความสูงในการกระโดด px
         },
 
         methods: {
@@ -347,11 +350,11 @@
                 }
             },
             direction: function () { //ตั้ง class ทิศทางการเคลื่อนที่
-                if (this.point > 0 && event.deltaY > 0) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
+                if (this.point > 0 && this.button == 97) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;
                     this.status = true;
-                } else if (this.point < 7 && event.deltaY < 0) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
+                } else if (this.point < 7 && this.button == 100) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
                     this.L_or_R = "right";
                     this.point += 1;
                     this.status = true;
@@ -371,15 +374,19 @@
         }
     })
 
-    document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
+    // document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
 
     function check_keyboard(event) { //รับค่าจาก keyboard มาเช็ค
-        var button = event.keyCode;
-        if (button == 13) { //ปุ่ม Enter เปิดปิด popup
+        app.button = event.keyCode;
+        if (app.button == 13) { //ปุ่ม Enter เปิดปิด popup
             app.change_status();
         }
-        if (button == 32) { //ปุ่ม Spacebar สั่งกระโดด
+        if (app.button == 32 && event.target == document.body) { //ปุ่ม J สั่งกระโดด
+            event.preventDefault();
             app.jump();
+        }
+        if (app.button == 97 || app.button == 100) { //ปุ่ม Num4 และ Num6 สั่งเลื่อนซ้ายขวา
+            app.direction();
         }
     }
 </script>

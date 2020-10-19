@@ -41,7 +41,7 @@ h1 a:hover{
 }
 .text{
     margin-top: 25px;
-    
+
 }
 h1{
     color: white;
@@ -57,6 +57,185 @@ body {
     background: black;
     /*สีพื้นหลัง*/
 }
+/** table of planet**/
+
+.rwd-table {
+    margin: 1em 0;
+    min-width: 300px;
+  }
+  .rwd-table tr {
+
+  }
+  .rwd-table th {
+    display: none;
+  }
+  .rwd-table td {
+    display: block;
+  }
+  .rwd-table td:first-child {
+    padding-top: .25em;
+  }
+  .rwd-table td:last-child {
+    padding-bottom: .25em;
+  }
+  .rwd-table td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 10%;
+    display: inline-block;
+  }
+  @media (min-width: 480px) {
+    .rwd-table td:before {
+      display: none;
+    }
+  }
+  .rwd-table th, .rwd-table td {
+    text-align: center;
+  }
+  @media (min-width: 480px) {
+    .rwd-table th, .rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+    }
+    .rwd-table th:first-child, .rwd-table td:first-child {
+      padding-left: 0;
+    }
+    .rwd-table th:last-child, .rwd-table td:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .rwd-table  {
+    width: 30%;
+    padding: 0 1em;
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: #444;
+    background: #eee;
+  }
+
+  .rwd-table {
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #34495E;
+  }
+
+  .rwd-table {
+    background: #34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+  }
+  .rwd-table tr {
+    border-color: #46637f;
+  }
+  .rwd-table th, .rwd-table td {
+    margin: 5em 2em;
+
+  }
+  @media (min-width: 480px) {
+    .rwd-table th, .rwd-table td {
+      padding: 1em !important;
+    }
+  }
+  .rwd-table th, .rwd-table td:before {
+    color: #dd5;
+  }
+  /** end table **/
+
+
+/** table of inform**/
+  p{
+    font-size: 1.3em;
+    color: #b861ff;
+
+    font-family: 'Neucha', cursive;
+
+  }
+  .inform{
+    font-family: 'Neucha', cursive;
+    font-size: 36px;
+ }
+
+/**
+
+  p:hover {
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+  }
+
+  @-webkit-keyframes neon2 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+      }
+  }
+ **/
+
+
+ .container_table td {
+    font-weight: normal;
+    font-size: 1.3em;
+-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+     -moz-box-shadow: 0 2px 2px -2px #0E1119;
+          box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container_table {
+    text-align: center;
+    overflow: hidden;
+    width: 30%;
+    margin: 1%;
+    font-family: 'Neucha', cursive;
+    display: table;
+
+
+}
+
+.container_table td, .container_table th {
+    padding-bottom: .1%;
+    padding-top: .1%;
+    padding-left:.1%;
+    border-radius: .8em;
+}
+
+
+
+.container_table td:first-child { color: #FB667A; }
+
+.container_table tr:hover {
+ background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+     -moz-box-shadow: 0 6px 6px -6px #0E1119;
+          box-shadow: 0 6px 6px -6px #0E1119;
+          border-radius: .8em;
+
+}
+
+.container_table td:hover,th:hover  {
+background-color: #f9c4ff;
+color: #614e63;
+font-weight: bold;
+text-align: center;
+border-radius: .8em;
+
+box-shadow: #e884f3 -1px 1px, #e884f3 -2px 2px, #e884f3 -3px 3px, #e884f3 -4px 4px, #e884f3 -5px 5px, #e884f3 -6px 6px;
+transform: translate3d(6px, -5px, 0);
+
+transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container_table td:nth-child(4),
+.container_table th:nth-child(4) { display: none; }
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -64,6 +243,8 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
+/** table of inform**/
 /*กรอกข้อมูล*/
 .container 		{
     font-family:'Roboto';
@@ -190,7 +371,7 @@ button {
   color: white;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   /*box-shadow: 0 0 20px #eee;*/
-  border-radius: 10px;
+  border-radius: .8em;
 
 
     margin: 4px 2px;

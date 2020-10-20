@@ -119,6 +119,7 @@
 
             <!-- แถวดาวเคราะห์ -->
             <div v-for="i in 8" style="height: 0px; font-family: 'Neucha', cursive; font-size: 24px">
+
                 <div v-if="(i-1) == 1" class="img_planet left_screen" :id="name_id+(i-1)">
                     <img :src="data.bodies[point_data[i-1]].img">
                     <br> {{data.bodies[point_data[i-1]].name}}
@@ -443,11 +444,11 @@
                 }
             },
             direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
-                if (this.point > 0 && this.button == 97) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
+                if (this.point > 0 && (this.button == 97 || this.button == 65)) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;
                     this.status = true;
-                } else if (this.point < 7 && this.button == 100) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
+                } else if (this.point < 7 && (this.button == 100 || this.button == 68)) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
                     this.L_or_R = "right";
                     this.point += 1;
                     this.status = true;
@@ -471,6 +472,7 @@
 
     function check_keyboard(event) { //รับค่าจาก keyboard มาเช็ค
         app.button = event.keyCode;
+        console.log(app.button)
         if (app.button == 13) { //ปุ่ม Enter เปิดปิด popup
             app.change_status();
         }
@@ -478,7 +480,7 @@
             event.preventDefault();
             app.jump();
         }
-        if (app.button == 97 || app.button == 100) { //ปุ่ม Num4 และ Num6 สั่งเลื่อนซ้ายขวา
+        if (app.button == 97 || app.button == 100 || app.button == 65 || app.button == 68) { //ปุ่ม Num4 และ Num6 สั่งเลื่อนซ้ายขวา
             app.direction();
         }
     }

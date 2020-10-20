@@ -23,6 +23,17 @@ html {
     /* overflow: hidden; */
     /*ซ้อน scrool bar*/
     color: white;
+    padding-bottom: 10%;
+}
+
+.menu {
+    padding: 1em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0009;
+    z-index: 100;
 }
 
 table {
@@ -694,13 +705,11 @@ img {
 .img_mini {
     height: var(--Size_img_mini);
     width: var(--Size_img_mini);
-    transition: 0.25s;
+    transition: 0.4s;
 }
 
 .img_mini:hover {
-    transition: 0.25s;
-    height: var(--Size_img);
-    width: var(--Size_img);
+    transform: scale(2) translateY(-10px);
 }
 
 
@@ -712,7 +721,7 @@ img {
 .popup {
     display: flex;
     position: fixed;
-    z-index: 99;
+    z-index: 101;
     left: 0;
     top: 0;
     width: 100%;

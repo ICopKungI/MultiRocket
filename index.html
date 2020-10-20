@@ -18,8 +18,8 @@
     <center>
         <div id="app">
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-            <div v-if="status_popup" class="popup" onkeypress="check_keyboard(event)">
-                <!--text bg-->
+            <div hidden v-if="status_popup" class="popup" onkeypress="check_keyboard(event)">
+                text bg
                 <div class="txt">
                     <h1>
                         <ul>
@@ -117,8 +117,8 @@
             <!-- <div class="human" id="human" >PRESS Spacebar</div> -->
             <img src="/image/Artboard 322.png" class="human" id="human" @click="jump()">
 
-            <!-- แถวดาวเคราะห์ -->
-            <div v-for="i in 8" style="height: 0px; font-family: 'Neucha', cursive; font-size: 24px">
+            <!-- แถวดาวเคราะห์ Old-->
+            <!-- <div v-for="i in 8" style="height: 0px; font-family: 'Neucha', cursive; font-size: 24px">
 
                 <div v-if="(i-1) == 1" class="img_planet left_screen" :id="name_id+(i-1)">
                     <img :src="data.bodies[point_data[i-1]].img">
@@ -137,113 +137,24 @@
                     <img :src="data.bodies[point_data[i-1]].img">
                     <br> {{data.bodies[point_data[i-1]].name}}
                 </div>
-            </div>
+            </div> -->
             <!-- แถวดาวเคราะห์ -->
 
+            <div v-for="i in 8" style="height: 0px; font-family: 'Neucha', cursive; font-size: 24px">
 
-
-
-            <div style="margin-top: 350px; margin-bottom: 100px; font-family: 'Patrick Hand', cursive; font-size: 18px">
-                <!-- EARTH -->
-                <div v-if="data.bodies[point_data[point]].name == 'Earth'">
-                    <img class="img_mini" :src="data.bodies[point_data[point]].moons[0].img">
-                    <center>
-                        <table class="rwd-table">
-                            <tr>
-                                <th>Name of Earth</th>
-                                <th>Gravity m.s <sup>-2</sup></th>
-                                <th>Weight on Planet</th>
-                            </tr>
-                            <tr class="inform_1">
-                                <td data-th="name">{{data.bodies[point_data[point]].moons[0].name}}</td>
-                                <td data-th="gravity">{{data.bodies[point_data[point]].moons[0].gravity}} m.s </td>
-                                <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[0].gravity)}} kg.</td>
-                            </tr>
-                        </table>
-                    </center>
-
-                </div>
-                <!-- Mars -->
-                <div v-if="data.bodies[point_data[point]].name == 'Mars'">
-                    <div v-for="i in 2" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
-                        <center>
-                            <table class="rwd-table">
-                                <tr>
-                                    <th>Name of Mars</th>
-                                    <th>Gravity m.s <sup>-2</sup></th>
-                                    <th>Weight on Planet</th>
-                                </tr>
-                                <tr class="inform_2">
-                                    <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
-                                    <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}}</td>
-                                    <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
-                                    </td>
-                                </tr>
-                            </table>
-                        </center>
-                    </div>
-                </div>
-                <!-- Jupiter -->
-                <div v-if="data.bodies[point_data[point]].name == 'Jupiter'">
-                    <div v-for="i in 14" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
-                        <center>
-                            <table class="rwd-table">
-                                <tr>
-                                    <th>Name of Jupiter</th>
-                                    <th>Gravity m.s <sup>-2</sup></th>
-                                    <th>Weight on Planet</th>
-                                </tr>
-                                <tr>
-                                    <tr class="inform_3">
-                                        <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
-                                        <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}}</td>
-                                        <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
-                                        </td>
-                                    </tr>
-                            </table>
-                        </center>
-                    </div>
-                </div>
-                <!-- Neptune -->
-                <div v-if="data.bodies[point_data[point]].name == 'Neptune'">
-                    <div v-for="i in 3" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
-                        <center>
-                            <table class="rwd-table">
-                                <tr>
-                                    <th>Name of Neptune</th>
-                                    <th>Gravity m.s <sup>-2</sup></th>
-                                    <th>Weight on Planet</th>
-                                </tr>
-                                <tr>
-                                    <tr class="inform_4">
-                                        <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
-                                        <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}} </td>
-                                        <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
-                                        </td>
-                                    </tr>
-                            </table>
-                        </center>
-                    </div>
-                </div>
             </div>
-            <br>
-
-
 
             <!-- แถบปุ่มดาวเคราะห์ -->
-            <div v-for="i in 8" @click="point = i-1, status = true, direction()" class="planet">
-                <img class="img_mini" :src="data.bodies[point_data[i-1]].img">
-                <br> {{data.bodies[point_data[i-1]].name}}
+            <div class="menu">
+                <div v-for="i in 8" @click="point = i-1, status = true, direction()" class="planet">
+                    <img class="img_mini" :src="data.bodies[point_data[i-1]].img">
+                    <br> {{data.bodies[point_data[i-1]].name}}
+                </div>
             </div>
             <!-- แถบปุ่มดาวเคราะห์ -->
 
             <!-- ปุ่มรูปแบบการเรียง -->
-            <p></p>
-            <p></p>
-            <div>
+            <div style="margin-top: 35%;">
                 <h1 v-if="status_sort" style="font-family: 'Neucha', cursive">Sort By Solar</h1>
                 <h1 v-else>Sort By Gravity</h1>
                 <button type="button" class="btn btn-body btn-lg text-white" v-if="status_sort" @click="sort_by()"> <p>Gravity</p> </button>
@@ -269,7 +180,7 @@
     <!-- ดาวใหญ่-->
 
     <center>
-        <div style="margin-left: 5.5%;">
+        <div style="margin-left: 5.5%; margin-top: 5%;">
             <div class="view view-ninth">
                 <img src="/image/earth.jpg" style="width:300px;height:200px;" />
                 <div class="mask mask-1"></div>

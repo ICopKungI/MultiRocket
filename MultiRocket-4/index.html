@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html onkeypress="check_keyboard(event)">
+
+
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <center>O</center>
+    <div id="app">
+        <div class="slide">
+            <div v-for="planet in 8" class="show">
+
+                <!-- ดาวหลัก -->
+                <div class="planet">
+                    <img class="showplanet" :src="data.bodies[planet-1].img">
+                    <p>{{data.bodies[planet-1].name}}</p>
+                </div>
+
+                <!-- ดาวลูก -->
+                <div v-for="moon in data.bodies[planet-1].moons.length" class="supshow">
+                    <img class="showplanet" :src="data.bodies[planet-1].moons[moon-1].img">
+                    <p>{{data.bodies[planet-1].moons[moon-1].name}}</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slideLeft" @click="slideleft()"></div>
+        <div class="slideRight" @click="slideright()"></div>
+    </div>
+</body>
+
+<script>
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            var myJSON = JSON.parse(request.responseText);
+            app.data = myJSON;
+        }
+    };
+    request.open("GET", 'Rocket_Api.json', true);
+    request.send();
+    // fetch('https://api.le-systeme-solaire.net/rest/bodies/')
+    //      .then(response => response.json())
+    //      .then(json => {
+    //          app.data = json
+    //          console.log(json)
+    //          console.log("โหลด json เสร็จแล้ว")
+    //      })
+
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            data: {}, //ข้อมูล JSON
+            point_data: [0, 1, 2, 3, 4, 5, 6, 7], //เหมือน solar_data
+            solar_data: [0, 1, 2, 3, 4, 5, 6, 7], //ตำแหน่งใน List bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"] ชื่อดาวตามตำแหน่งใน solar_data เรียงตามลำดับระบบสุริยะ
+            g_data: [0, 3, 1, 6, 2, 5, 7, 4], //ตำแหน่งใน List bodies ["Mercury", "Mars", "Uranus", "Venus", "Earth", "Saturn", "Neptune", "Jupiter"] ชื่อดาวตามตำแหน่งใน g_data เรียงตามค่าแรงโน้มถ่วง
+            weight: 0, //น้ำหนักของผู้ใช้
+            weight_on_planet: 0, //น้ำหนักบนดาวเคราะห์นั้น
+            name: "", //ชื่อผู้ใช้
+            point: 2, //ตำแหน่งในlist point_data
+            status_popup: true, //สถานะหน้าpopup
+            name_id: "img_planet_",
+            L_or_R: "", //บอกว่าไปทางซ้ายหรือขวา
+            status: false, //สถานะการเลื่อนดาวเคราห์
+            status_sort: true, //สถานะรูปแบบการเรียง
+            jump_time: 0.53, //เวลาที่ใช้ในการกระโดด
+            jump_h: 50, //ความสูงในการกระโดด px
+            button: 50 //ความสูงในการกระโดด px
+        },
+
+        methods: {
+            slideleft: function() {
+
+            },
+            slideright: function() {
+
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
+                this.weight_on_planet = (gravity * this.weight) / 9.8
+                return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
+            },
+            change_status: function() { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
+                if (this.status_popup) {
+                    this.point = 2;
+                    this.status = true;
+                    this.direction();
+                }
+                this.status_popup = !this.status_popup;
+            },
+            sort_by: function() { //เรืยงตามที่ต้องการ
+                this.status_sort = !this.status_sort;
+                if (this.status_sort) { //เปลี่ยนเป็นระบบสุริยะ
+                    this.point_data = this.solar_data;
+                    this.point = 2;
+                } else { //เปลี่ยนเป็นแรงโน้มถ่วง
+                    this.point_data = this.g_data;
+                    this.point = 4;
+                }
+                this.status = true;
+                this.direction();
+            },
+            jump: function() { //กระโดด!!!
+                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity); //เวลาในการกระโดด
+                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7; //ความสูงที่กระโดดได้
+
+                document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
+                document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
+
+                document.getElementById("human").className = "human jumpping";
+
+                setTimeout(function playing() {
+
+                    document.getElementById("human").style = null; //ล้างประวัติการเล่น animation
+                    document.getElementById("human").className = "human";
+                    clearTimeout();
+
+                }, this.jump_time * 1000)
+            },
+            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
+                for (var i = 0; i <= 7; i++) {
+                    if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
+                        document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
+                    }
+                }
+            },
+            direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
+                if (this.point > 0 && (this.button == 97 || this.button == 65)) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
+                    this.L_or_R = "left";
+                    this.point -= 1;
+                    this.status = true;
+                } else if (this.point < 7 && (this.button == 100 || this.button == 68)) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
+                    this.L_or_R = "right";
+                    this.point += 1;
+                    this.status = true;
+                }
+                if (this.status) { //มีการเลื่อนไหม
+                    this.status = false;
+                    this.delete_class();
+                    document.getElementById(this.name_id + this.point).className = " img_planet w3-animate-" + this.L_or_R + " center_planet";
+                    if (this.point != 0) { //ตัวซ้ายสุดหรือยัง
+                        document.getElementById(this.name_id + (this.point - 1)).className = "img_planet left_screen direction_" + this.L_or_R + "_screen_left";
+                    }
+                    if (this.point != 7) { //ตัวขวาสุดหรือยัง
+                        document.getElementById(this.name_id + (this.point + 1)).className = "img_planet right_screen direction_" + this.L_or_R + "_screen_right";
+                    }
+                }
+            }
+        }
+    })
+
+    // document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
+
+    function check_keyboard(event) { //รับค่าจาก keyboard มาเช็ค
+        app.button = event.keyCode;
+        console.log(app.button)
+        if (app.button == 13) { //ปุ่ม Enter เปิดปิด popup
+            app.change_status();
+        }
+        if (app.button == 32 && event.target == document.body) { //ปุ่ม J สั่งกระโดด
+            event.preventDefault();
+            app.jump();
+        }
+        if (app.button == 97 || app.button == 100 || app.button == 65 || app.button == 68) { //ปุ่ม Num4 และ Num6 สั่งเลื่อนซ้ายขวา
+            app.direction();
+        }
+    }
+</script>
+
+</html>

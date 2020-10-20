@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
 <body class="text-white">
@@ -156,8 +155,8 @@
 
             <div style="margin-top: 350px; margin-bottom: 100px; font-family: 'Patrick Hand', cursive; font-size: 18px">
                 <!-- EARTH -->
-                <div v-if="point == 2">
-                    <img class="img_mini" :src="data.bodies[point].moons[0].img">
+                <div v-if="data.bodies[point_data[point]].name == 'Earth'">
+                    <img class="img_mini" :src="data.bodies[point_data[point]].moons[0].img">
                     <center>
                         <table class="rwd-table">
                             <tr>
@@ -166,18 +165,18 @@
                                 <th>Weight on Planet</th>
                             </tr>
                             <tr class="inform_1">
-                                <td data-th="name">{{data.bodies[point].moons[0].name}}</td>
-                                <td data-th="gravity">{{data.bodies[point].moons[0].gravity}} m.s </td>
-                                <td data-th="weight">{{calculate_weight(data.bodies[point].moons[0].gravity)}} kg.</td>
+                                <td data-th="name">{{data.bodies[point_data[point]].moons[0].name}}</td>
+                                <td data-th="gravity">{{data.bodies[point_data[point]].moons[0].gravity}} m.s </td>
+                                <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[0].gravity)}} kg.</td>
                             </tr>
                         </table>
                     </center>
 
                 </div>
                 <!-- Mars -->
-                <div v-if="point == 3">
+                <div v-if="data.bodies[point_data[point]].name == 'Mars'">
                     <div v-for="i in 2" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point].moons[i-1].img">
+                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
                         <center>
                             <table class="rwd-table">
                                 <tr>
@@ -186,19 +185,19 @@
                                     <th>Weight on Planet</th>
                                 </tr>
                                 <tr class="inform_2">
-                                    <td data-th="name">{{data.bodies[point].moons[i-1].name}}</td>
-                                    <td data-th="gravity">{{data.bodies[point].moons[i-1].gravity}}</td>
-                                    <td data-th="weight">{{calculate_weight(data.bodies[point].moons[i-1].gravity)}}
-                                        kg.</td>
+                                    <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
+                                    <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}}</td>
+                                    <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
+                                    </td>
                                 </tr>
                             </table>
                         </center>
                     </div>
                 </div>
                 <!-- Jupiter -->
-                <div v-if="point == 4">
+                <div v-if="data.bodies[point_data[point]].name == 'Jupiter'">
                     <div v-for="i in 14" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point].moons[i-1].img">
+                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
                         <center>
                             <table class="rwd-table">
                                 <tr>
@@ -207,20 +206,20 @@
                                     <th>Weight on Planet</th>
                                 </tr>
                                 <tr>
-                                <tr class="inform_3">
-                                    <td data-th="name">{{data.bodies[point].moons[i-1].name}}</td>
-                                    <td data-th="gravity">{{data.bodies[point].moons[i-1].gravity}}</td>
-                                    <td data-th="weight">{{calculate_weight(data.bodies[point].moons[i-1].gravity)}}
-                                        kg.</td>
-                                </tr>
+                                    <tr class="inform_3">
+                                        <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
+                                        <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}}</td>
+                                        <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
+                                        </td>
+                                    </tr>
                             </table>
                         </center>
                     </div>
                 </div>
                 <!-- Neptune -->
-                <div v-if="point == 7">
+                <div v-if="data.bodies[point_data[point]].name == 'Neptune'">
                     <div v-for="i in 3" style="display: inline-block; margin-right: 30px;">
-                        <img class="img_mini" :src="data.bodies[point].moons[i-1].img">
+                        <img class="img_mini" :src="data.bodies[point_data[point]].moons[i-1].img">
                         <center>
                             <table class="rwd-table">
                                 <tr>
@@ -229,12 +228,12 @@
                                     <th>Weight on Planet</th>
                                 </tr>
                                 <tr>
-                                <tr class="inform_4">
-                                    <td data-th="name">{{data.bodies[point].moons[i-1].name}}</td>
-                                    <td data-th="gravity">{{data.bodies[point].moons[i-1].gravity}} </td>
-                                    <td data-th="weight">{{calculate_weight(data.bodies[point].moons[i-1].gravity)}}
-                                        kg.</td>
-                                </tr>
+                                    <tr class="inform_4">
+                                        <td data-th="name">{{data.bodies[point_data[point]].moons[i-1].name}}</td>
+                                        <td data-th="gravity">{{data.bodies[point_data[point]].moons[i-1].gravity}} </td>
+                                        <td data-th="weight">{{calculate_weight(data.bodies[point_data[point]].moons[i-1].gravity)}} kg.
+                                        </td>
+                                    </tr>
                             </table>
                         </center>
                     </div>
@@ -257,8 +256,8 @@
             <div>
                 <h1 v-if="status_sort" style="font-family: 'Neucha', cursive">Sort By Solar</h1>
                 <h1 v-else>Sort By Gravity</h1>
-                <button type="button" class = "btn btn-body btn-lg text-white"v-if="status_sort" @click="sort_by()">Gravity</button>
-                <button type="button" class = "btn btn-body btn-lg text-white"v-else @click="sort_by()">Solar</button>
+                <button type="button" class="btn btn-body btn-lg text-white" v-if="status_sort" @click="sort_by()">Gravity</button>
+                <button type="button" class="btn btn-body btn-lg text-white" v-else @click="sort_by()">Solar</button>
             </div>
             <!-- ปุ่มรูปแบบการเรียง -->
 
@@ -380,7 +379,7 @@
 
 <script>
     let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var myJSON = JSON.parse(request.responseText);
             app.data = myJSON;
@@ -419,11 +418,11 @@
         },
 
         methods: {
-            calculate_weight: function (gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
+            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
                 this.weight_on_planet = (gravity * this.weight) / 9.8
                 return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
             },
-            change_status: function () { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
+            change_status: function() { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
                 if (this.status_popup) {
                     this.point = 2;
                     this.status = true;
@@ -431,7 +430,7 @@
                 }
                 this.status_popup = !this.status_popup;
             },
-            sort_by: function () { //เรืยงตามที่ต้องการ
+            sort_by: function() { //เรืยงตามที่ต้องการ
                 this.status_sort = !this.status_sort;
                 if (this.status_sort) { //เปลี่ยนเป็นระบบสุริยะ
                     this.point_data = this.solar_data;
@@ -443,7 +442,7 @@
                 this.status = true;
                 this.direction();
             },
-            jump: function () { //กระโดด!!!
+            jump: function() { //กระโดด!!!
                 this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity); //เวลาในการกระโดด
                 this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7; //ความสูงที่กระโดดได้
 
@@ -460,14 +459,14 @@
 
                 }, this.jump_time * 1000)
             },
-            delete_class: function () { //ซ้อนดาวที่ไม่ใช้
+            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
                 for (var i = 0; i <= 7; i++) {
                     if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
                         document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
                     }
                 }
             },
-            direction: function () { //ตั้ง class ทิศทางการเคลื่อนที่
+            direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
                 if (this.point > 0 && this.button == 97) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
                     this.L_or_R = "left";
                     this.point -= 1;

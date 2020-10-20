@@ -492,6 +492,12 @@ button:hover {
     /* ทำให้พื้นหลังมืดลง */
 }
 
+button p {
+    font-family: 'Neucha', cursive;
+    color: #fff;
+    margin: 0;
+}
+
 
 /* end ปุ่ม button */
 

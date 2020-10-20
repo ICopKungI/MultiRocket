@@ -67,49 +67,51 @@
 
             </div>
             <!-- หน้าป๊อปอัพบังคับกรอกข้อมูล -->
-            <div class="text">
-                <!-- <table class="container_table"> -->
-                <table>
-                    <tr>
-                        <th>
-                            <h3>
-                                <p>Planet</p>
-                            </h3>
-                            <!--ชื่อดาว-->
-                        </th>
-                        <th>
-                            <h3>
-                                <p>Gravity</p>
-                            </h3>
-                            <!--แรงโน้มถ่วง-->
-                        </th>
-                        <th>
-                            <h3>
-                                <p>Name </p>
-                            </h3>
-                            <!--ชื่อผู้ใช้-->
-                        </th>
-                        <th>
-                            <h3>
-                                <p>Weight on Planet</p>
-                            </h3>
-                            <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
-                        </th>
-                    </tr>
-                    <td>
-                        {{data.bodies[point_data[point]].name}}
-                    </td>
-                    <td>
-                        {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup>
-                    </td>
-                    <td>
-                        {{name}}
-                    </td>
-                    <td>
-                        {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.
-                    </td>
-                </table>
-            </div>
+            <center>
+                <div class="text">
+                    <!-- <table class="container_table"> -->
+                    <table>
+                        <tr>
+                            <th>
+                                <h3>
+                                    <p>Planet</p>
+                                </h3>
+                                <!--ชื่อดาว-->
+                            </th>
+                            <th>
+                                <h3>
+                                    <p>Gravity</p>
+                                </h3>
+                                <!--แรงโน้มถ่วง-->
+                            </th>
+                            <th>
+                                <h3>
+                                    <p>Name </p>
+                                </h3>
+                                <!--ชื่อผู้ใช้-->
+                            </th>
+                            <th>
+                                <h3>
+                                    <p>Weight on Planet</p>
+                                </h3>
+                                <!--น้ำหนักบนดาวเคราะห์นั้นๆ-->
+                            </th>
+                        </tr>
+                        <td>
+                            {{data.bodies[point_data[point]].name}}
+                        </td>
+                        <td>
+                            {{data.bodies[point_data[point]].gravity}} m.s <sup>-2</sup>
+                        </td>
+                        <td>
+                            {{name}}
+                        </td>
+                        <td>
+                            {{calculate_weight(data.bodies[point_data[point]].gravity)}} kg.
+                        </td>
+                    </table>
+                </div>
+            </center>
 
             <button class="again btn btn-body btn-lg text-white" @click="change_status()">RESTART</button><br>
             <!-- <div class="human" id="human" >PRESS Spacebar</div> -->

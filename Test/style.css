@@ -1,0 +1,49 @@
+.swiper-step {
+    width: 500px;
+    height: 300px;
+}
+
+.swiper-step>.swiper-wrapper>.swiper-slide {
+    background: #ddd;
+    position: relative;
+}
+
+.swiper-step>.swiper-wrapper>.swiper-slide:nth-child(even) {
+    background: #ccc;
+}
+
+.swiper-set-parent {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.swiper-set-parent .swiper-slide {
+    width: 100%;
+    height: 100%;
+    background: #aaa;
+}
+
+.swiper-set-parent .swiper-slide:nth-child(even) {
+    background: #999;
+}
+
+.swiper-set-child {
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.swiper-set-child .swiper-slide {
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+}
+
+.swiper-set-child .swiper-slide:nth-child(even) {
+    background: #ccc;
+}

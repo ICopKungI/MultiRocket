@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html onkeypress="check_keyboard(event)">
+
+
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="swiper-container swiper-step">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-no-swiping">
+                    Step 1
+                    <div class="swiper-container swiper-set-parent swiper-set-parent-1">
+                        <div class="swiper-wrapper swiper-no-swiping">
+                            <div class="swiper-slide swiper-no-swiping">
+                                Set 1.1
+                                <div class="swiper-container swiper-set-child swiper-set-child-1">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            Sheet 1.1.1
+                                        </div>
+                                        <div class="swiper-slide">
+                                            Sheet 1.1.2
+                                        </div>
+                                        <div class="swiper-slide">
+                                            Sheet 1.1.3
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination swiper-set-child-1-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping">
+                                Set 1.2
+                                <div class="swiper-container swiper-set-child swiper-set-child-2">
+                                    <div class="swiper-wrapper swiper-no-swiping">
+                                        <div class="swiper-slide">
+                                            Sheet 1.2.1
+                                        </div>
+                                        <div class="swiper-slide">
+                                            Sheet 1.2.2
+                                        </div>
+                                        <div class="swiper-slide">
+                                            Sheet 1.2.3
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination swiper-set-child-2-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                Set 1.3
+                            </div>
+                        </div>
+                        <div class="swiper-pagination swiper-set-parent-1-pagination"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    Step 2
+                    <div class="swiper-container swiper-set-parent swiper-set-parent-2">
+                        <div class="swiper-wrapper swiper-no-swiping">
+                            <div class="swiper-slide">
+                                Set 2.1
+                            </div>
+                            <div class="swiper-slide">
+                                Set 2.2
+                            </div>
+                            <div class="swiper-slide">
+                                Set 2.3
+                            </div>
+                        </div>
+                        <div class="swiper-pagination swiper-set-parent-2-pagination"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    Step 3
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    Step 4
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-step-pagination"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var swiper = new Swiper('.swiper-container');
+    var swiperStepAllowSlideToPrev = false,
+        swiperStepAllowSlideToNext = false,
+
+        swiperSet1AllowSlideToPrev = false,
+        swiperSet1AllowSlideToNext = false,
+
+        swiperSet2AllowSlideToPrev = false,
+        swiperSetA2llowSlideToNext = false,
+
+        swiperStep = new Swiper('.swiper-step', {
+            mode: 'horizontal',
+            noSwiping: true,
+            pagination: '.swiper-step-pagination',
+            paginationClickable: true,
+            onSlideChangeEnd: function(swiper) {
+                if (swiper.activeIndex > swiper.previousIndex) {
+                    swiperStepAllowSlideToPrev = true;
+                }
+                if (swiper.activeIndex < swiper.previousIndex) {
+                    swiperStepAllowSlideToNext = true;
+                }
+            }
+        }),
+
+        swiperSetDefaultSettings = {
+            mode: 'horizontal',
+            noSwiping: true,
+            onSlideChangeEnd: function(swiper) {
+                if (swiper.isBeginning) {
+                    swiperStepAllowSlideToPrev = true;
+                }
+                if (swiper.isEnd) {
+                    swiperStepAllowSlideToNext = true;
+                }
+            },
+            onProgress: function(swiper, progress) {
+                if (swiperStepAllowSlideToPrev && progress < -0.1 && swiper.isBeginning) {
+                    swiperStepAllowSlideToPrev = false;
+                    swiperStep.slidePrev();
+                }
+                if (swiperStepAllowSlideToNext && progress > 1.1 && swiper.isEnd) {
+                    swiperStepAllowSlideToNext = false;
+                    swiperStep.slideNext();
+                }
+            }
+        },
+
+        swiperSetParent1 = new Swiper('.swiper-set-parent-1',
+            $.extend(swiperSetDefaultSettings, {
+                pagination: '.swiper-set-parent-1-pagination',
+                paginationClickable: true,
+                noSwiping: true,
+            })
+        ),
+
+        swiperSetChild1 = new Swiper('.swiper-set-child-1',
+            $.extend(swiperSetDefaultSettings, {
+                pagination: '.swiper-set-child-1-pagination',
+                noSwiping: true,
+            })
+        ),
+
+        swiperSetParent2 = new Swiper('.swiper-set-parent-2',
+            $.extend(swiperSetDefaultSettings, {
+                pagination: '.swiper-set-parent-2-pagination'
+            })
+        );
+</script>

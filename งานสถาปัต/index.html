@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Index</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- หน้าก่อนเข้าหน้า Home -->
+        <div v-if="what_page == 'Before_Home'">
+            <img src="Architecture/Page_before entering_home page/logo.gif"
+                style="width: 90%; height: 95vh; margin-left: 5%; margin-right: 5%;">
+        </div>
+        <!-- หน้าก่อนเข้าหน้า Home -->
+
+        <!-- แถบเมนูด้านบน -->
+        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand bg-light container">
+
+            <img id="icon" src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
+                @click="change_page('Home')">
+
+            <ul v-if="what_page != 'Home'" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link button" @click="change_page('Home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" @click="change_page('Law')">Law</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" @click="change_page('All cases')">All cases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" @click="change_page('Contect')">Contect</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- แถบเมนูด้านบน -->
+
+        <!-- หน้า Home -->
+        <div v-if="what_page == 'Home'" class="container">
+            <div class="row">
+                <div class="cal-6 topic">
+                    <p class="topic_text">Discover all</p>
+                    <p class="topic_text">about law</p>
+                    <p class="topic_text">for women</p>
+                    <p class="topic_text">in Thailand</p>
+                    <button class="time_to_bloom" @click="change_page('Law')"></button>
+                </div>
+                <div class="cal-6">
+                    <img name="gif_home" src="Architecture/home_page/final.gif" class="logo_gif">
+                </div>
+            </div>
+        </div>
+        <!-- หน้า Home -->
+
+        <!-- ปุ่มกด Back Next -->
+        <div v-if="what_page == 'Law' || what_page == 'All cases'" class="align-text-bottom container">
+            <div class="row">
+                <div class="col-6">
+                    <p class="button">Back</p>
+                </div>
+                <div class="col-6">
+                    <p class="button next">Next</p>
+                </div>
+            </div>
+        </div>
+        <!-- ปุ่มกด Back Next -->
+    </div>
+
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            what_page: "Before_Home"
+        },
+        methods: {
+            change_page: function(page) {
+                this.what_page = page;
+                document.title = app.what_page;
+                if (page == "Home") {
+                    console.log(document.getElementsByName("gif_home"))
+                    console.log(document.getElementsByName("gif_home")[0])
+                    document.getElementsByName("gif_home")[0].src= "Architecture/home_page/final.gif";
+                }
+            }
+        }
+    })
+    setTimeout(function () { app.change_page("Home"); }, 4000);
+</script>
+
+</html>

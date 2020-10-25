@@ -1,0 +1,80 @@
+:root{
+    --logo_size:125px;
+    --button_size_x:217px;
+    --button_size_y:54px;
+    --topic_or_button_color:#517ebf;
+    --topic_or_button_font:'Prompt', sans-serif;
+    --text_font:"";
+    --menu_size:15pt;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+.button{
+    cursor: pointer;
+    color: var(--topic_or_button_color);
+    font-size: var(--menu_size);
+    font-family: var(--topic_or_button_font);
+}
+
+.next{
+    width: 102px;
+    margin-right:0;
+    margin-left:auto;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+.topic{
+    margin-top: 8%;
+    margin-right: auto;
+}
+
+.topic_text{
+    font-family: var(--topic_or_button_font);
+    margin: 0;
+    font-size: 50pt;
+    text-align: left;
+}
+
+.time_to_bloom{
+
+    background-image: url(Architecture/home_page/time_to_bloom.png);
+    background-size: var(--button_size_x) var(--button_size_y);
+    background-position: center;
+
+    width: var(--button_size_x);
+    height: var(--button_size_y);
+
+    border: 0px;
+    border-radius: 10px;
+
+    position:relative;
+    top:50%; 
+    left:15%;
+
+    transition: 0.075s;
+}
+
+.time_to_bloom:active{
+    transform: scale(0.8);
+    transition: 0.075s;
+}
+
+.logo_png{
+    width: var(--logo_size);
+    height: var(--logo_size);
+    cursor: pointer;
+}
+
+.logo_gif{
+    transform: scale(2) translateY(6%);
+    display: block;
+    height: 50vh;
+    margin: auto;
+    z-index: -1;
+}

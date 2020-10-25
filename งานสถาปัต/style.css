@@ -4,7 +4,7 @@
     --button_size_y:54px;
     --topic_or_button_color:#517ebf;
     --topic_or_button_font:'Prompt', sans-serif;
-    --text_font:"";
+    --text_font:'Bai Jamjuree', sans-serif;
     --menu_size:15pt;
 }
 
@@ -20,13 +20,17 @@ body{
 }
 
 .next{
-    width: 102px;
-    margin-right:0;
+    margin-right:12px;
     margin-left:auto;
+    text-align: right;
+}
+
+.back, .next{
+    width: 50px;
 }
 
 .nav-item{
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .topic{
@@ -72,6 +76,7 @@ body{
 }
 
 .logo_gif{
+    /* content:url(Architecture/home_page/final.gif); */
     transform: scale(2) translateY(6%);
     display: block;
     height: 50vh;

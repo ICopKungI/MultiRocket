@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -58,17 +59,32 @@
                     <button class="time_to_bloom" @click="change_page('Law')"></button>
                 </div>
                 <div class="cal-6">
-                    <img name="gif_home" src="Architecture/home_page/final.gif" class="logo_gif">
+                    <img id="gif_home" src="Architecture/home_page/final.gif" class="logo_gif">
                 </div>
             </div>
         </div>
         <!-- หน้า Home -->
 
+        <!-- หน้า Law -->
+        <div v-if="what_page == 'Law'" class="container">
+        </div>
+        <!-- หน้า Law -->
+
+        <!-- หน้า All cases -->
+        <div v-if="what_page == 'All cases'" class="container">
+        </div>
+        <!-- หน้า All cases -->
+
+        <!-- หน้า Contect -->
+        <div v-if="what_page == 'Contect'" class="container">
+        </div>
+        <!-- หน้า Contect -->
+
         <!-- ปุ่มกด Back Next -->
         <div v-if="what_page == 'Law' || what_page == 'All cases'" class="align-text-bottom container">
             <div class="row">
                 <div class="col-6">
-                    <p class="button">Back</p>
+                    <p class="button back">Back</p>
                 </div>
                 <div class="col-6">
                     <p class="button next">Next</p>
@@ -89,10 +105,9 @@
             change_page: function(page) {
                 this.what_page = page;
                 document.title = app.what_page;
+                
                 if (page == "Home") {
-                    console.log(document.getElementsByName("gif_home"))
-                    console.log(document.getElementsByName("gif_home")[0])
-                    document.getElementsByName("gif_home")[0].src= "Architecture/home_page/final.gif";
+                    document.getElementById("gif_home").src = "Architecture/home_page/final.gif";
                 }
             }
         }

@@ -5,10 +5,10 @@
     --topic_or_button_color:#517ebf;
     --topic_or_button_font:'Prompt', sans-serif;
     --text_font:'Bai Jamjuree', sans-serif;
-    --menu_size:15pt;
+    --menu_size:12.5pt;
 }
 
-body{
+html, body{
     background-color: #f2f2f2;
 }
 
@@ -57,8 +57,7 @@ body{
     border: 0px;
     border-radius: 10px;
 
-    position:relative;
-    top:50%; 
+    position:relative; 
     left:15%;
 
     transition: 0.075s;

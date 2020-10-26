@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>Index</title>
     <link rel="icon" href="Architecture/logoweb.png" type="image" sizes="16x16">
 </head>
 
 <body>
+
     <div id="app">
 
         <!-- หน้าก่อนเข้าหน้า Home -->
@@ -28,7 +35,7 @@
         <!-- แถบเมนูด้านบน -->
         <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand container">
 
-            <img id="icon" src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
+            <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
                 @click="change_page('Time_To_Bloom')">
 
             <ul v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto">
@@ -53,7 +60,7 @@
             <div class="row">
                 <div class="cal-6 time_to_bloom_topic">
                     <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
-                    <button class="time_to_bloom" @click="change_page('Home')"></button>
+                    <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png" @click="change_page('Home')">
                 </div>
                 <div class="cal-6">
                     <img id="gif_home" src="Architecture/Time_To_Bloom_page/final.gif" class="logo_gif">
@@ -65,10 +72,10 @@
         <!-- หน้า Home -->
         <div v-if="what_page == 'Home'" class="container">
             <div class="row">
-                <div class="col-6">
+                <div data-aos-anchor-placement="top-center" data-aos="fade-right" class="col-6">
                     <img :src="info.Home[0].Img" class="home_gif1">
                 </div>
-                <div class="col-6">
+                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6">
                     <p class="topic_text home_topic_text">
                         {{info.Home[0].LawName}}<br>{{info.Home[0].LawName2}}
                     </p>
@@ -79,13 +86,13 @@
             </div>
         </div>
 
-        <div v-if="what_page == 'Home'" class="home_gif2">
+        <div data-aos="fade-down" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'" class="home_gif2">
             <div v-if="what_page == 'Home'" class="container">
-                <div class="container home_text2">
+                <div data-aos-anchor-placement="top-center" data-aos="fade-up" class="container home_text2">
                     <p class="topic_text home_topic_text2">
                         {{info.Home[1].LawName}}
                     </p>
-                    <p class="text">
+                    <p class="text home_mean2">
                         {{info.Home[1].Mean}}
                     </p>
                 </div>
@@ -142,7 +149,7 @@
             change_page: function (page) {
                 this.what_page = page;
                 document.title = app.what_page;
-                if(page == "Home"){
+                if (page == "Home") {
                     this.final_page = true;
                     document.documentElement.style.setProperty("--home_img2", 'url("Architecture/Home_page/giflaw2.gif")');
                 }
@@ -152,12 +159,19 @@
                 else {
                     this.final_page = false;
                     document.title = "Time To Bloom";
-                    document.getElementById("gif_home").src = "Architecture/Time_To_Bloom_page/final.gif";
+                    // document.getElementById("gif_home").src = "Architecture/Time_To_Bloom_page/final.gif";
                 }
             }
         }
     })
     setTimeout(function () { app.change_page("Time_To_Bloom"); }, 4000);
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
 </script>
 
 </html>

@@ -17,6 +17,10 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
     background-color: #f2f2f2;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* แทบเมนูด้านบน*/
 .button{
     cursor: pointer;
@@ -71,7 +75,6 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
 
 .time_to_bloom{/*buuton*/
 
-    background-image: url(Architecture/Time_To_Bloom_page/time_to_bloom.png);
     background-size: var(--button_size_x) var(--button_size_y);
     background-position: center;
 
@@ -83,8 +86,6 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
 
     position:relative; 
     left:15%;
-
-    transition: 0.075s;
 }
 
 .time_to_bloom:active{/*buuton*/
@@ -106,7 +107,7 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
     width: 100%; 
     height: 100vh; 
     background-position: center;
-    margin-top: 5%;
+    margin-top: 7%;
     background-repeat:no-repeat;
 }
 .home_text2{
@@ -115,7 +116,7 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
     padding-right: var(--home_text2_posision) !important;
 }
 
-.home_topic_text2{
+.home_topic_text2, .home_mean2{
     text-align: center;
 }
 /* หน้า  Home*/

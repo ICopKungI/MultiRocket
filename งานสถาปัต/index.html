@@ -60,7 +60,8 @@
             <div class="row">
                 <div class="cal-6 time_to_bloom_topic">
                     <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
-                    <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png" @click="change_page('Home')">
+                    <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png"
+                        @click="change_page('Home')">
                 </div>
                 <div class="cal-6">
                     <img id="gif_home" src="Architecture/Time_To_Bloom_page/final.gif" class="logo_gif">
@@ -132,12 +133,24 @@
 
 </body>
 <script>
-    fetch('Time_To_Bloom.json')
-        .then(response => response.json())
-        .then(json => {
-            console.log(json)
-            app.info = json
-        })
+    // fetch('Time_To_Bloom.json')
+    //     .then(response => response.json())
+    //     .then(json => {
+    //         app.info = json
+    //         console.log(json)
+    //         console.log("โหลด json เสร็จแล้ว")
+    //     })
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var myJSON = JSON.parse(request.responseText);
+            app.info = myJSON;
+        }
+    };
+    request.open("GET", 'Time_To_Bloom.json', true);
+    request.send();
+
     let app = new Vue({
         el: '#app',
         data: {

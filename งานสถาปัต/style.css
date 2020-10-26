@@ -2,16 +2,22 @@
     --logo_size:125px;
     --button_size_x:217px;
     --button_size_y:54px;
-    --topic_or_button_color:#517ebf;
+    --topic_or_button_color:#5382bf;
     --topic_or_button_font:'Prompt', sans-serif;
     --text_font:'Bai Jamjuree', sans-serif;
     --menu_size:12.5pt;
+    --topic_size:28pt;
+    --text_size:15pt;
+    --home_img2:url('');
+    --home_text2_posision: 17.5% !important;
+    --button_b_n_posision:10%;
 }
 
-html, body{
+html, body, #app, .nav{/* สีพื้นหลัง*/
     background-color: #f2f2f2;
 }
 
+/* แทบเมนูด้านบน*/
 .button{
     cursor: pointer;
     color: var(--topic_or_button_color);
@@ -19,35 +25,53 @@ html, body{
     font-family: var(--topic_or_button_font);
 }
 
-.next{
-    margin-right:12px;
-    margin-left:auto;
-    text-align: right;
-}
-
-.back, .next{
-    width: 50px;
-}
-
 .nav-item{
     margin-left: 20px;
 }
 
-.topic{
-    margin-top: 8%;
+.logo_png{
+    width: var(--logo_size);
+    height: var(--logo_size);
+    cursor: pointer;
+}
+/* แทบเมนูด้านบน*/
+
+/*หน้าก่อนเข้า time_to_bloom*/
+.before{
+    width: 70%; 
+    height: 95vh; 
+    margin-left: 15%; 
+    margin-right: 15%;
+}
+/*หน้าก่อนเข้า time_to_bloom*/
+
+/* หน้า  time_to_bloom*/
+.logo_gif{
+    /* content:url(Architecture/home_page/final.gif); */
+    transform: scale(2) translateY(6%);
+    display: block;
+    height: 50vh;
+    margin: auto;
+    z-index: -1;
+}
+
+.time_to_bloom_topic{
+    margin-top: 15%;
     margin-right: auto;
 }
 
-.topic_text{
+.time_to_bloom_text{
     font-family: var(--topic_or_button_font);
     margin: 0;
     font-size: 50pt;
     text-align: left;
+    line-height: 100%;
+    margin-bottom: 10%;
 }
 
-.time_to_bloom{
+.time_to_bloom{/*buuton*/
 
-    background-image: url(Architecture/home_page/time_to_bloom.png);
+    background-image: url(Architecture/Time_To_Bloom_page/time_to_bloom.png);
     background-size: var(--button_size_x) var(--button_size_y);
     background-position: center;
 
@@ -63,22 +87,65 @@ html, body{
     transition: 0.075s;
 }
 
-.time_to_bloom:active{
+.time_to_bloom:active{/*buuton*/
     transform: scale(0.8);
     transition: 0.075s;
 }
+/* หน้า  time_to_bloom*/
 
-.logo_png{
-    width: var(--logo_size);
-    height: var(--logo_size);
-    cursor: pointer;
+/* หน้า  Home*/
+.home_gif1{
+    width: 100%;
+}
+.home_topic_text{
+    padding-top: 25%;
+}
+.home_gif2{
+    background-image: var(--home_img2); 
+    background-size: 90% 95vh;
+    width: 100%; 
+    height: 100vh; 
+    background-position: center;
+    margin-top: 5%;
+    background-repeat:no-repeat;
+}
+.home_text2{
+    padding-top: var(--home_text2_posision);
+    padding-left: var(--home_text2_posision) !important;
+    padding-right: var(--home_text2_posision) !important;
 }
 
-.logo_gif{
-    /* content:url(Architecture/home_page/final.gif); */
-    transform: scale(2) translateY(6%);
-    display: block;
-    height: 50vh;
-    margin: auto;
-    z-index: -1;
+.home_topic_text2{
+    text-align: center;
 }
+/* หน้า  Home*/
+
+.topic_text{
+    font-family: var(--topic_or_button_font);
+    color: var(--topic_or_button_color);
+    font-size: var(--topic_size);
+    font-weight: bold;
+}
+
+.text{
+    font-family: var(--text_font);
+    font-size: var(--text_size);
+}
+
+/* ปุ่มด้านล่าง*/
+.next{
+    margin-right:var(--button_b_n_posision);
+    margin-left:auto;
+    text-align: right;
+}
+.back{
+    margin-right:auto;
+    margin-left:var(--button_b_n_posision);
+}
+
+.back, .next{
+    width: 50px;
+    /* opacity:0; */
+}
+
+/* ปุ่มด้านล่าง*/

@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Index</title>
+    <link rel="icon" href="Architecture/logoweb.png" type="image" sizes="16x16">
 </head>
 
 <body>
@@ -20,18 +21,17 @@
 
         <!-- หน้าก่อนเข้าหน้า Home -->
         <div v-if="what_page == 'Before_Home'">
-            <img src="Architecture/Page_before entering_home page/logo.gif"
-                style="width: 70%; height: 95vh; margin-left: 15%; margin-right: 15%;">
+            <img src="Architecture/Page_before entering_home page/logo.gif" class="before">
         </div>
         <!-- หน้าก่อนเข้าหน้า Home -->
 
         <!-- แถบเมนูด้านบน -->
-        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand bg-light container">
+        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand container">
 
             <img id="icon" src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
-                @click="change_page('Home')">
+                @click="change_page('Time_To_Bloom')">
 
-            <ul v-if="what_page != 'Home'" class="navbar-nav ml-auto">
+            <ul v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link button" @click="change_page('Home')">Home</a>
                 </li>
@@ -48,22 +48,51 @@
         </nav>
         <!-- แถบเมนูด้านบน -->
 
-        <!-- หน้า Home -->
-        <div v-if="what_page == 'Home'" class="container">
+        <!-- หน้า Time_To_Bloom -->
+        <div v-if="what_page == 'Time_To_Bloom'" class="container">
             <div class="row">
-                <div class="cal-6 topic">
-                    <p class="topic_text">Discover all</p>
-                    <p class="topic_text">about law</p>
-                    <p class="topic_text">for women</p>
-                    <p class="topic_text">in Thailand</p>
-                    <button class="time_to_bloom" @click="change_page('Law')"></button>
+                <div class="cal-6 time_to_bloom_topic">
+                    <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
+                    <button class="time_to_bloom" @click="change_page('Home')"></button>
                 </div>
                 <div class="cal-6">
-                    <img id="gif_home" src="Architecture/home_page/final.gif" class="logo_gif">
+                    <img id="gif_home" src="Architecture/Time_To_Bloom_page/final.gif" class="logo_gif">
                 </div>
             </div>
         </div>
+        <!-- หน้า Time_To_Bloom -->
+
         <!-- หน้า Home -->
+        <div v-if="what_page == 'Home'" class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img :src="info.Home[0].Img" class="home_gif1">
+                </div>
+                <div class="col-6">
+                    <p class="topic_text home_topic_text">
+                        {{info.Home[0].LawName}}<br>{{info.Home[0].LawName2}}
+                    </p>
+                    <p class="text">
+                        {{info.Home[0].Mean}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="what_page == 'Home'" class="home_gif2">
+            <div v-if="what_page == 'Home'" class="container">
+                <div class="container home_text2">
+                    <p class="topic_text home_topic_text2">
+                        {{info.Home[1].LawName}}
+                    </p>
+                    <p class="text">
+                        {{info.Home[1].Mean}}
+                    </p>
+                </div>
+                <!-- <img :src="info.Home[1].Img"> -->
+            </div>
+        </div>
+        <!-- หน้า Law -->
 
         <!-- หน้า Law -->
         <div v-if="what_page == 'Law'" class="container">
@@ -81,13 +110,13 @@
         <!-- หน้า Contect -->
 
         <!-- ปุ่มกด Back Next -->
-        <div v-if="what_page == 'Law' || what_page == 'All cases'" class="align-text-bottom container">
-            <div class="row">
+        <div v-if="final_page" class="align-text-bottom">
+            <div class="row" style="margin: 0;">
                 <div class="col-6">
-                    <p class="button back">Back</p>
+                    <p class="button back" @click="change_page('Time_To_Bloom')">Back</p>
                 </div>
                 <div class="col-6">
-                    <p class="button next">Next</p>
+                    <p class="button next" @click="change_page('Law')">Next</p>
                 </div>
             </div>
         </div>
@@ -96,23 +125,39 @@
 
 </body>
 <script>
+    fetch('Time_To_Bloom.json')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            app.info = json
+        })
     let app = new Vue({
         el: '#app',
         data: {
-            what_page: "Before_Home"
+            info: {},
+            what_page: "Before_Home",
+            final_page: false,
         },
         methods: {
-            change_page: function(page) {
+            change_page: function (page) {
                 this.what_page = page;
                 document.title = app.what_page;
-                
-                if (page == "Home") {
-                    document.getElementById("gif_home").src = "Architecture/home_page/final.gif";
+                if(page == "Home"){
+                    this.final_page = true;
+                    document.documentElement.style.setProperty("--home_img2", 'url("Architecture/Home_page/giflaw2.gif")');
+                }
+                else if (page != "Time_To_Bloom") {
+                    this.final_page = false;
+                }
+                else {
+                    this.final_page = false;
+                    document.title = "Time To Bloom";
+                    document.getElementById("gif_home").src = "Architecture/Time_To_Bloom_page/final.gif";
                 }
             }
         }
     })
-    setTimeout(function () { app.change_page("Home"); }, 4000);
+    setTimeout(function () { app.change_page("Time_To_Bloom"); }, 4000);
 </script>
 
 </html>

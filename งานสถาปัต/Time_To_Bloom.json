@@ -19,7 +19,8 @@
             "Phone" : "โทรศัพท์: 02 577 0496",
             "Email" : "Email: pavena1134@hotmail.com",
             "FB" : "Facebook: มูลนิธิปวีณาหงสกุลเพื่อเด็กและสตรี",
-            "Web" : "Website: http://www.pavenafoundation.or.th/"
+            "Web" : "Website: http://www.pavenafoundation.or.th/",
+            "LinkFB": "https://www.facebook.com/pavenafoundation/"
         },
         {
             "CName" : "มูลนิธิแอ็คชั่นเอด",
@@ -27,7 +28,8 @@
             "Phone" : "โทรศัพท์: 02 279 6601",
             "Email" : "Email: communications.thailand@actionaid.org",
             "FB" : "Facebook: ActionAid Thailand",
-            "Web" : "Website: https://actionaid.or.th/donate/"
+            "Web" : "Website: https://actionaid.or.th/donate/",
+            "LinkFB": "https://www.facebook.com/ActionAidThailand/"
         },
         {
             "CName" : "Amnesty",
@@ -35,7 +37,8 @@
             "Phone" : "โทรศัพท์: 02 513 8745",
             "Email" : "Email: nfo@amnesty.or.th",
             "FB" : "Facebook: Amnesty International Thailand",
-            "Web" : "Website: https://www.amnesty.or.th"
+            "Web" : "Website: https://www.amnesty.or.th",
+            "LinkFB": "https://www.facebook.com/AmnestyThailand"
         }
     ]
     

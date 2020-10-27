@@ -2,7 +2,11 @@
     --logo_size:125px;
     --button_size_x:217px;
     --button_size_y:54px;
-    --topic_color:#5382bf;
+    --mood_tone_1:#f2f2f2;
+    --mood_tone_2: #fbd8b8;
+    --mood_tone_3:#5382bf;
+    --mood_tone_4:#f0a28e;
+    --mood_tone_5:#e84225;
     --button_color:#b7a9a6;
     --topic_or_button_font:'Prompt', sans-serif;
     --text_font:'Bai Jamjuree', sans-serif;
@@ -15,14 +19,15 @@
 }
 
 html, body, #app, .nav{/* สีพื้นหลัง*/
-    background-color: #f2f2f2;
+    background-color: var(--mood_tone_1);
 }
 
 html{
     scroll-behavior: smooth;
 }
 
-#myBtn {
+/* ปุ่มเลื่อนขึ้นบนสุด*/
+#Btn_top {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -31,7 +36,7 @@ html{
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: var(--topic_color);
+    background-color: var(--mood_tone_5);
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -39,12 +44,13 @@ html{
     z-index: 9999;
   }
   
-  #myBtn:hover {
-    background-color: #555;
+  #Btn_top:hover {
+    background-color: var(--mood_tone_2);
   }
+/* ปุ่มเลื่อนขึ้นบนสุด*/
 
 /* แทบเมนูด้านบน*/
-.navbar{
+.menu{
     position: fixed !important;
     top: 0;
     left: 0;
@@ -70,7 +76,7 @@ html{
     font-family: var(--topic_or_button_font);
 }
 .button:hover{
-    color: var(--topic_color);
+    color: var(--mood_tone_3);
 }
 
 .nav-item{
@@ -139,7 +145,7 @@ html{
 }
 /* หน้า  time_to_bloom*/
 
-/* หน้า  Home*/
+/* หน้า Home*/
 .home_gif1{
     width: 100%;
 }
@@ -166,11 +172,51 @@ html{
 .home_topic_text2, .home_mean2{
     text-align: center;
 }
-/* หน้า  Home*/
+/* หน้า Home*/
+
+/*หน้า Contact*/
+.contact{
+    height: 500px;
+    background-color: var(--mood_tone_3);
+    padding: 0 !important;
+}
+.contact_menu{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+}
+
+.contact_menu .nav-pills .nav-item {
+    padding: 0 !important;
+    margin: 0;
+    flex:auto;
+    text-align: center;
+}
+.contact_menu .nav-pills{
+    background-color: #8fb5d9;
+    width: 100%;
+}
+
+.contact_menu .nav-pills .nav-item .nav-link{
+    color: white;
+    border-radius:0;
+    font-family: var(--topic_or_button_font);
+    font-weight: bold;
+}
+.contact_menu .nav-pills .nav-link.active{
+    background-color: var(--mood_tone_3);
+}
+
+.contact_info{
+    padding: 20px;
+    color: white;
+    font-family: var(--text_font);
+}
+/*หน้า Contact*/
 
 .topic_text{
     font-family: var(--topic_or_button_font);
-    color: var(--topic_color);
+    color: var(--mood_tone_3);
     font-size: var(--topic_size);
     font-weight: bold;
 }

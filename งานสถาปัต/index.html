@@ -33,7 +33,7 @@
         <!-- หน้าก่อนเข้าหน้า Home -->
 
         <!-- แถบเมนูด้านบน -->
-        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand">
+        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand menu">
 
             <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
                 @click="change_page('Time_To_Bloom')">
@@ -114,17 +114,49 @@
 
         <!-- หน้า Contact -->
         <div v-if="what_page == 'Contact'" class="container">
+            <div class="row">
+                <div data-aos="fade-right" class="col-5 contact">
+                    <nav class="navbar navbar-expand contact_menu">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#" role="tab" aria-selected="true" @click="contact_mean = 0">{{info.Contact[0].CName}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false" @click="contact_mean = 1">{{info.Contact[1].CName}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false" @click="contact_mean = 2">{{info.Contact[2].CName}}</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="contact_info">
+                        <p>{{info.Contact[contact_mean].Address}}</p>
+                        <p>{{info.Contact[contact_mean].Phone}}</p>
+                        <p>{{info.Contact[contact_mean].Email}}</p>
+                        <p>{{info.Contact[contact_mean].FB}}</p>
+                        <p>{{info.Contact[contact_mean].Web}}</p>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="col-7">
+                    <iframe v-if="contact_mean == 0"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.088801953883!2d100.75716!3d14.031513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92513d71fa2aabf1!2z4Lih4Li54Lil4LiZ4Li04LiY4Li0IOC4m-C4p-C4teC4k-C4siDguKvguIfguKrguIHguLjguKUg4LmA4Lie4Li34LmI4Lit4LmA4LiU4LmH4LiB4LmB4Lil4Liw4Liq4LiV4Lij4Li1!5e0!3m2!1sth!2sth!4v1603780240501!5m2!1sth!2sth"
+                        width="700" height="700" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                    <iframe v-if="contact_mean == 1" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15499.778348702363!2d100.549197!3d13.782214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e74e8b1c0b10fac!2zQWN0aW9uQWlkIFRoYWlsYW5kICjguYHguK3guYfguITguIrguLHguYjguJnguYDguK3guJQg4Lib4Lij4Liw4LmA4LiX4Lio4LmE4LiX4LiiKQ!5e0!3m2!1sth!2sth!4v1603780300411!5m2!1sth!2sth" width="700" height="700" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <iframe v-if="contact_mean == 2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15497.802108053562!2d100.5661086!3d13.8119642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc6ba2124b2cff05!2sAmnesty%20International%20Thailand!5e0!3m2!1sth!2sth!4v1603780329645!5m2!1sth!2sth" width="700" height="700" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                
+                </div>
+            </div>
         </div>
         <!-- หน้า Contact -->
 
         <!-- ปุ่มกด Back Next -->
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <button onclick="topFunction()" id="Btn_top" title="Go to top">Top</button>
         <!-- <div v-if="final_page" class="align-text-bottom">
             <div class="row" style="margin: 0;">
                 <div class="col-6">
                     <p class="button back" @click="change_page('Time_To_Bloom')">Back</p>
                 </div>
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+                <button onclick="topFunction()" id="Btn_top" title="Go to top">Top</button>
                 <div class="col-6">
                     <p class="button next" @click="change_page('Law')">Next</p>
                 </div>
@@ -139,10 +171,10 @@
 
     function scrollFunction() {
         if (document.documentElement.scrollTop > 50) {
-            console.log(document.getElementById("myBtn").style.display)
-            document.getElementById("myBtn").style.display = "block";
+            console.log(document.getElementById("Btn_top").style.display)
+            document.getElementById("Btn_top").style.display = "block";
         } else {
-            document.getElementById("myBtn").style.display = "none";
+            document.getElementById("Btn_top").style.display = "none";
         }
     }
 
@@ -175,6 +207,7 @@
             info: {},
             what_page: "Before_Home",
             final_page: false,
+            contact_mean:0,
         },
         methods: {
             change_page: function (page) {

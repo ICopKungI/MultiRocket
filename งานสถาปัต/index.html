@@ -133,8 +133,8 @@
                         <p>{{info.Contact[contact_mean].Address}}</p>
                         <p>{{info.Contact[contact_mean].Phone}}</p>
                         <p>{{info.Contact[contact_mean].Email}}</p>
-                        <p>{{info.Contact[contact_mean].FB}}</p>
-                        <p>{{info.Contact[contact_mean].Web}}</p>
+                        <p>Facebook: <a :href="info.Contact[contact_mean].LinkFB" target="_blank">{{info.Contact[contact_mean].FB}}</a></p>
+                        <p>Website: <a :href="info.Contact[contact_mean].Web" target="_blank">{{info.Contact[contact_mean].Web}}</a></p>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" class="col-7">

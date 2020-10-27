@@ -33,12 +33,12 @@
         <!-- หน้าก่อนเข้าหน้า Home -->
 
         <!-- แถบเมนูด้านบน -->
-        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand container">
+        <nav v-if="what_page != 'Before_Home'" class="navbar navbar-expand">
 
             <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
                 @click="change_page('Time_To_Bloom')">
 
-            <ul v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto">
+            <ul data-aos="fade-down" v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link button" @click="change_page('Home')">Home</a>
                 </li>
@@ -49,7 +49,7 @@
                     <a class="nav-link button" @click="change_page('All cases')">All cases</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" @click="change_page('Contect')">Contect</a>
+                    <a class="nav-link button" @click="change_page('Contact')">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -112,44 +112,62 @@
         </div>
         <!-- หน้า All cases -->
 
-        <!-- หน้า Contect -->
-        <div v-if="what_page == 'Contect'" class="container">
+        <!-- หน้า Contact -->
+        <div v-if="what_page == 'Contact'" class="container">
         </div>
-        <!-- หน้า Contect -->
+        <!-- หน้า Contact -->
 
         <!-- ปุ่มกด Back Next -->
-        <div v-if="final_page" class="align-text-bottom">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <!-- <div v-if="final_page" class="align-text-bottom">
             <div class="row" style="margin: 0;">
                 <div class="col-6">
                     <p class="button back" @click="change_page('Time_To_Bloom')">Back</p>
                 </div>
+                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
                 <div class="col-6">
                     <p class="button next" @click="change_page('Law')">Next</p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- ปุ่มกด Back Next -->
     </div>
 
 </body>
 <script>
-    // fetch('Time_To_Bloom.json')
-    //     .then(response => response.json())
-    //     .then(json => {
-    //         app.info = json
-    //         console.log(json)
-    //         console.log("โหลด json เสร็จแล้ว")
-    //     })
+    window.onscroll = function () { scrollFunction() };
 
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            var myJSON = JSON.parse(request.responseText);
-            app.info = myJSON;
+    function scrollFunction() {
+        if (document.documentElement.scrollTop > 50) {
+            console.log(document.getElementById("myBtn").style.display)
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
         }
-    };
-    request.open("GET", 'Time_To_Bloom.json', true);
-    request.send();
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.documentElement.scrollTop = 0;
+    }
+
+    fetch('Time_To_Bloom.json')
+        .then(response => response.json())
+        .then(json => {
+            app.info = json
+            console.log(json)
+            console.log("โหลด json เสร็จแล้ว")
+        })
+
+    // let request = new XMLHttpRequest();
+    // request.onreadystatechange = function () {
+    //     if (request.readyState == 4 && request.status == 200) {
+    //         var myJSON = JSON.parse(request.responseText);
+    //         app.info = myJSON;
+    //     }
+    // };
+    // request.open("GET", 'Time_To_Bloom.json', true);
+    // request.send();
 
     let app = new Vue({
         el: '#app',

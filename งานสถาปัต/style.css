@@ -2,7 +2,8 @@
     --logo_size:125px;
     --button_size_x:217px;
     --button_size_y:54px;
-    --topic_or_button_color:#5382bf;
+    --topic_color:#5382bf;
+    --button_color:#b7a9a6;
     --topic_or_button_font:'Prompt', sans-serif;
     --text_font:'Bai Jamjuree', sans-serif;
     --menu_size:12.5pt;
@@ -21,12 +22,55 @@ html{
     scroll-behavior: smooth;
 }
 
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--topic_color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    z-index: 9999;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
+
 /* แทบเมนูด้านบน*/
+.navbar{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    padding-left: 370px !important;
+    padding-right: 370px !important;
+    z-index: 9999999;
+}
+.container{
+    margin-top: 175px;
+}
+
+.row{
+    width: 100%;
+    height: 80vh;
+}
+
 .button{
     cursor: pointer;
-    color: var(--topic_or_button_color);
+    color: var(--button_color);
     font-size: var(--menu_size);
     font-family: var(--topic_or_button_font);
+}
+.button:hover{
+    color: var(--topic_color);
 }
 
 .nav-item{
@@ -74,6 +118,7 @@ html{
 }
 
 .time_to_bloom{/*buuton*/
+    cursor: pointer;
 
     background-size: var(--button_size_x) var(--button_size_y);
     background-position: center;
@@ -105,13 +150,15 @@ html{
     background-image: var(--home_img2); 
     background-size: 90% 95vh;
     width: 100%; 
-    height: 100vh; 
+    height: 80vh; 
+    left: 0;
+    right: 0;
     background-position: center;
-    margin-top: 7%;
+    /* margin-top: 7%; */
     background-repeat:no-repeat;
 }
 .home_text2{
-    padding-top: var(--home_text2_posision);
+    padding-top: 100px;
     padding-left: var(--home_text2_posision) !important;
     padding-right: var(--home_text2_posision) !important;
 }
@@ -123,7 +170,7 @@ html{
 
 .topic_text{
     font-family: var(--topic_or_button_font);
-    color: var(--topic_or_button_color);
+    color: var(--topic_color);
     font-size: var(--topic_size);
     font-weight: bold;
 }

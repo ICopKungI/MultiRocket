@@ -1,11 +1,11 @@
 html,
-body {
-    position: relative;
+.app {
     height: 100%;
     /* overflow: hidden; */
 }
 
 body {
+    height: 100%;
     background: #000;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -48,15 +48,32 @@ body {
 }
 
 .swiper-pagination {
-    height: 5%;
-    position: fixed;
-    bottom: 0px !important;
-    background-color: #000a;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    right: 0;
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    text-align: center;
+    padding-right: 40px;
+}
+
+.imgicon {
+    position: relative;
+    right: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
     --swiper-theme-color: white;
+}
+
+.swiper-pagination-bullet-active {
+    --swiper-theme-color: transparent;
 }
 
 .slideshow-container {

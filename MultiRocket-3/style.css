@@ -520,6 +520,7 @@ img {
 }
 
 @keyframes jump {
+    /* 0 20 60 100 */
     0% {
         margin-bottom: 0;
     }

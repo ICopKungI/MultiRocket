@@ -1,6 +1,5 @@
 html,
-body,
-{
+body {
     position: relative;
     height: 100%;
     /* overflow: hidden; */
@@ -13,6 +12,11 @@ body {
     color: #eee;
     margin: 0;
     padding: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5%;
 }
 
 .swiper-container {
@@ -29,7 +33,7 @@ body {
 }
 
 .main {
-    /* height: 50%; */
+    height: 50%;
     position: relative;
 }
 
@@ -50,12 +54,18 @@ body {
     background-color: #000a;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    --swiper-theme-color: white;
+}
+
 .slideshow-container {
     max-width: 100%;
-    height: 300px;
+    height: 250px;
     position: relative;
     margin: 5%;
     margin-bottom: 0%;
+    margin-top: 1%;
 }
 
 .slideshow-container img {
@@ -63,13 +73,34 @@ body {
     width: 100%;
 }
 
+.human {
+    top: 15%;
+}
+
+.noSlides {
+    background-color: #000a;
+}
+
+.noSlides img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
+}
+
 .mySlides {
     background-color: #000a;
 }
 
 .mySlides img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
 }
 
 .mySlides2 {
@@ -77,8 +108,13 @@ body {
 }
 
 .mySlides2 img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
 }
 
 .mySlides4 {
@@ -86,8 +122,13 @@ body {
 }
 
 .mySlides4 img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
 }
 
 .mySlides7 {
@@ -95,8 +136,22 @@ body {
 }
 
 .mySlides7 img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
+}
+
+.showtext {
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    width: 50%;
+    left: 50%;
+    top: 30%;
 }
 
 .prev,

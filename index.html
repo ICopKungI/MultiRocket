@@ -6,150 +6,786 @@
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- font-->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="swiper-bundle.min.js"></script>
+
 </head>
 
-<body class="text-white">
+<body>
 
     <div id="app">
-        {{data.bodies[point_data[point]].name}}
+        <!-- form -->
+        <!-- <div v-if="status_popup" class="popup" onkeypress="check_keyboard(event)"></div> -->
+        <div class="overlay">
+            <div class="login">
+                <div class="login__inner">
+                    <div class="login__header">
+                        <div class="login__title">
+                            <h1 class="login__heading" data-text="What weight are you on planet ?">What weight are you on planet ?</h1>
+                        </div>
+                    </div>
+                    <div class="login__content">
+                        <div class="login__form">
+                            <form action="javascript:;" class="form">
+                                <div class="form__group">
+
+                                    <input class="form__input" type="text" name="weight" required v-model="weight">
+                                    <div class="form__input-after"></div>
+                                    <label class="form__label" for="weight">Weight</label>
+                                </div>
+
+                                <div class="form__group">
+                                    <a href="#section2">
+                                        <div class="scroll-down-arrow"></div>
+                                    </a>
+                                    <!--<button class="form__btn" type="submit">
+                                        <span class="form__btn-text">Submit</span>
+
+                                    </button>!-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- form -->
+
+
+
+
+
+
+        <div id="section2">
+            <div class="swiper-container">
+                <h1 class="header">Your Weight On Planet !</h1>
+                <div class="swiper-wrapper">
+                    <!-- Mercury -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[0].name}}</p> -->
+                            <img :src="planet[0].img" alt="โหลดอยู่ใจเย็น">
+
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div v-for="i in fix1" class="noSlides">
+                                <img :src="planet[0].img" alt="โหลดอยู่ใจเย็น">
+                                <img src="/image/Artboard 322.png" class="human jump0">
+                                <div class="showtext">
+                                    <p>Name : {{planet[0].name}}</p>
+                                    <p>Gravity : {{planet[0].gravity}} m.s <sup>-2</sup> </p>
+                                    <p>Weight : {{ twopointfloat((weight*planet[0].gravity)/9.8) }} kg</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- Venus -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[1].name}}</p> -->
+                            <img :src="planet[1].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div v-for="i in fix1" class="noSlides">
+                                <img :src="planet[1].img" alt="โหลดอยู่ใจเย็น">
+                                <img src="/image/Artboard 322.png" class="human jump1">
+                                <div class="showtext">
+                                    <p>Name : {{planet[1].name}}</p>
+                                    <p>Gravity : {{planet[1].gravity}} m.s <sup>-2</sup></p>
+                                    <p>Weight : {{ twopointfloat((weight*planet[1].gravity)/9.8) }} kg</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <!-- Earth -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[2].name}}</p> -->
+                            <img :src="planet[2].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[2].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump2">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[2].name}}</p>
+                                        <p>Gravity : {{planet[2].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[2].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[2].moons[0].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump20">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[2].moons[0].name}}</p>
+                                        <p>Gravity : {{planet[2].moons[0].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[2].moons[0].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <div style="text-align:center; margin-bottom: 6%;">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- Mars -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[3].name}}</p> -->
+                            <img :src="planet[3].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div class="mySlides2 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[3].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump3">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[3].name}}</p>
+                                        <p>Gravity : {{planet[3].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[3].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides2 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[3].moons[0].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump30">
+                                    <div class="showtext">
+                                        <p> Name : {{planet[3].moons[0].name}}</p>
+                                        <p>Gravity : {{planet[3].moons[0].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[3].moons[0].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides2 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[3].moons[1].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump31">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[3].moons[1].name}}</p>
+                                        <p>Gravity : {{planet[3].moons[1].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[3].moons[1].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="prev" onclick="plusSlide2(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlide2(1)">&#10095;</a>
+                        </div>
+                        <div style="text-align:center; margin-bottom: 6%;">
+                            <span class="dot" onclick="currentSlide2(1)"></span>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- Jupiter -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[4].name}}</p> -->
+                            <img :src="planet[4].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump4">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].name}}</p>
+                                        <p>Gravity : {{planet[4].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[0].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump40">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[0].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[0].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[0].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[1].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump41">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[1].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[1].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[1].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[2].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump42">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[2].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[2].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[2].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[3].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump43">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[3].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[3].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[3].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[4].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump44">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[4].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[4].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[4].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[5].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump45">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[5].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[5].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[5].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[6].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump46">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[6].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[6].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[6].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[7].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump47">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[7].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[7].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[7].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[8].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump48">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[8].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[8].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[8].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[9].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump49">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[9].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[9].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[9].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[10].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump410">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[10].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[10].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[10].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[11].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump411">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[11].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[11].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[11].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[12].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump412">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[12].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[12].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[12].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides4 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[4].moons[13].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump413">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[4].moons[13].name}}</p>
+                                        <p>Gravity : {{planet[4].moons[13].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[4].moons[13].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="prev" onclick="plusSlide4(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlide4(1)">&#10095;</a>
+                        </div>
+                        <div style="text-align:center; margin-bottom: 6%;">
+                            <span class="dot" onclick="currentSlide4(1)"></span>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- Saturn -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[5].name}}</p> -->
+                            <img :src="planet[5].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div v-for="i in fix1" class="noSlides">
+                                <img :src="planet[5].img" alt="โหลดอยู่ใจเย็น">
+                                <img src="/image/Artboard 322.png" class="human jump5">
+                                <div class="showtext">
+                                    <p>Name : {{planet[5].name}}</p>
+                                    <p>Gravity : {{planet[5].gravity}} m.s <sup>-2</sup></p>
+                                    <p>Weight : {{ twopointfloat((weight*planet[5].gravity)/9.8) }} kg</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <!-- Uranus -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[6].name}}</p> -->
+                            <img :src="planet[6].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div v-for="i in fix1" class="noSlides">
+                                <img :src="planet[6].img" alt="โหลดอยู่ใจเย็น">
+                                <img src="/image/Artboard 322.png" class="human jump6">
+                                <div class="showtext">
+                                    <p>Name : {{planet[6].name}}</p>
+                                    <p>Gravity : {{planet[6].gravity}} m.s <sup>-2</sup></p>
+                                    <p>Weight : {{ twopointfloat((weight*planet[6].gravity)/9.8) }} kg</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- Neptune -->
+                    <div class="swiper-slide">
+                        <div v-for="i in fix1" class="main">
+                            <!-- <p>{{planet[7].name}}</p> -->
+                            <img :src="planet[7].img" alt="โหลดอยู่ใจเย็น">
+                        </div>
+
+                        <!-- ลูก -->
+                        <div class="slideshow-container">
+                            <div class="mySlides7 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[7].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump7">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[7].name}}</p>
+                                        <p>Gravity : {{planet[7].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[7].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides7 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[7].moons[0].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump70">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[7].moons[0].name}}</p>
+                                        <p>Gravity : {{planet[7].moons[0].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[7].moons[0].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides7 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[7].moons[1].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump71">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[7].moons[1].name}}</p>
+                                        <p>Gravity : {{planet[7].moons[1].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[7].moons[1].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides7 fade">
+                                <div v-for="i in fix1">
+                                    <img :src="planet[7].moons[2].img" alt="โหลดอยู่ใจเย็น">
+                                    <img src="/image/Artboard 322.png" class="human jump72">
+                                    <div class="showtext">
+                                        <p>Name : {{planet[7].moons[2].name}}</p>
+                                        <p>Gravity : {{planet[7].moons[2].gravity}} m.s <sup>-2</sup></p>
+                                        <p>Weight : {{ twopointfloat((weight*planet[7].moons[2].gravity)/9.8) }} kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="prev" onclick="plusSlide7(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlide7(1)">&#10095;</a>
+                        </div>
+                        <div style="text-align:center; margin-bottom: 6%;">
+                            <span class="dot" onclick="currentSlide7(1)"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+            <br>
+            <br>
+            <br>
+        </div>
     </div>
+    <!-- <div style="margin-left: 5.5%">
+        <div class="view view-ninth">
+            <img src="image/Pearth.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Earth</h2>
+                <p>The planet that we have lived</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Pvenus.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Venus</h2>
+                <p>Venus has 90 times the atmospheric pressure of Earth</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Pjupitor.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Jupitor</h2>
+                <p>The Fastest Spinning Planet In The Solar System!!!</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Psaturn.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Saturn</h2>
+                <p>Saturn is the flattest planet.</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Pmercury.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Mercury</h2>
+                <p>A day on the surface of Mercury lasts 176 Earth days.</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Pmars.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Mars</h2>
+                <p>Its signature color come from Iron oxide. </p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Puranus.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Uranus</h2>
+                <p>Uranus was discovered in 1781 by William Herschel.</p>
+
+            </div>
+        </div>
+        <div class="view view-ninth">
+            <img src="image/Pneptune.jpg" style="width:300px;height:200px;" />
+            <div class="mask mask-1"></div>
+            <div class="mask mask-2"></div>
+            <div class="content">
+                <h2>Neptune</h2>
+                <p>Neptune has the Strongest Winds in the Solar System</p>
+
+            </div>
+        </div>
+    </div> -->
 </body>
 
-<script>
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if (request.readyState == 4 && request.status == 200) {
-            var myJSON = JSON.parse(request.responseText);
-            app.data = myJSON;
-        }
-    };
-    request.open("GET", 'Rocket_Api.json', true);
-    request.send();
-    // fetch('https://api.le-systeme-solaire.net/rest/bodies/')
-    //      .then(response => response.json())
-    //      .then(json => {
-    //          app.data = json
-    //          console.log(json)
-    //          console.log("โหลด json เสร็จแล้ว")
-    //      })
 
+<!-- MAIN -->
+<script>
+    fetch('Rocket_Api.json')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json.bodies)
+            app.fix1 = json.fix1
+            app.planet = json.bodies
+        })
 
     let app = new Vue({
         el: '#app',
         data: {
-            data: {}, //ข้อมูล JSON
-            point_data: [0, 1, 2, 3, 4, 5, 6, 7], //เหมือน solar_data
-            solar_data: [0, 1, 2, 3, 4, 5, 6, 7], //ตำแหน่งใน List bodies ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"] ชื่อดาวตามตำแหน่งใน solar_data เรียงตามลำดับระบบสุริยะ
-            g_data: [0, 3, 1, 6, 2, 5, 7, 4], //ตำแหน่งใน List bodies ["Mercury", "Mars", "Uranus", "Venus", "Earth", "Saturn", "Neptune", "Jupiter"] ชื่อดาวตามตำแหน่งใน g_data เรียงตามค่าแรงโน้มถ่วง
-            weight: 0, //น้ำหนักของผู้ใช้
-            weight_on_planet: 0, //น้ำหนักบนดาวเคราะห์นั้น
-            name: "", //ชื่อผู้ใช้
-            point: 2, //ตำแหน่งในlist point_data
-            status_popup: true, //สถานะหน้าpopup
-            name_id: "img_planet_",
-            L_or_R: "", //บอกว่าไปทางซ้ายหรือขวา
-            status: false, //สถานะการเลื่อนดาวเคราห์
-            status_sort: true, //สถานะรูปแบบการเรียง
-            jump_time: 0.53, //เวลาที่ใช้ในการกระโดด
-            jump_h: 50, //ความสูงในการกระโดด px
-            button: 50 //ความสูงในการกระโดด px
+            fix1: {},
+            planet: {},
+            weight: 0, //test
+
         },
 
         methods: {
-            calculate_weight: function(gravity) { //คำนวณน้ำหนักบนดาวต่างๆ
-                this.weight_on_planet = (gravity * this.weight) / 9.8
-                return this.weight_on_planet.toFixed(2) //toFixed = ทศนิยม...ตำแหน่ง
-            },
-            change_status: function() { //เปิดปิดป๊อปอัพ และ รีเซ็ตดาว
-                if (this.status_popup) {
-                    this.point = 2;
-                    this.status = true;
-                    this.direction();
-                }
-                this.status_popup = !this.status_popup;
-            },
-            sort_by: function() { //เรืยงตามที่ต้องการ
-                this.status_sort = !this.status_sort;
-                if (this.status_sort) { //เปลี่ยนเป็นระบบสุริยะ
-                    this.point_data = this.solar_data;
-                    this.point = 2;
-                } else { //เปลี่ยนเป็นแรงโน้มถ่วง
-                    this.point_data = this.g_data;
-                    this.point = 4;
-                }
-                this.status = true;
-                this.direction();
-            },
-            jump: function() { //กระโดด!!!
-                this.jump_time = ((0.53 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity); //เวลาในการกระโดด
-                this.jump_h = ((50 * 9.8) / this.data.bodies[this.point_data[this.point]].gravity) / 1.7; //ความสูงที่กระโดดได้
-
-                document.documentElement.style.setProperty("--Jump_height", this.jump_h + "px");
-                document.documentElement.style.setProperty("--Jump_time", this.jump_time + "s");
-
-                document.getElementById("human").className = "human jumpping";
-
-                setTimeout(function playing() {
-
-                    document.getElementById("human").style = null; //ล้างประวัติการเล่น animation
-                    document.getElementById("human").className = "human";
-                    clearTimeout();
-
-                }, this.jump_time * 1000)
-            },
-            delete_class: function() { //ซ้อนดาวที่ไม่ใช้
-                for (var i = 0; i <= 7; i++) {
-                    if (i < this.point - 1 || i > this.point + 1) { //ไม่ได้อยู่ในช่วง 3 ดาวที่ต้องแสดงผลใช้ไหม?
-                        document.getElementById(this.name_id + i).className = "invisible"; //ซ้อน
-                    }
-                }
-            },
-            direction: function() { //ตั้ง class ทิศทางการเคลื่อนที่
-                if (this.point > 0 && (this.button == 97 || this.button == 65)) { //เช็คว่าซ้ายสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่มากกว่า 0 คือ "ลง"
-                    this.L_or_R = "left";
-                    this.point -= 1;
-                    this.status = true;
-                } else if (this.point < 7 && (this.button == 100 || this.button == 68)) { //เช็คว่าขวาสุดหรือยัง event.deltaY อ่านค่าจาก scroll mouse โดยที่น้อยกว่า 0 คือ "ขึ้น"
-                    this.L_or_R = "right";
-                    this.point += 1;
-                    this.status = true;
-                }
-                if (this.status) { //มีการเลื่อนไหม
-                    this.status = false;
-                    this.delete_class();
-                    document.getElementById(this.name_id + this.point).className = " img_planet w3-animate-" + this.L_or_R + " center_planet";
-                    if (this.point != 0) { //ตัวซ้ายสุดหรือยัง
-                        document.getElementById(this.name_id + (this.point - 1)).className = "img_planet left_screen direction_" + this.L_or_R + "_screen_left";
-                    }
-                    if (this.point != 7) { //ตัวขวาสุดหรือยัง
-                        document.getElementById(this.name_id + (this.point + 1)).className = "img_planet right_screen direction_" + this.L_or_R + "_screen_right";
-                    }
-                }
+            twopointfloat: function(num) {
+                return num.toFixed(2)
             }
         }
+
     })
 
-    // document.querySelector('html').addEventListener("wheel", app.direction); //เช็คว่าเลื่อน scroll mouse ยัง ถ้าเลื่อนเรียกใช้ methods direction
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function(index, className) {
+                return '<span class="' + className + '">' + '<img class="imgicon" src="image/' + index + '.png"></img>' + '</span>';
+                // return '<span class="' + className + '">' + index + '</span>';
+            },
+        },
+    });
+</script>
 
-    function check_keyboard(event) { //รับค่าจาก keyboard มาเช็ค
-        app.button = event.keyCode;
-        console.log(app.button)
-        if (app.button == 13) { //ปุ่ม Enter เปิดปิด popup
-            app.change_status();
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
         }
-        if (app.button == 32 && event.target == document.body) { //ปุ่ม J สั่งกระโดด
-            event.preventDefault();
-            app.jump();
+        if (n < 1) {
+            slideIndex = slides.length
         }
-        if (app.button == 97 || app.button == 100 || app.button == 65 || app.button == 68) { //ปุ่ม Num4 และ Num6 สั่งเลื่อนซ้ายขวา
-            app.direction();
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        // dots[slideIndex - 1].className += " active";
     }
 </script>
+
+<script>
+    var slideIndex2 = 1;
+    showSlides2(slideIndex2);
+
+    // Next/previous controls
+    function plusSlide2(n) {
+        showSlides2(slideIndex2 += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide2(n) {
+        showSlides2(slideIndex2 = n);
+    }
+
+    function showSlides2(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides2");
+        var dots = document.getElementsByClassName("dot2");
+        if (n > slides.length) {
+            slideIndex2 = 1
+        }
+        if (n < 1) {
+            slideIndex2 = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex2 - 1].style.display = "block";
+        // dots[slideIndex2 - 1].className += " active";
+    }
+</script>
+<script>
+    var slideIndex4 = 1;
+    showSlides4(slideIndex4);
+
+    // Next/previous controls
+    function plusSlide4(n) {
+        showSlides4(slideIndex4 += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide4(n) {
+        showSlides4(slideIndex4 = n);
+    }
+
+    function showSlides4(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides4");
+        var dots = document.getElementsByClassName("dot4");
+        if (n > slides.length) {
+            slideIndex4 = 1
+        }
+        if (n < 1) {
+            slideIndex4 = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex4 - 1].style.display = "block";
+        // dots[slideIndex4 - 1].className += " active";
+    }
+</script>
+
+
+<script>
+    var slideIndex7 = 1;
+    showSlides7(slideIndex7);
+
+    // Next/previous controls
+    function plusSlide7(n) {
+        showSlides7(slideIndex7 += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide7(n) {
+        showSlides7(slideIndex7 = n);
+    }
+
+    function showSlides7(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides7");
+        var dots = document.getElementsByClassName("dot7");
+        if (n > slides.length) {
+            slideIndex7 = 1
+        }
+        if (n < 1) {
+            slideIndex7 = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex7 - 1].style.display = "block";
+        // dots[slideIndex7 - 1].className += " active";
+    }
+</script>
+
 
 </html>

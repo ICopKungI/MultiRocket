@@ -1,19 +1,23 @@
 {
+    "fix1": 1,
     "bodies": [{
+            "id": 1,
             "name": "Mercury",
             "gravity": 3.7,
             "density": 5.4291,
             "img": "/image/Mercury.png",
-            "moons": null
+            "moons": []
         },
         {
+            "id": 2,
             "name": "Venus",
             "gravity": 8.87,
             "density": 5.243,
             "img": "/image/Venus.png",
-            "moons": null
+            "moons": []
         },
         {
+            "id": 3,
             "name": "Earth",
             "gravity": 9.8,
             "density": 5.5136,
@@ -26,6 +30,7 @@
             }]
         },
         {
+            "id": 4,
             "name": "Mars",
             "gravity": 3.71,
             "density": 3.9341,
@@ -45,6 +50,7 @@
             ]
         },
         {
+            "id": 5,
             "name": "Jupiter",
             "gravity": 24.79,
             "density": 1.3262,
@@ -136,20 +142,23 @@
             ]
         },
         {
+            "id": 6,
             "name": "Saturn",
             "gravity": 10.44,
             "density": 0.6871,
             "img": "/image/Saturn.png",
-            "moons": null
+            "moons": []
         },
         {
+            "id": 7,
             "name": "Uranus",
             "gravity": 8.87,
             "density": 1.27,
             "img": "/image/Uranus.png",
-            "moons": null
+            "moons": []
         },
         {
+            "id": 8,
             "name": "Neptune",
             "gravity": 11.15,
             "density": 1.638,

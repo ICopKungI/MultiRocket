@@ -10,12 +10,13 @@
     --button_color:#b7a9a6;
     --topic_or_button_font:'Prompt', sans-serif;
     --text_font:'Bai Jamjuree', sans-serif;
-    --menu_size:12.5pt;
+    --menu_size:20px;
     --topic_size:28pt;
     --text_size:15pt;
     --home_img2:url('');
-    --home_text2_posision: 17.5% !important;
+    --home_text2_posision: 286px !important;
     --button_b_n_posision:10%;
+    --overflow:auto;
 }
 
 html, body, #app, .nav{/* สีพื้นหลัง*/
@@ -24,6 +25,7 @@ html, body, #app, .nav{/* สีพื้นหลัง*/
 
 html{
     scroll-behavior: smooth;
+    overflow: var(--overflow);
 }
 
 /* ปุ่มเลื่อนขึ้นบนสุด*/
@@ -56,9 +58,14 @@ html{
     left: 0;
     right: 0;
     width: 100% !important;
-    padding-left: 370px !important;
-    padding-right: 370px !important;
+    padding-top: 52px !important;
+    padding-bottom: 0 !important;
+    padding-left: 306px !important;
+    padding-right: 300px !important;
     z-index: 9999999;
+}
+.menu_page{
+    margin-top: -100px !important;
 }
 .container{
     margin-top: 175px;
@@ -84,9 +91,11 @@ html{
 }
 
 .logo_png{
-    width: var(--logo_size);
-    height: var(--logo_size);
+    width: 127px;
+    height: 150px;
     cursor: pointer;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 /* แทบเมนูด้านบน*/
 
@@ -100,43 +109,57 @@ html{
 /*หน้าก่อนเข้า time_to_bloom*/
 
 /* หน้า  time_to_bloom*/
+.Time_To_Bloom_container{
+    padding-top: 202px;
+    margin-top: 0 !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 304px !important;
+    margin-right: 290px !important;
+}
+
+.Time_To_Bloom_row{
+    margin: 0 !important;
+}
 .logo_gif{
     /* content:url(Architecture/home_page/final.gif); */
     transform: scale(2) translateY(6%);
     display: block;
-    height: 50vh;
+    /* width: 704px;
+    height: 917.69px; */
+    height: 45vh;
     margin: auto;
     z-index: -1;
-}
-
-.time_to_bloom_topic{
-    margin-top: 15%;
-    margin-right: auto;
+    /* padding-top: 45px; */
 }
 
 .time_to_bloom_text{
     font-family: var(--topic_or_button_font);
     margin: 0;
-    font-size: 50pt;
+    font-size: 80.7px;
+    letter-spacing: 2px;
     text-align: left;
-    line-height: 100%;
-    margin-bottom: 10%;
+    line-height: 83.7px;
+    padding-bottom: 60px;
+    padding-top: 137px;
+    padding-right: 163px;
 }
 
 .time_to_bloom{/*buuton*/
     cursor: pointer;
 
-    background-size: var(--button_size_x) var(--button_size_y);
+    background-size: 320px 80px;
     background-position: center;
 
-    width: var(--button_size_x);
-    height: var(--button_size_y);
+    width: 320px;
+    height: 80px;
 
     border: 0px;
     border-radius: 10px;
 
     position:relative; 
-    left:15%;
+    left:74px;
+    /* padding-right: 241px; */
 }
 
 .time_to_bloom:active{/*buuton*/
@@ -151,6 +174,11 @@ html{
 }
 .home_topic_text{
     padding-top: 25%;
+    padding-bottom: 49px;
+}
+.home_topic_text2{
+    padding-bottom: 36px;
+    margin: 0;
 }
 .home_gif2{
     background-image: var(--home_img2); 
@@ -168,13 +196,24 @@ html{
     padding-left: var(--home_text2_posision) !important;
     padding-right: var(--home_text2_posision) !important;
 }
+.home_text2 .text{
+    width: 691px !important;
+}
+.home_gif2 .container{
+    margin-left: 290px !important;
+    margin-right: 290px !important;
+}
 
-.home_topic_text2, .home_mean2{
+.home_topic_text2{
+    width: 691px !important;
     text-align: center;
 }
 /* หน้า Home*/
 
 /*หน้า Contact*/
+.contact_container{ 
+    padding-top: 55px !important;
+}
 .contact{
     height: 500px;
     background-color: var(--mood_tone_3);

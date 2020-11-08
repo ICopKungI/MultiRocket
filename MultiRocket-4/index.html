@@ -14,6 +14,8 @@
     <!-- swiper -->
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <script src="swiper-bundle.min.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -1092,9 +1094,21 @@
             clickable: true,
             renderBullet: function(index, className) {
                 // return '<span class="' + className + '">' + '<img class="imgicon" src="image/' + index + '.png"></img>' + '</span>';
-                return '<span class="' + className + '">' + " " + '</span>';
+                return '<span class="' + className + ' bp' + index + '">' + '<img class="imgicon" src="image/' + index + '.png"></img>' + '</span>';
+
             },
         },
+    });
+
+    $(document).ready(function() {
+        $(".p2 .bp0 .imgicon").attr('src', 'image/0.png');
+        $(".p2 .bp1 .imgicon").attr('src', 'image/3.png');
+        $(".p2 .bp2 .imgicon").attr('src', 'image/1.png');
+        $(".p2 .bp3 .imgicon").attr('src', 'image/6.png');
+        $(".p2 .bp4 .imgicon").attr('src', 'image/2.png');
+        $(".p2 .bp5 .imgicon").attr('src', 'image/5.png');
+        $(".p2 .bp6 .imgicon").attr('src', 'image/7.png');
+        $(".p2 .bp7 .imgicon").attr('src', 'image/4.png');
     });
 </script>
 

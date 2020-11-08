@@ -124,19 +124,26 @@ body {
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet2 {
-    height: 40px !important;
-    background: #bbb !important;
+    /* height: 40px !important; */
+    /* background: #bbb !important; */
+    background: transparent !important;
     text-align: center;
     padding-right: 60px;
     border-radius: 100%;
+}
+
+.p2 span:nth-child(1) {
+    /* background: url(image/0.png) !important;
+    background-image: url(image/0.png) !important; */
+    /* background-color: brown !important; */
 }
 
 .imgicon {
     position: relative;
     right: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     outline: none;
 }
 

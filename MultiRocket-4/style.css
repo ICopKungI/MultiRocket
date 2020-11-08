@@ -93,7 +93,7 @@ body {
 }
 
 .main {
-    height: 50%;
+    height: 30vh;
     position: relative;
 }
 
@@ -117,6 +117,7 @@ body {
 
 .swiper-pagination,
 .swiper-pagination2 {
+    position: relative;
     bottom: 0 !important;
     right: 0 !important;
     left: 0 !important;
@@ -130,12 +131,6 @@ body {
     text-align: center;
     padding-right: 60px;
     border-radius: 100%;
-}
-
-.p2 span:nth-child(1) {
-    /* background: url(image/0.png) !important;
-    background-image: url(image/0.png) !important; */
-    /* background-color: brown !important; */
 }
 
 .imgicon {

@@ -28,6 +28,10 @@ html{
     overflow: var(--overflow);
 }
 
+.row{
+    width: 110% !important;
+}
+
 /* ปุ่มเลื่อนขึ้นบนสุด*/
 #Btn_top {
     display: none;
@@ -100,11 +104,14 @@ html{
 /* แทบเมนูด้านบน*/
 
 /*หน้าก่อนเข้า time_to_bloom*/
-.before{
-    width: 70%; 
-    height: 95vh; 
-    margin-left: 15%; 
-    margin-right: 15%;
+#before{
+    /* margin: auto; */
+    width: 226px;
+    height: 267px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 /*หน้าก่อนเข้า time_to_bloom*/
 
@@ -122,11 +129,14 @@ html{
     margin: 0 !important;
 }
 .Time_To_Bloom_bg_vdo{
-    position: fixed;
+    /* position: fixed; */
     width: 704px;
     height: 917.69px;
-    right: 290px;
-    top: 0px;
+    margin-top: -200px !important;
+    margin-right: -163px !important;
+    /* right: 290px; */
+    /* top: 0px; */
+    /* z-index: 1 !important; */
 }
 .logo_gif{
     /* content:url(Architecture/home_page/final.gif); */
@@ -176,6 +186,10 @@ html{
 /* หน้า  time_to_bloom*/
 
 /* หน้า Home*/
+.home_bg_vdo{
+    width: 597px;
+    height: 691.73px;
+}
 .home_gif1{
     width: 100%;
 }
@@ -189,6 +203,10 @@ html{
 }
 .home_bg_vdo2{
     position: fixed;
+    left: 330px;
+    right: 330px;
+    width: 1340px;
+    height: 1010.27px;
 }
 .home_gif2{
     /* background-image: var(--home_img2);  */
@@ -202,7 +220,7 @@ html{
     background-repeat:no-repeat;
 }
 .home_text2{
-    padding-top: 100px;
+    padding-top: 189px;
     padding-left: var(--home_text2_posision) !important;
     padding-right: var(--home_text2_posision) !important;
 }
@@ -219,6 +237,15 @@ html{
     text-align: center;
 }
 /* หน้า Home*/
+
+/* หน้า Draf law */
+.draf_law_bg_vdo3{
+    position: fixed;
+    left: 291px;
+    width: 1025px;
+    height: 751px;
+}
+/* หน้า Draf law */
 
 /*หน้า Contact*/
 .contact_container{ 

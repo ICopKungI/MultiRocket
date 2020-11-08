@@ -30,7 +30,10 @@
 
         <!-- หน้าก่อนเข้าหน้า Home -->
         <div v-if="what_page == 'Before_Time_To_Bloom'">
-            <img src="Architecture/Page_before entering_home page/logo.gif" class="before">
+            <!-- <img src="Architecture/Page_before entering_home page/logo.gif" class="before"> -->
+            <video autoplay muted style="margin: 0;" id="before">
+                <source src="Architecture/Page_before entering_home page/time to bloom.mp4" type="video/mp4">
+            </video>
         </div>
         <!-- หน้าก่อนเข้าหน้า Home -->
 
@@ -59,18 +62,19 @@
 
         <!-- หน้า Time_To_Bloom -->
         <div v-if="what_page == 'Time_To_Bloom'" class="container Time_To_Bloom_container">
-            
-            <video autoplay muted style="margin: 0;" class="Time_To_Bloom_bg_vdo">
-                <source src="finalแก้.mp4" type="video/mp4">
-            </video>
             <div class="row Time_To_Bloom_row">
                 <div class="cal-6">
                     <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
                     <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png"
                         @click="change_page('Home')">
                 </div>
+                <div class="cal-6">
+                <video autoplay muted style="margin: 0;" class="Time_To_Bloom_bg_vdo">
+                    <source src="finalแก้.mp4" type="video/mp4">
+                </video>
+                </div>
                 <!-- <div class="cal-6"> -->
-                    <!-- <img id="gif_home" src="Architecture/Time_To_Bloom_page/final.gif" class="logo_gif"> -->
+                <!-- <img id="gif_home" src="Architecture/Time_To_Bloom_page/final.gif" class="logo_gif"> -->
                 <!-- </div> -->
             </div>
         </div>
@@ -80,12 +84,12 @@
         <div v-if="what_page == 'Home'" class="container">
             <div class="row">
                 <div data-aos-anchor-placement="top-center" data-aos="fade-right" class="col-6">
-                    <video autoplay muted style="margin: 0;">
-                        <source src="Architecture/solve/homepage/หยดน้ำ.mp4" type="video/mp4">
+                    <video autoplay muted style="margin: 0;" class="home_bg_vdo">
+                        <source src="Architecture/solve/homepage/หยดน้ำแก้ล่าสุด.mp4" type="video/mp4">
                     </video>
                     <!-- <img :src="info.Home[0].Img" class="home_gif1"> -->
                 </div>
-                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6">
+                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6" style="padding-left: 99px; padding-right: -99px;">
                     <p class="topic_text home_topic_text">
                         {{info.Home[0].LawName}}
                     </p>
@@ -99,7 +103,7 @@
         <div data-aos="fade-down" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'">
 
             <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                <source src="test.mp4" type="video/mp4">
+                <source src="Architecture/solve/homepage/กรอบ.mp4" type="video/mp4">
                 <!-- <source src="Architecture/solve/homepage/กรอบรูป.mp4" type="video/mp4"> -->
             </video>
             <div v-if="what_page == 'Home'" class="container">
@@ -123,7 +127,7 @@
 
         <!-- หน้า Draf law -->
         <div v-if="what_page == 'Draf law'" class="container">
-            <video autoplay muted style="margin: 0;">
+            <video autoplay muted style="margin: 0;" class="draf_law_bg_vdo3">
                 <source src="Architecture/solve/draf law/test3.mp4" type="video/mp4">
             </video>
         </div>
@@ -150,12 +154,22 @@
                         </ul>
                     </nav>
                     <div class="contact_info">
-                        <img src="Architecture/solve/contact/home.png" class="contact_logo" style="height: 18px; width: 20px;"><p>{{info.Contact[contact_mean].Address}}</p>
-                        <img src="Architecture/solve/contact/phone.png" class="contact_logo" style="height: 16px; width: 14px;"><p>{{info.Contact[contact_mean].Phone}}</p>
-                        <img src="Architecture/solve/contact/emall.png" class="contact_logo" style="height: 12px; width: 17px;"><p>{{info.Contact[contact_mean].Email}}</p>
-                        <img src="Architecture/solve/contact/facebook.png" class="contact_logo" style="height: 18px; width: 18px;"><p>Facebook: <a :href="info.Contact[contact_mean].LinkFB"
+                        <img src="Architecture/solve/contact/home.png" class="contact_logo"
+                            style="height: 18px; width: 20px;">
+                        <p>{{info.Contact[contact_mean].Address}}</p>
+                        <img src="Architecture/solve/contact/phone.png" class="contact_logo"
+                            style="height: 16px; width: 14px;">
+                        <p>{{info.Contact[contact_mean].Phone}}</p>
+                        <img src="Architecture/solve/contact/emall.png" class="contact_logo"
+                            style="height: 12px; width: 17px;">
+                        <p>{{info.Contact[contact_mean].Email}}</p>
+                        <img src="Architecture/solve/contact/facebook.png" class="contact_logo"
+                            style="height: 18px; width: 18px;">
+                        <p>Facebook: <a :href="info.Contact[contact_mean].LinkFB"
                                 target="_blank">{{info.Contact[contact_mean].FB}}</a></p>
-                        <img src="Architecture/solve/contact/web.png" class="contact_logo" style="height: 22px; width: 22px;"><p>Website: <a :href="info.Contact[contact_mean].Web"
+                        <img src="Architecture/solve/contact/web.png" class="contact_logo"
+                            style="height: 22px; width: 22px;">
+                        <p>Website: <a :href="info.Contact[contact_mean].Web"
                                 target="_blank">{{info.Contact[contact_mean].Web}}</a></p>
                     </div>
                 </div>
@@ -247,15 +261,13 @@
                     document.documentElement.style.setProperty("--home_img2", 'url("Architecture/Home_page/giflaw2.gif")');
                 }
                 else if (page == "Contact" || page == "Before_Time_To_Bloom" || page == "Time_To_Bloom") {
+                    if (page == "Time_To_Bloom") {
+                        document.title = "Time To Bloom";
+                    }
                     this.hidden_or_show_scroll_bar(false);
                 }
                 else if (page != "Time_To_Bloom") {
                     this.final_page = false;
-                }
-                else {
-                    this.final_page = false;
-                    document.title = "Time To Bloom";
-                    // document.getElementById("gif_home").src = "Architecture/Time_To_Bloom_page/final.gif";
                 }
             },
             hidden_or_show_scroll_bar: function (boo) {
@@ -267,7 +279,12 @@
             }
         }
     })
-    setTimeout(function () { app.change_page("Time_To_Bloom"); }, 4000);
+    var count_down = setInterval(function () {
+        if (document.getElementById("before").ended) {//เช็คว่า vdo หน้าก่อน time to bloom จบยัง
+            app.change_page("Time_To_Bloom");
+            clearInterval(count_down);
+        }
+    }, 500);
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

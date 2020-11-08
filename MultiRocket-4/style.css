@@ -9,7 +9,7 @@ html {
 }
 
 button {
-    position: absolute;
+    position: relative;
     background: #eee;
     width: 150px;
     height: 50px;
@@ -20,8 +20,8 @@ button {
     border-radius: .8em;
     padding: 8px 15px;
     z-index: 99;
-    bottom: -170vh;
-    right: 20px;
+    top: -8vh;
+    left: 90%;
 }
 
 button:hover {

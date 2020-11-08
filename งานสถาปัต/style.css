@@ -121,6 +121,13 @@ html{
 .Time_To_Bloom_row{
     margin: 0 !important;
 }
+.Time_To_Bloom_bg_vdo{
+    position: fixed;
+    width: 704px;
+    height: 917.69px;
+    right: 290px;
+    top: 0px;
+}
 .logo_gif{
     /* content:url(Architecture/home_page/final.gif); */
     transform: scale(2) translateY(6%);
@@ -180,8 +187,11 @@ html{
     padding-bottom: 36px;
     margin: 0;
 }
+.home_bg_vdo2{
+    position: fixed;
+}
 .home_gif2{
-    background-image: var(--home_img2); 
+    /* background-image: var(--home_img2);  */
     background-size: 90% 95vh;
     width: 100%; 
     height: 80vh; 
@@ -212,17 +222,24 @@ html{
 
 /*หน้า Contact*/
 .contact_container{ 
-    padding-top: 55px !important;
+    padding-top: 67px !important;
+    /* margin-left: 338px !important;
+    margin-right: 338px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important; */
 }
 .contact{
-    height: 500px;
+    height: 366px;
+    width: 534px;
     background-color: var(--mood_tone_3);
     padding: 0 !important;
 }
+.contact_logo{
+    float: left;
+    margin-right: 5px;
+}
 .contact_menu{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
+    padding: 0 !important;
 }
 
 .contact_menu .nav-pills .nav-item {
@@ -240,21 +257,41 @@ html{
     color: white;
     border-radius:0;
     font-family: var(--topic_or_button_font);
-    font-weight: bold;
+    /* width: 178px;
+    height: 62px; */
+    /* padding: 0; */
+    margin: 0;
+    /* font-size: 18px; */
+    /* font-weight: bold; */
+    /* padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 17.5px;
+    padding-bottom: 17.5px; */
 }
 .contact_menu .nav-pills .nav-link.active{
     background-color: var(--mood_tone_3);
 }
 
 .contact_info{
-    padding: 20px;
+    padding-top: 67px;
+    padding-left: 34px;
+    padding-right: 28px;
     color: white;
     font-family: var(--text_font);
+    font-size: 14px;
+    line-height: 20px;
 }
 
+.contact_info p{
+    margin-bottom: 2px;
+}
 .contact_info a{
     text-decoration: none;
     color: white;
+}
+.contact_info a:hover{
+    color: black;
+    text-decoration: none;
 }
 /*หน้า Contact*/
 

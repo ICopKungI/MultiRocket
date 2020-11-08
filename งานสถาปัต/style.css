@@ -28,6 +28,10 @@ html{
     overflow: var(--overflow);
 }
 
+.row{
+    width: 110% !important;
+}
+
 /* ปุ่มเลื่อนขึ้นบนสุด*/
 #Btn_top {
     display: none;
@@ -100,11 +104,14 @@ html{
 /* แทบเมนูด้านบน*/
 
 /*หน้าก่อนเข้า time_to_bloom*/
-.before{
-    width: 70%; 
-    height: 95vh; 
-    margin-left: 15%; 
-    margin-right: 15%;
+#before{
+    /* margin: auto; */
+    width: 226px;
+    height: 267px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 /*หน้าก่อนเข้า time_to_bloom*/
 
@@ -120,6 +127,16 @@ html{
 
 .Time_To_Bloom_row{
     margin: 0 !important;
+}
+.Time_To_Bloom_bg_vdo{
+    /* position: fixed; */
+    width: 704px;
+    height: 917.69px;
+    margin-top: -200px !important;
+    margin-right: -163px !important;
+    /* right: 290px; */
+    /* top: 0px; */
+    /* z-index: 1 !important; */
 }
 .logo_gif{
     /* content:url(Architecture/home_page/final.gif); */
@@ -169,6 +186,10 @@ html{
 /* หน้า  time_to_bloom*/
 
 /* หน้า Home*/
+.home_bg_vdo{
+    width: 597px;
+    height: 691.73px;
+}
 .home_gif1{
     width: 100%;
 }
@@ -180,8 +201,15 @@ html{
     padding-bottom: 36px;
     margin: 0;
 }
+.home_bg_vdo2{
+    position: fixed;
+    left: 330px;
+    right: 330px;
+    width: 1340px;
+    height: 1010.27px;
+}
 .home_gif2{
-    background-image: var(--home_img2); 
+    /* background-image: var(--home_img2);  */
     background-size: 90% 95vh;
     width: 100%; 
     height: 80vh; 
@@ -192,7 +220,7 @@ html{
     background-repeat:no-repeat;
 }
 .home_text2{
-    padding-top: 100px;
+    padding-top: 189px;
     padding-left: var(--home_text2_posision) !important;
     padding-right: var(--home_text2_posision) !important;
 }
@@ -210,19 +238,35 @@ html{
 }
 /* หน้า Home*/
 
+/* หน้า Draf law */
+.draf_law_bg_vdo3{
+    position: fixed;
+    left: 291px;
+    width: 1025px;
+    height: 751px;
+}
+/* หน้า Draf law */
+
 /*หน้า Contact*/
 .contact_container{ 
-    padding-top: 55px !important;
+    padding-top: 67px !important;
+    /* margin-left: 338px !important;
+    margin-right: 338px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important; */
 }
 .contact{
-    height: 500px;
+    height: 366px;
+    width: 534px;
     background-color: var(--mood_tone_3);
     padding: 0 !important;
 }
+.contact_logo{
+    float: left;
+    margin-right: 5px;
+}
 .contact_menu{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
+    padding: 0 !important;
 }
 
 .contact_menu .nav-pills .nav-item {
@@ -240,21 +284,41 @@ html{
     color: white;
     border-radius:0;
     font-family: var(--topic_or_button_font);
-    font-weight: bold;
+    /* width: 178px;
+    height: 62px; */
+    /* padding: 0; */
+    margin: 0;
+    /* font-size: 18px; */
+    /* font-weight: bold; */
+    /* padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 17.5px;
+    padding-bottom: 17.5px; */
 }
 .contact_menu .nav-pills .nav-link.active{
     background-color: var(--mood_tone_3);
 }
 
 .contact_info{
-    padding: 20px;
+    padding-top: 67px;
+    padding-left: 34px;
+    padding-right: 28px;
     color: white;
     font-family: var(--text_font);
+    font-size: 14px;
+    line-height: 20px;
 }
 
+.contact_info p{
+    margin-bottom: 2px;
+}
 .contact_info a{
     text-decoration: none;
     color: white;
+}
+.contact_info a:hover{
+    color: black;
+    text-decoration: none;
 }
 /*หน้า Contact*/
 

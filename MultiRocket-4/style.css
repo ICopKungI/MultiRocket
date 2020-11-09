@@ -7,15 +7,17 @@ html {
     height: 100vh;
     /* overflow: hidden; */
 }
-#section2{
+
+#section2 {
     background-image: url(/image/Pin-on-Super-gif.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 button {
     position: relative;
     background: transparent;
-    width: 8%;
+    width: 10%;
     height: 8%;
     flex: 1 1 auto;
     color: whitesmoke;
@@ -28,7 +30,7 @@ button {
     padding: 8px 15px;
     z-index: 99;
     top: -10vh;
-    left: 70%;
+    left: 80%;
     font-family: 'Goldman', cursive;
     font-size: 1.2em;
 }
@@ -37,7 +39,6 @@ button:hover {
     border: whitesmoke;
     border-style: solid;
     font-family: 'Goldman', cursive;
-
 }
 
 .p1 {

@@ -1,2 +1,2 @@
-print(325*(2/3))
-print(81*(2/3))
+print(str((float(input())*100)/1920)+"vw")
+print(str((float(input())*100)/1080)+"vh")

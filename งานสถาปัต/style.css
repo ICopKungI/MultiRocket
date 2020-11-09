@@ -62,17 +62,20 @@ html{
     left: 0;
     right: 0;
     width: 100% !important;
-    padding-top: 52px !important;
+    padding-top: 4.814814814814815vh !important;
+    /* padding-top: 52px !important; */
     padding-bottom: 0 !important;
-    padding-left: 306px !important;
-    padding-right: 300px !important;
+    /* padding-left: 306px !important;
+    padding-right: 300px !important; */
+    padding-left: 15.78125vw !important;
+    padding-right: 15.78125vw !important;
     z-index: 9999999;
 }
 .menu_page{
-    margin-top: -100px !important;
+    margin-top: -9.25925925925926vh !important;
 }
 .container{
-    margin-top: 175px;
+    margin-top: 16.203703703703702vh;
 }
 
 .row{
@@ -91,12 +94,14 @@ html{
 }
 
 .nav-item{
-    margin-left: 20px;
+    margin-left: 1.0416666666666667vw;
 }
 
 .logo_png{
-    width: 127px;
-    height: 150px;
+    width: 6.614583333333333vw;
+    height: 13.88888888888889vh;
+    /* width: 127px;
+    height: 150px; */
     cursor: pointer;
     padding: 0 !important;
     margin: 0 !important;
@@ -117,12 +122,13 @@ html{
 
 /* หน้า  time_to_bloom*/
 .Time_To_Bloom_container{
-    padding-top: 202px;
+    /* padding-top: 202px; */
+    padding-top: 18.703703703703702vh;
     margin-top: 0 !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
-    margin-left: 304px !important;
-    margin-right: 290px !important;
+    margin-left: 15.78125vw !important;
+    /* margin-right: 290px !important; */
 }
 
 .Time_To_Bloom_row{
@@ -130,10 +136,14 @@ html{
 }
 .Time_To_Bloom_bg_vdo{
     /* position: fixed; */
-    width: 704px;
-    height: 917.69px;
-    margin-top: -200px !important;
-    margin-right: -163px !important;
+    /* width: 704px;
+    height: 917.69px; */
+    width: 36.666666666666664vw;
+    height: 84.9712962962963vh;
+    /* margin-top: -200px !important; */
+    /* margin-right: -163px !important; */
+    margin-top: -18.51851851851852vh !important;
+    margin-right: -8.489583333333334vw !important;
     /* right: 290px; */
     /* top: 0px; */
     /* z-index: 1 !important; */
@@ -157,19 +167,22 @@ html{
     letter-spacing: 2px;
     text-align: left;
     line-height: 83.7px;
-    padding-bottom: 60px;
+    padding-bottom: 3.125vw;
+    padding-top: 12.685185185185185vh;
+    padding-right: 8.489583333333334vw;
+    /* padding-bottom: 60px;
     padding-top: 137px;
-    padding-right: 163px;
+    padding-right: 163px; */
 }
 
 .time_to_bloom{/*buuton*/
     cursor: pointer;
 
-    background-size: 320px 80px;
+    background-size: 16.666666666666668vw 7.407407407407407vh;
     background-position: center;
 
-    width: 320px;
-    height: 80px;
+    width: 16.666666666666668vw;
+    height: 7.407407407407407vh;
 
     border: 0px;
     border-radius: 10px;
@@ -248,8 +261,13 @@ html{
 /* หน้า Draf law */
 
 /*หน้า Contact*/
+
+.test{
+    width: 37.083333333333336vw;
+    height: 65.74074074074075vh;
+}
 .contact_container{ 
-    padding-top: 67px !important;
+    padding-top: 6.203703703703703vh !important;
     /* margin-left: 338px !important;
     margin-right: 338px !important;
     padding-left: 0 !important;

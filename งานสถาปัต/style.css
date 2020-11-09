@@ -14,7 +14,7 @@
     --topic_size:28pt;
     --text_size:15pt;
     --home_img2:url('');
-    --home_text2_posision: 286px !important;
+    --home_text2_posision: 14.739583333333334vw !important;
     --button_b_n_posision:10%;
     --overflow:auto;
 }
@@ -200,15 +200,16 @@ html{
 
 /* หน้า Home*/
 .home_bg_vdo{
-    width: 597px;
-    height: 691.73px;
+    width: 31.09375vw;
+    height: 64.04907407407407vh;
 }
 .home_gif1{
     width: 100%;
 }
 .home_topic_text{
     padding-top: 25%;
-    padding-bottom: 49px;
+    padding-bottom: 4.537037037037037vh;
+    margin: 0;
 }
 .home_topic_text2{
     padding-bottom: 36px;
@@ -216,10 +217,10 @@ html{
 }
 .home_bg_vdo2{
     position: fixed;
-    left: 330px;
-    right: 330px;
-    width: 1340px;
-    height: 1010.27px;
+    left: 17.1875vw;
+    /* right: 17.1875vw; */
+    width: 65.625vw;
+    height: 77.22222222222223vh;
 }
 .home_gif2{
     /* background-image: var(--home_img2);  */
@@ -233,9 +234,9 @@ html{
     background-repeat:no-repeat;
 }
 .home_text2{
-    padding-top: 189px;
-    padding-left: var(--home_text2_posision) !important;
-    padding-right: var(--home_text2_posision) !important;
+    padding-top: 8.333333333333334vh;
+    padding-left: 14.739583333333334vw !important;
+    padding-right: 14.895833333333334vw !important;
 }
 .home_text2 .text{
     width: 691px !important;

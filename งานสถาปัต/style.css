@@ -336,7 +336,7 @@ html{
     color: white;
 }
 .contact_info a:hover{
-    color: black;
+    color: var(--button_color);
     text-decoration: none;
 }
 /*หน้า Contact*/

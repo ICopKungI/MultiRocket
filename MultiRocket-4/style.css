@@ -9,7 +9,7 @@ html {
 }
 
 #section2 {
-    background-image: url(/image/Pin-on-Super-gif.gif);
+    background-image: url(image/Pin-on-Super-gif.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -29,7 +29,7 @@ button {
     border-radius: .9em;
     padding: 8px 15px;
     z-index: 99;
-    top: -10vh;
+    top: -15vh;
     left: 80%;
     font-family: 'Goldman', cursive;
     font-size: 1.2em;
@@ -131,7 +131,7 @@ body {
 .swiper-pagination,
 .swiper-pagination2 {
     position: relative !important;
-    bottom: 25% !important;
+    top: -30% !important;
     right: 0 !important;
     left: 0 !important;
 }

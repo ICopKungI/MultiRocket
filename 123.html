@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="swiper-bundle.min.js"></script>
+
+    <!-- Demo styles -->
+    <style>
+         :root {
+            --p1_H: 100%;
+            --p2_H: 0px;
+        }
+        
+        html,
+        body,
+        #app {
+            position: relative;
+            height: 100%;
+        }
+        
+        #id {
+            height: 100%;
+        }
+        
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        
+        button {
+            position: absolute;
+            background: #1c1b27;
+            width: 100px;
+            height: 50px;
+            flex: 1 1 auto;
+            text-align: center;
+            transition: 0.5s;
+            background-size: 200% auto;
+            border-radius: .8em;
+            padding: 8px 15px;
+            z-index: 99;
+            bottom: 15px;
+            right: 20px;
+        }
+        
+        button:hover {
+            background: #3a3a3b;
+        }
+        
+        .p1 {
+            transition: 1s;
+            height: var(--p1_H);
+        }
+        
+        .p2 {
+            transition: 1s;
+            height: var(--p2_H);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="p1">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 10</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="p2">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 11</div>
+                    <div class="swiper-slide">Slide 21</div>
+                    <div class="swiper-slide">Slide 31</div>
+                    <div class="swiper-slide">Slide 41</div>
+                    <div class="swiper-slide">Slide 51</div>
+                    <div class="swiper-slide">Slide 61</div>
+                    <div class="swiper-slide">Slide 71</div>
+                    <div class="swiper-slide">Slide 81</div>
+                    <div class="swiper-slide">Slide 91</div>
+                    <div class="swiper-slide">Slide 101</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <button v-if="p1" type="button" @click="changep1()"></button>
+        <button v-else type="button" @click="changep2()"></button>
+
+    </div>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                p1: true,
+            },
+
+            methods: {
+                changep1: function() {
+                    alert("c1")
+                    this.p1 = false;
+                    document.documentElement.style.setProperty("--p1_H", "0px");
+                    document.documentElement.style.setProperty("--p2_H", "100%");
+                },
+                changep2: function() {
+                    alert("c2")
+                    this.p1 = true;
+                    document.documentElement.style.setProperty("--p1_H", "100%");
+                    document.documentElement.style.setProperty("--p2_H", "0px");
+                },
+            }
+        })
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

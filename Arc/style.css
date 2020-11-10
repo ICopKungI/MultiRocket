@@ -365,9 +365,9 @@ html {
 }
 
 .contact_info {
-    padding-top: 67px;
-    padding-left: 34px;
-    padding-right: 28px;
+    padding-top: 6.2037037037vh;
+    padding-left: 1.77083333vw;
+    padding-right: 1.45833333vw;
     color: white;
     font-family: var(--text_font);
     font-size: 14px;

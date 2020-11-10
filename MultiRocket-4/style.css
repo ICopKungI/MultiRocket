@@ -41,6 +41,30 @@ button:hover {
     font-family: 'Goldman', cursive;
 }
 
+
+/* ------------------------- */
+
+.bp1:hover span {
+    display: none
+}
+
+.bp1:hover:before {
+    content: "Sort By \a Gravity";
+    white-space: pre;
+}
+
+.bp2:hover span {
+    display: none
+}
+
+.bp2:hover:before {
+    content: "Sort By \a Solar";
+    white-space: pre;
+}
+
+
+/* ------------------------- */
+
 .p1 {
     transition: 1s;
     height: var(--p1_H);
@@ -240,8 +264,8 @@ body {
 .dot41,
 .dot71 {
     cursor: pointer;
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 15px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;

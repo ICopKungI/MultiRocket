@@ -154,8 +154,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -209,8 +209,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide2(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide2(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide2(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide2(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot2" onclick="currentSlide2(1)"></span>
@@ -396,8 +396,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide4(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide4(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide4(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide4(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot4" onclick="currentSlide4(1)"></span>
@@ -523,8 +523,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide7(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide7(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide7(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide7(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot7" onclick="currentSlide7(1)"></span>
@@ -632,8 +632,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide21(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide21(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide21(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide21(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot21" onclick="currentSlide21(1)"></span>
@@ -721,8 +721,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide11(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide11(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide11(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide11(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot11" onclick="currentSlide11(1)"></span>
@@ -805,8 +805,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide71(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide71(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide71(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide71(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot71" onclick="currentSlide71(1)"></span>
@@ -993,8 +993,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="prev" onclick="plusSlide41(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlide41(1)">&#10095;</a>
+                                <!-- <a class="prev" onclick="plusSlide41(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlide41(1)">&#10095;</a> -->
                             </div>
                             <div style="text-align:center; margin-bottom: 6%;">
                                 <span class="dot41" onclick="currentSlide41(1)"></span>
@@ -1028,13 +1028,11 @@
             </div>
         </div>
 
-        <button v-if="p1" type="button" @click="changep1()">
-                <p>Sort By</p>
-                <p>Solar</p>
+        <button v-if="p1" type="button" @click="changep1()" class="bp1">
+                <span>Sort By <br> Solar</span>
             </button>
-        <button v-else type="button" @click="changep2()">
-                <p>Sort By</p>
-                <p>Gravity</p>
+        <button v-else type="button" @click="changep2()" class="bp2">
+                <span>Sort By <br> Gravity</span>
             </button>
     </div>
 

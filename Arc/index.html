@@ -170,31 +170,43 @@
                 </div>
                 <div class="col-4" v-if="status_draft_law[0]" @click="change_draw_law('draw_law0')"
                     style="width: 100px; height: 100px; background: purple;">ร่าง{{info.Draftlaw[0].DLName1}}</div>
+
                 <div class="col-4" v-if="!status_draft_law[1]" @click="change_draw_law('draw_law1')"
                     style="width: 100px; height: 100px; background-color: green;">ร่าง{{info.Draftlaw[1].DLName1}}
                 </div>
                 <div class="col-4" v-if="status_draft_law[1]" @click="change_draw_law('draw_law1')"
                     style="width: 100px; height: 100px; background: red;">ร่าง{{info.Draftlaw[1].DLName1}}</div>
+
                 <div class="col-4" v-if="!status_draft_law[2]" @click="change_draw_law('draw_law2')"
                     style="width: 100px; height: 100px; background-color: skyblue;">ร่าง{{info.Draftlaw[2].DLName1}}
                 </div>
                 <div class="col-4" v-if="status_draft_law[2]" @click="change_draw_law('draw_law2')"
                     style="width: 100px; height: 100px; background: blue;">ร่าง{{info.Draftlaw[2].DLName1}}</div>
-                <div class="col-4" v-if="!status_draft_law[3]" @click="change_draw_law('draw_law3')"
-                    style="width: 100px; height: 100px; background-color: rosybrown;">ร่าง{{info.Draftlaw[3].DLName1}}
-                </div>
-                <div class="col-4" v-if="status_draft_law[3]" @click="change_draw_law('draw_law3')"
-                    style="width: 100px; height: 100px; background: brown;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
+
+                <div class="col-4" v-if="!status_draft_law[3]">
+                    <img v-if="!hover" @mouseover="hover = true" src="/Arc/Architecture/เมล็ดดอกสีฟ้า.png"
+                        style="width: 200px; height: 200px;" @click="change_draw_law('draw_law3')">
+                    <video v-if="hover" @mouseleave="hover = false" id="vid" width="200" height="200" autoplay muted
+                        style="margin: 0;" @click="change_draw_law('draw_law3')">
+                        <source src="/Arc/Architecture/ใบสีฟ้า.mp4" type="video/mp4">
+                    </video>
+                    ร่าง{{info.Draftlaw[3].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')"
+                        src="/Arc/Architecture/เต็มใบฟ้า.png"
+                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
+
                 <div class="col-4" v-if="!status_draft_law[4]" @click="change_draw_law('draw_law4')"
                     style="width: 100px; height: 100px; background-color: gold;">ร่าง{{info.Draftlaw[4].DLName1}}
                 </div>
                 <div class="col-4" v-if="status_draft_law[4]" @click="change_draw_law('draw_law4')"
                     style="width: 100px; height: 100px; background: hotpink;">ร่าง{{info.Draftlaw[4].DLName1}}</div>
+
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/3.กฎหมายทำแท้งเสรีChrysanthemum1.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draft law/3.กฎหมายทำแท้งเสรีChrysanthemum1.mp4"
+                            type="video/mp4">
                     </video>
                 </div>
                 <div class="col-5">
@@ -359,6 +371,9 @@
             what_draft_law: "Main",
             status_law: [false, false],
             status_draft_law: [false, false, false, false, false],
+            law_hover: [false, false],
+            hover: false,
+            draft_law_hover: [false, false, false, false, false],
             contact_mean: 0,
         },
         methods: {

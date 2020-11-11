@@ -405,76 +405,15 @@ html {
 
 /* ปุ่มด้านล่าง*/
 
-.next {
-    margin-right: var(--button_b_n_posision);
-    margin-left: auto;
-    text-align: right;
-}
-
 .back {
     margin-right: auto;
     margin-left: var(--button_b_n_posision);
 }
 
-.back,
-.next {
+.back{
     width: 50px;
     /* opacity:0; */
 }
 
 
 /* ปุ่มด้านล่าง*/
-
-
-/* หน้าจอ Tablets */
-
-@media screen and (max-width: 1280px) {
-    .container {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    .menu {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .time_to_bloom_text {
-        line-height: 63.7px;
-        font-size: 60.7px;
-    }
-    .topic_text {
-        --topic_size: 21pt;
-    }
-    .text {
-        --text_size: 11.25pt;
-    }
-}
-
-
-/* หน้าจอ Tablets */
-
-
-/* หน้าจอ Phones */
-
-@media screen and (max-width: 768px) {
-    .container {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    .menu {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .time_to_bloom_text {
-        line-height: 43.7px;
-        font-size: 40.7px;
-    }
-    .topic_text {
-        --topic_size: 14pt;
-    }
-    .text {
-        --text_size: 7.5pt;
-    }
-}
-
-
-/* หน้าจอ Phones */

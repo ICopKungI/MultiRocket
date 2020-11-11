@@ -50,7 +50,7 @@
                     <a class="nav-link button" @click="change_page('Law')">Law</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" @click="change_page('Draf law')">Draf law</a>
+                    <a class="nav-link button" @click="change_page('Draft law')">Draft law</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link button" @click="change_page('Contact')">Contact</a>
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <div data-aos="fade-down" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'">
 
             <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
                 <source src="Architecture/solve/homepage/กรอบ3.mp4" type="video/mp4">
@@ -162,122 +162,122 @@
         </div>
         <!-- หน้า Law -->
 
-        <!-- หน้า Draf law -->
-        <div v-if="what_page == 'Draf law'" class="container">
-            <div v-if="what_draf_law == 'Main'" class="row">
-                <div class="col-4" v-if="!status_draf_law[0]" @click="change_draw_law('draw_law0')"
-                    style="width: 100px; height: 100px; background-color: orange;">ร่าง{{info.Draflaw[0].DLName1}}
+        <!-- หน้า Draft law -->
+        <div v-if="what_page == 'Draft law'" class="container">
+            <div v-if="what_draft_law == 'Main'" class="row">
+                <div class="col-4" v-if="!status_draft_law[0]" @click="change_draw_law('draw_law0')"
+                    style="width: 100px; height: 100px; background-color: orange;">ร่าง{{info.Draftlaw[0].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draf_law[0]" @click="change_draw_law('draw_law0')"
-                    style="width: 100px; height: 100px; background: purple;">ร่าง{{info.Draflaw[0].DLName1}}</div>
-                <div class="col-4" v-if="!status_draf_law[1]" @click="change_draw_law('draw_law1')"
-                    style="width: 100px; height: 100px; background-color: green;">ร่าง{{info.Draflaw[1].DLName1}}
+                <div class="col-4" v-if="status_draft_law[0]" @click="change_draw_law('draw_law0')"
+                    style="width: 100px; height: 100px; background: purple;">ร่าง{{info.Draftlaw[0].DLName1}}</div>
+                <div class="col-4" v-if="!status_draft_law[1]" @click="change_draw_law('draw_law1')"
+                    style="width: 100px; height: 100px; background-color: green;">ร่าง{{info.Draftlaw[1].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draf_law[1]" @click="change_draw_law('draw_law1')"
-                    style="width: 100px; height: 100px; background: red;">ร่าง{{info.Draflaw[1].DLName1}}</div>
-                <div class="col-4" v-if="!status_draf_law[2]" @click="change_draw_law('draw_law2')"
-                    style="width: 100px; height: 100px; background-color: skyblue;">ร่าง{{info.Draflaw[2].DLName1}}
+                <div class="col-4" v-if="status_draft_law[1]" @click="change_draw_law('draw_law1')"
+                    style="width: 100px; height: 100px; background: red;">ร่าง{{info.Draftlaw[1].DLName1}}</div>
+                <div class="col-4" v-if="!status_draft_law[2]" @click="change_draw_law('draw_law2')"
+                    style="width: 100px; height: 100px; background-color: skyblue;">ร่าง{{info.Draftlaw[2].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draf_law[2]" @click="change_draw_law('draw_law2')"
-                    style="width: 100px; height: 100px; background: blue;">ร่าง{{info.Draflaw[2].DLName1}}</div>
-                <div class="col-4" v-if="!status_draf_law[3]" @click="change_draw_law('draw_law3')"
-                    style="width: 100px; height: 100px; background-color: rosybrown;">ร่าง{{info.Draflaw[3].DLName1}}
+                <div class="col-4" v-if="status_draft_law[2]" @click="change_draw_law('draw_law2')"
+                    style="width: 100px; height: 100px; background: blue;">ร่าง{{info.Draftlaw[2].DLName1}}</div>
+                <div class="col-4" v-if="!status_draft_law[3]" @click="change_draw_law('draw_law3')"
+                    style="width: 100px; height: 100px; background-color: rosybrown;">ร่าง{{info.Draftlaw[3].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draf_law[3]" @click="change_draw_law('draw_law3')"
-                    style="width: 100px; height: 100px; background: brown;">ร่าง{{info.Draflaw[3].DLName1}}</div>
-                <div class="col-4" v-if="!status_draf_law[4]" @click="change_draw_law('draw_law4')"
-                    style="width: 100px; height: 100px; background-color: gold;">ร่าง{{info.Draflaw[4].DLName1}}
+                <div class="col-4" v-if="status_draft_law[3]" @click="change_draw_law('draw_law3')"
+                    style="width: 100px; height: 100px; background: brown;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
+                <div class="col-4" v-if="!status_draft_law[4]" @click="change_draw_law('draw_law4')"
+                    style="width: 100px; height: 100px; background-color: gold;">ร่าง{{info.Draftlaw[4].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draf_law[4]" @click="change_draw_law('draw_law4')"
-                    style="width: 100px; height: 100px; background: hotpink;">ร่าง{{info.Draflaw[4].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[4]" @click="change_draw_law('draw_law4')"
+                    style="width: 100px; height: 100px; background: hotpink;">ร่าง{{info.Draftlaw[4].DLName1}}</div>
             </div>
-            <div v-if="what_draf_law == 'draw_law0'" class="row">
+            <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
                     <!-- <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draf law/" type="video/mp4">
+                        <source src="Architecture/solve/draft law/" type="video/mp4">
                     </video> -->
                 </div>
                 <div class="col-5">
                     <p class="topic_text">
-                        {{info.Draflaw[0].DLName1}}<br>
-                        {{info.Draflaw[0].DLName2}}
+                        {{info.Draftlaw[0].DLName1}}<br>
+                        {{info.Draftlaw[0].DLName2}}
                     </p>
                     <p class="text">
-                        {{info.Draflaw[0].DLMean1}}
+                        {{info.Draftlaw[0].DLMean1}}
                     </p>
                 </div>
             </div>
-            <div v-if="what_draf_law == 'draw_law1'" class="row">
+            <div v-if="what_draft_law == 'draw_law1'" class="row">
                 <div class="col-5">
                     <!-- <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draf law/" type="video/mp4">
+                        <source src="Architecture/solve/draft law/" type="video/mp4">
                     </video> -->
                 </div>
                 <div class="col-7">
                     <p class="topic_text">
-                        {{info.Draflaw[1].DLName1}}<br>
-                        {{info.Draflaw[1].DLName2}}
+                        {{info.Draftlaw[1].DLName1}}<br>
+                        {{info.Draftlaw[1].DLName2}}
                     </p>
                     <p class="text">
-                        {{info.Draflaw[1].DLMean1}}
+                        {{info.Draftlaw[1].DLMean1}}
                     </p>
                 </div>
             </div>
-            <div v-if="what_draf_law == 'draw_law2'" class="row">
+            <div v-if="what_draft_law == 'draw_law2'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draf law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
+                        <source src="Architecture/solve/draft law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
                             type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
                     <p class="topic_text">
-                        {{info.Draflaw[2].DLName1}}<br>
-                        {{info.Draflaw[2].DLName2}}
+                        {{info.Draftlaw[2].DLName1}}<br>
+                        {{info.Draftlaw[2].DLName2}}
                     </p>
                     <p class="text">
-                        {{info.Draflaw[2].DLMean1}}<br><br>
-                        {{info.Draflaw[2].DLMean2}}
+                        {{info.Draftlaw[2].DLMean1}}<br><br>
+                        {{info.Draftlaw[2].DLMean2}}
                     </p>
                 </div>
             </div>
-            <div v-if="what_draf_law == 'draw_law3'" class="row">
+            <div v-if="what_draft_law == 'draw_law3'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draf law/6-กฎหมายการแต่งกายในอาชีพต่างๆPansies_1.mp4"
+                        <source src="Architecture/solve/draft law/6-กฎหมายการแต่งกายในอาชีพต่างๆPansies_1.mp4"
                             type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
                     <p class="topic_text">
-                        {{info.Draflaw[3].DLName1}}<br>
-                        {{info.Draflaw[3].DLName2}}
+                        {{info.Draftlaw[3].DLName1}}<br>
+                        {{info.Draftlaw[3].DLName2}}
                     </p>
                     <p class="text">
-                        {{info.Draflaw[3].DLMean1}}<br><br>
-                        {{info.Draflaw[3].DLMean2}}
+                        {{info.Draftlaw[3].DLMean1}}<br><br>
+                        {{info.Draftlaw[3].DLMean2}}
                     </p>
                 </div>
             </div>
-            <div v-if="what_draf_law == 'draw_law4'" class="row">
+            <div v-if="what_draft_law == 'draw_law4'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draf law/ค้่าประเวณี.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draft law/ค้่าประเวณี.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
                     <p class="topic_text">
-                        {{info.Draflaw[4].DLName1}}<br>
-                        {{info.Draflaw[4].DLName2}}
+                        {{info.Draftlaw[4].DLName1}}<br>
+                        {{info.Draftlaw[4].DLName2}}
                     </p>
                     <p class="text">
-                        {{info.Draflaw[4].DLMean1}}<br><br>
-                        {{info.Draflaw[4].DLMean2}}
+                        {{info.Draftlaw[4].DLMean1}}<br><br>
+                        {{info.Draftlaw[4].DLMean2}}
                     </p>
                 </div>
             </div>
         </div>
-        <!-- หน้า Draf law -->
+        <!-- หน้า Draft law -->
 
         <!-- หน้า Contact -->
         <div v-if="what_page == 'Contact'" class="container contact_container">
@@ -336,7 +336,7 @@
 
         <!-- ปุ่มกด Back -->
         <button
-            v-if="(what_page == 'Law' || what_page == 'Draf law') && (what_law != 'Main' || what_draf_law != 'Main' )"
+            v-if="(what_page == 'Law' || what_page == 'Draft law') && (what_law != 'Main' || what_draft_law != 'Main' )"
             @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>
         <!-- ปุ่มกด Back -->
     </div>
@@ -356,16 +356,16 @@
             info: {},
             what_page: "Before_Time_To_Bloom",
             what_law: "Main",
-            what_draf_law: "Main",
+            what_draft_law: "Main",
             status_law: [false, false],
-            status_draf_law: [false, false, false, false, false],
+            status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
         },
         methods: {
             change_page: function (page) {
                 this.what_page = page;
                 this.what_law = 'Main';
-                this.what_draf_law = 'Main';
+                this.what_draft_law = 'Main';
                 document.title = app.what_page;
                 if (page == "Home") {
                     this.hidden_or_show_scroll_bar(true);
@@ -387,17 +387,17 @@
                 }
             },
             change_draw_law: function (draw_law) {
-                this.what_draf_law = draw_law;
+                this.what_draft_law = draw_law;
                 if (draw_law == "draw_law0") {
-                    this.status_draf_law[0] = true;
+                    this.status_draft_law[0] = true;
                 } else if (draw_law == "draw_law1") {
-                    this.status_draf_law[1] = true;
+                    this.status_draft_law[1] = true;
                 } else if (draw_law == "draw_law2") {
-                    this.status_draf_law[2] = true;
+                    this.status_draft_law[2] = true;
                 } else if (draw_law == "draw_law3") {
-                    this.status_draf_law[3] = true;
+                    this.status_draft_law[3] = true;
                 } else if (draw_law == "draw_law4") {
-                    this.status_draf_law[4] = true;
+                    this.status_draft_law[4] = true;
                 }
             },
             hidden_or_show_scroll_bar: function (boo) {

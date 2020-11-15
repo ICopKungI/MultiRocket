@@ -164,11 +164,8 @@
             <div v-if="what_draft_law == 'Main'" class="row">
 
                 <div class="col-4" v-if="!status_draft_law[0]">
-                    <img v-if="!draft_hover0" @mouseover="draft_hover0 = true"
-                        src="/Arc/Architecture/solve/flower/ดอกขาว/เมล็ดดอกขาว.png" style="width: 200px; height: 200px;"
-                        @click="change_draw_law('draw_law0')">
-                    <video v-if="draft_hover0" @mouseleave="draft_hover0 = false" id="vid" width="200" height="200"
-                        autoplay muted style="margin: 0;" @click="change_draw_law('draw_law0')">
+                    <video @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')" id="vid0" width="200" height="200"
+                         muted style="margin: 0;" @click="change_draw_law('draw_law0')">
                         <source src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกสีขาวps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[0].DLName1}}
                 </div>
@@ -177,11 +174,8 @@
                         style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[0].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[1]">
-                    <img v-if="!draft_hover1" @mouseover="draft_hover1 = true"
-                        src="/Arc/Architecture/solve/flower/ดอกม่วง/เมล็ดดอกม่วง.png" style="width: 200px; height: 200px;"
-                        @click="change_draw_law('draw_law1')">
-                    <video v-if="draft_hover1" @mouseleave="draft_hover1 = false" id="vid" width="200" height="200"
-                        autoplay muted style="margin: 0;" @click="change_draw_law('draw_law1')">
+                    <video @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')" id="vid1" width="200" height="200"
+                         muted style="margin: 0;" @click="change_draw_law('draw_law1')">
                         <source src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วงps-3.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[1].DLName1}}
                 </div>
@@ -190,11 +184,8 @@
                         style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[1].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[2]">
-                    <img v-if="!draft_hover2" @mouseover="draft_hover2 = true"
-                        src="/Arc/Architecture/solve/flower/ดอกชมพู/เมล็ดชมพู.png" style="width: 200px; height: 200px;"
-                        @click="change_draw_law('draw_law2')">
-                    <video v-if="draft_hover2" @mouseleave="draft_hover2 = false" id="vid" width="200" height="200"
-                        autoplay muted style="margin: 0;" @click="change_draw_law('draw_law2')">
+                    <video @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')" id="vid2" width="200" height="200"
+                         muted style="margin: 0;" @click="change_draw_law('draw_law2')">
                         <source src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพูps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[2].DLName1}}
                 </div>
@@ -203,11 +194,8 @@
                         style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[2].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[3]">
-                    <img v-if="!draft_hover3" @mouseover="draft_hover3 = true"
-                        src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/เมล็ดดอกสีฟ้า.png" style="width: 200px; height: 200px;"
-                        @click="change_draw_law('draw_law3')">
-                    <video v-if="draft_hover3" @mouseleave="draft_hover3 = false" id="vid" width="200" height="200"
-                        autoplay muted style="margin: 0;" @click="change_draw_law('draw_law3')">
+                    <video @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200"
+                         muted style="margin: 0;" @click="change_draw_law('draw_law3')">
                         <source src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/ใบฟ้าบาน.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[3].DLName1}}
                 </div>
@@ -216,16 +204,13 @@
                         style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[4]">
-                    <img v-if="!draft_hover4" @mouseover="draft_hover4 = true"
-                        src="/Arc/Architecture/solve/flower/ดอกแดง/เมล็ดดอกสุดท้าย_.png" style="width: 200px; height: 200px;"
-                        @click="change_draw_law('draw_law4')">
-                    <video v-if="draft_hover4" @mouseleave="draft_hover4 = false" id="vid" width="200" height="200"
-                        autoplay muted style="margin: 0;" @click="change_draw_law('draw_law4')">
+                    <video @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200"
+                         muted style="margin: 0;" @click="change_draw_law('draw_law4')">
                         <source src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดงps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[4].DLName1}}
                 </div>
                 <div class="col-4" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')"
-                        src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง.png"
+                        src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง2.png"
                         style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[4].DLName1}}</div>
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
@@ -388,9 +373,6 @@
             what_draft_law: "Main",
             status_law: [false, false],
             status_draft_law: [false, false, false, false, false],
-            law_hover: [false, false],
-            draft_hover0: false, draft_hover1: false, draft_hover2: false, draft_hover3: false, draft_hover2: false, draft_hover4: false,
-            draft_law_hover: [false, false, false, false, false],
             contact_mean: 0,
         },
         methods: {
@@ -436,6 +418,15 @@
                     document.documentElement.style.setProperty("--overflow", 'auto');
                 } else {
                     document.documentElement.style.setProperty("--overflow", 'hidden');
+                }
+            },
+            Blooming_flowers(status, id) {
+                var vid = document.getElementById(id);
+                if (status) {
+                    vid.play();
+                } else {
+                    vid.pause();
+                    vid.currentTime = 0;
                 }
             }
         }

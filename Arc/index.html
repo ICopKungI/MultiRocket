@@ -401,8 +401,10 @@
     }, 500);
     if (navigator.appVersion.indexOf("Win") != -1) {
         document.documentElement.style.setProperty("--mood_tone_1", '#f3f2f3');
+        console.log("win");
     } else if (navigator.appVersion.indexOf("Mac") != -1) {
         document.documentElement.style.setProperty("--mood_tone_1", '#f5f4f5');
+        console.log("Mac");
     }
 </script>
 

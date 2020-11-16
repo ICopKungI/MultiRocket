@@ -162,59 +162,80 @@
             <div v-if="what_draft_law == 'Main'" class="row">
 
                 <div class="col-4" v-if="!status_draft_law[0]">
-                    <video @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
+                    <video data-aos-anchor-placement="top-center" data-aos="fade-right"
+                        @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
                         id="vid0" width="200" height="200" muted style="margin: 0;"
                         @click="change_draw_law('draw_law0')">
                         <source src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกสีขาวps.mp4" type="video/mp4">
-                    </video> <br>ร่าง{{info.Draftlaw[0].DLName1}}
+                    </video> <br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-right">ร่าง{{info.Draftlaw[0].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[0]"><img @click="change_draw_law('draw_law0')"
-                        src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกขาว.png"
-                        style="width: 200px; height: 200px;"><br>ร่าง{{info.Draftlaw[0].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[0]"><img data-aos-anchor-placement="top-center"
+                        data-aos="fade-right" @click="change_draw_law('draw_law0')"
+                        src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกขาว.png" style="width: 200px; height: 200px;"><br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-right">ร่าง{{info.Draftlaw[0].DLName1}}</p>
+                </div>
 
                 <div class="col-4" v-if="!status_draft_law[1]">
-                    <video @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
+                    <video data-aos-anchor-placement="top-center" data-aos="fade-down"
+                        @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
                         @click="change_draw_law('draw_law1')">
                         <source src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วงps-3.mp4" type="video/mp4">
-                    </video> <br>ร่าง{{info.Draftlaw[1].DLName1}}
+                    </video> <br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-down">ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')"
+                <div class="col-4" v-if="status_draft_law[1]"><img data-aos-anchor-placement="top-center"
+                        data-aos="fade-down" @click="change_draw_law('draw_law1')"
                         src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วง.png"
-                        style="width: 200px; height: 200px;"><br>ร่าง{{info.Draftlaw[1].DLName1}}</div>
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-down">ร่าง{{info.Draftlaw[1].DLName1}}</p>
+                </div>
 
                 <div class="col-4" v-if="!status_draft_law[2]">
-                    <video @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
+                    <video data-aos-anchor-placement="top-center" data-aos="fade-left"
+                        @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
                         @click="change_draw_law('draw_law2')">
                         <source src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพูps.mp4" type="video/mp4">
-                    </video> <br>ร่าง{{info.Draftlaw[2].DLName1}}
+                    </video> <br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-left">ร่าง{{info.Draftlaw[2].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')"
+                <div class="col-4" v-if="status_draft_law[2]"><img data-aos-anchor-placement="top-center"
+                        data-aos="fade-left" @click="change_draw_law('draw_law2')"
                         src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพู.png"
-                        style="width: 200px; height: 200px;"><br>ร่าง{{info.Draftlaw[2].DLName1}}</div>
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-left">ร่าง{{info.Draftlaw[2].DLName1}}</p>
+                </div>
 
                 <div class="col-4" v-if="!status_draft_law[3]">
-                    <video @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')"
-                        id="vid3" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law3')">
+                    <video data-aos="fade-up-right" @mouseover="Blooming_flowers(true, 'vid3')"
+                        @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200" muted
+                        style="margin: 0;" @click="change_draw_law('draw_law3')">
                         <source src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/ใบฟ้าบาน.mp4" type="video/mp4">
-                    </video> <br>ร่าง{{info.Draftlaw[3].DLName1}}
+                    </video> <br>
+                    <p data-aos="fade-up-right">ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')"
+                <div class="col-4" v-if="status_draft_law[3]"><img data-aos="fade-up-right"
+                        @click="change_draw_law('draw_law3')"
                         src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/เต็มใบฟ้า.png"
-                        style="width: 200px; height: 200px;"><br>ร่าง{{info.Draftlaw[3].DLName1}}</div>
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos="fade-up-right">ร่าง{{info.Draftlaw[3].DLName1}}</p>
+                </div>
 
                 <div class="col-4" v-if="!status_draft_law[4]">
-                    <video @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')"
-                        id="vid4" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law4')">
+                    <video data-aos="fade-up-left" @mouseover="Blooming_flowers(true, 'vid4')"
+                        @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200" muted
+                        style="margin: 0;" @click="change_draw_law('draw_law4')">
                         <source src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดงps.mp4" type="video/mp4">
-                    </video> <br>ร่าง{{info.Draftlaw[4].DLName1}}
+                    </video> <br>
+                    <p data-aos="fade-up-left">ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')"
-                        src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง2.png"
-                        style="width: 200px; height: 200px;"><br>ร่าง{{info.Draftlaw[4].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[4]"><img data-aos="fade-up-left"
+                        @click="change_draw_law('draw_law4')" src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง2.png"
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos="fade-up-left">ร่าง{{info.Draftlaw[4].DLName1}}</p>
+                </div>
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
@@ -385,6 +406,7 @@
         },
         methods: {
             change_page: function (page) {
+                document.documentElement.scrollTop = 0;
                 this.what_page = page;
                 this.what_law = 'Main';
                 this.what_draft_law = 'Main';

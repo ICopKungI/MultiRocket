@@ -168,12 +168,15 @@
                         @click="change_draw_law('draw_law0')">
                         <source src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกสีขาวps.mp4" type="video/mp4">
                     </video> <br>
-                    <p data-aos-anchor-placement="top-center" data-aos="fade-right">ร่าง{{info.Draftlaw[0].DLName1}}</p>
+
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-right">ร่าง{{info.Draftlaw[0].DLName1}}
+                    </p>
                 </div>
                 <div class="col-4" v-if="status_draft_law[0]"><img data-aos-anchor-placement="top-center"
                         data-aos="fade-right" @click="change_draw_law('draw_law0')"
                         src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกขาว.png" style="width: 200px; height: 200px;"><br>
                     <p data-aos-anchor-placement="top-center" data-aos="fade-right">ร่าง{{info.Draftlaw[0].DLName1}}</p>
+
                 </div>
 
                 <div class="col-4" v-if="!status_draft_law[1]">
@@ -199,13 +202,20 @@
                         @click="change_draw_law('draw_law2')">
                         <source src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพูps.mp4" type="video/mp4">
                     </video> <br>
-                    <p data-aos-anchor-placement="top-center" data-aos="fade-left">ร่าง{{info.Draftlaw[2].DLName1}}</p>
+
+                    <p class="Draft" data-aos-anchor-placement="top-center" data-aos="fade-left">
+                        ร่าง{{info.Draftlaw[2].DLName1}}
+                    </p>
+
                 </div>
                 <div class="col-4" v-if="status_draft_law[2]"><img data-aos-anchor-placement="top-center"
                         data-aos="fade-left" @click="change_draw_law('draw_law2')"
                         src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพู.png"
                         style="width: 200px; height: 200px;"><br>
-                    <p data-aos-anchor-placement="top-center" data-aos="fade-left">ร่าง{{info.Draftlaw[2].DLName1}}</p>
+
+                    <p data-aos-anchor-placement="top-center" data-aos="fade-left">ร่าง{{info.Draftlaw[2].DLName1}}
+                    </p>
+
                 </div>
 
                 <div class="col-4" v-if="!status_draft_law[3]">
@@ -269,19 +279,20 @@
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law2'" class="row">
-                <div class="col-5">
+                <div style="margin-top:10;" class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
+                        <source  src="Architecture/solve/draft law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
                             type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
-                    <p class="topic_text">
-                        {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
-                    </p>
-                    <p class="text">
-                        {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
-                    </p>
+                    <!--แก้ layout-->
+                        <p style="margin-left: 125px;" class="topic_text">
+                            {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
+                        </p>
+                        <p style="margin-left: 125px;" class="text">
+                            {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
+                        </p>
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law3'" class="row">

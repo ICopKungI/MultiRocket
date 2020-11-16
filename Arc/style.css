@@ -390,12 +390,14 @@ html {
 
 /*หน้า Contact*/
 
+
 .topic_text {
     font-family: var(--topic_or_button_font);
     color: var(--mood_tone_3);
     font-size: var(--topic_size);
     font-weight: bold;
 }
+
 
 .text {
     font-family: var(--text_font);
@@ -417,3 +419,5 @@ html {
 
 
 /* ปุ่มด้านล่าง*/
+
+

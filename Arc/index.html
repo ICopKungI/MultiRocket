@@ -271,15 +271,15 @@
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
-                    <video autoplay muted style="margin: 0;" class="vdo1 home_bg_vdo2">
+                    <video autoplay muted style="margin: 0;" class="vdo1 home_bg_vdo2" id="draft_vdo">
                         <source src="Architecture/solve/draft law/Free abortion law.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-5">
-                    <p class="topic_text">
+                    <p class="topic_text" id="draft_topic_text">
                         {{info.Draftlaw[0].DLName1}}<br> <d style="font-size: 20pt;">{{info.Draftlaw[0].DLName2}}</d>
                     </p>
-                    <p class="text">
+                    <p class="text" id="draft_text">
                         {{info.Draftlaw[0].DLMean1}}
                     </p>
                 </div>

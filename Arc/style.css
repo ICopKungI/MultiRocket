@@ -311,29 +311,29 @@ html {
 /* กฎหมายการเลือกตั้ง*/
 #law_vdo1{
     position: fixed;
-    top: 40.245370370370374vh;
-    left: 12.138020833333332vw;
+    top: 20.245370370370374vh;
+    left: 9.138020833333332vw;
 }
 
 #law_topic1{
     position: sticky;
-    top: 26.033333333333335vh;
+    top: 22.033333333333335vh;
     left: 36.5625vw;
 }
 #law_text1{
     position: sticky;
-    top: 36.541666666666664vh;
+    top: 30.541666666666664vh;
     left: 17.864583333333332vw;
-    bottom: 8.981481481481481vh
+    bottom: 8.981481481481481vh;
+    width: 30vw;
 }
 /* กฎหมายการเลือกตั้ง*/
 
 /* กฎหมายการลาคลอด*/
 #law_vdo2{
     position: fixed;
-    top: 17.26388888888889vh;
+    top: 20.26388888888889vh;
     left: 15vw;
-
 }
 
 #law_topic2{
@@ -388,8 +388,23 @@ html {
     width: 1025px;
     height: 751px;
 }
+/*ทำแท้งเสรี*/
+#draft_vdo{
+    width: 100vw;
+    position: fixed;
+    top: 22.245370370370374vh;
+    left: -5vw;
+}
+#draft_topic_text{
+    position: sticky;
+    width: 23vw;
+}
 
-
+#draft_text{
+    position: sticky;
+    width: 30vw;
+}
+/*ทำแท้งเสรี*/
 /* หน้า Draf law */
 
 

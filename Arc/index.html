@@ -117,8 +117,8 @@
             <div v-if="what_law == 'Main'" class="row">
                 <div class="col-4" v-if="!status_law[0]">
                     <video data-aos-anchor-placement="top-bottom" data-aos="fade-right"
-                        @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
-                        id="vid0" width="200" height="200" muted style="margin: 0;" @click="change_law('law0')">
+                        @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
+                        id="vid6" width="200" height="200" muted style="margin: 0;" @click="change_law('law0')">
                         <source src="/Arc/Architecture/solve/flower/Another red flower/Another red flowerps.mp4" type="video/mp4">
                     </video> <br>
                     <p data-aos-anchor-placement="top-bottom" data-aos="fade-right">กฎหมายการเลือกตั้ง</p>
@@ -128,10 +128,19 @@
                         style="width: 200px; height: 200px;"><br>
                     <p data-aos-anchor-placement="top-bottom" data-aos="fade-right">กฎหมายการเลือกตั้ง</p>
                 </div>
-                <div v-if="!status_law[1]" @click="change_law('law1')" class="col-6"
-                    style="width: 100px; height: 100px; background-color: green;">กฎหมายลาคลอด</div>
-                <div v-if="status_law[1]" @click="change_law('law1')" class="col-6"
-                    style="width: 100px; height: 100px; background: red;">กฎหมายลาคลอด</div>
+                <div class="col-4" v-if="!status_law[1]">
+                    <video data-aos-anchor-placement="top-bottom" data-aos="fade-right"
+                        @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')"
+                        id="vid7" width="200" height="200" muted style="margin: 0;" @click="change_law('law1')">
+                        <source src="/Arc/Architecture/solve/flower/Black flower/Black flowerps.mp4" type="video/mp4">
+                    </video> <br>
+                    <p data-aos-anchor-placement="top-bottom" data-aos="fade-right">กฎหมายลาคลอด</p>
+                </div>
+                <div class="col-4" v-if="status_law[1]"><img data-aos-anchor-placement="top-bottom" data-aos="fade-right"
+                        @click="change_law('law1')" src="/Arc/Architecture/solve/flower/Black flower/Black flower.png"
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos-anchor-placement="top-bottom" data-aos="fade-right">กฎหมายลาคลอด</p>
+                </div>
             </div>
             <div v-if="what_law == 'law0'" class="row">
                 <div class="col-7">

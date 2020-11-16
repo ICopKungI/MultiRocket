@@ -178,9 +178,9 @@
 
         <!-- หน้า Draft law -->
         <div v-if="what_page == 'Draft law'" class="container">
-            <div v-if="what_draft_law == 'Main'" class="row">
+            <div v-if="what_draft_law == 'Main'" class="row align-items-center">
 
-                <div class="col-4" v-if="!status_draft_law[0]">
+                <div class="col-4 align-self-center" v-if="!status_draft_law[0]">
                     <video
                         @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
                         id="vid0" width="200" height="200" muted style="margin: 0;"
@@ -191,7 +191,7 @@
                     <p>ร่าง{{info.Draftlaw[0].DLName1}}
                     </p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[0]"><img data-aos-anchor-placement="top-center"
+                <div class="col-4 align-self-center" v-if="status_draft_law[0]"><img data-aos-anchor-placement="top-center"
                         data-aos="fade-right" @click="change_draw_law('draw_law0')"
                         src="/Arc/Architecture/solve/flower/White flowers/White flowers.png"
                         style="width: 200px; height: 200px;"><br>
@@ -199,7 +199,7 @@
 
                 </div>
 
-                <div class="col-4" v-if="!status_draft_law[1]">
+                <div class="col-4 align-self-center" v-if="!status_draft_law[1]">
                     <video
                         @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
@@ -209,14 +209,14 @@
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[1]"><img data-aos-anchor-placement="top-center"
+                <div class="col-4 align-self-center" v-if="status_draft_law[1]"><img data-aos-anchor-placement="top-center"
                         data-aos="fade-down" @click="change_draw_law('draw_law1')"
                         src="/Arc/Architecture/solve/flower/Purple flowers/Purple flowers.png"
                         style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
-                <div class="col-4" v-if="!status_draft_law[2]">
+                <div class="col-4 align-self-center" v-if="!status_draft_law[2]">
                     <video
                         @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
@@ -229,7 +229,7 @@
                     </p>
 
                 </div>
-                <div class="col-4" v-if="status_draft_law[2]"><img data-aos-anchor-placement="top-center"
+                <div class="col-4 align-self-center" v-if="status_draft_law[2]"><img data-aos-anchor-placement="top-center"
                         data-aos="fade-left" @click="change_draw_law('draw_law2')"
                         src="/Arc/Architecture/solve/flower/Pink flowers/Pink flowers.png"
                         style="width: 200px; height: 200px;"><br>
@@ -238,8 +238,8 @@
                     </p>
 
                 </div>
-
-                <div class="col-4" v-if="!status_draft_law[3]">
+                <div class="col-2"></div>
+                <div class="col-4 align-self-center" v-if="!status_draft_law[3]">
                     <video @mouseover="Blooming_flowers(true, 'vid3')"
                         @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200" muted
                         style="margin: 0;" @click="change_draw_law('draw_law3')">
@@ -247,14 +247,14 @@
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[3]"><img
+                <div class="col-4 align-self-center" v-if="status_draft_law[3]"><img
                         @click="change_draw_law('draw_law3')"
                         src="/Arc/Architecture/solve/flower/Blue flowers/Blue flowers.png"
                         style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 
-                <div class="col-4" v-if="!status_draft_law[4]">
+                <div class="col align-self-center" v-if="!status_draft_law[4]">
                     <video @mouseover="Blooming_flowers(true, 'vid4')"
                         @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200" muted
                         style="margin: 0;" @click="change_draw_law('draw_law4')">
@@ -262,7 +262,7 @@
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
-                <div class="col-4" v-if="status_draft_law[4]"><img
+                <div class="col align-self-center" v-if="status_draft_law[4]"><img
                         @click="change_draw_law('draw_law4')"
                         src="/Arc/Architecture/solve/flower/Red flowers/Red flowers2.png"
                         style="width: 200px; height: 200px;"><br>

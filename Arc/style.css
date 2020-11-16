@@ -36,6 +36,25 @@ html {
     width: 110% !important;
 }
 
+.bg_ladl1, .bg_ladl2, .bg_ladl3{
+    position: fixed;
+    background-repeat: no-repeat;
+    bottom: -5vh;
+}
+.bg_ladl1{
+    z-index: 1;
+    left: 0;
+    height: 37.79351851851852vh;
+}
+.bg_ladl2{
+    z-index: 1;
+    right: 0;
+    height: 37.79351851851852vh;
+}
+.bg_ladl3{
+    z-index: 0;
+}
+
 
 /* ปุ่มเลื่อนขึ้นบนสุด*/
 

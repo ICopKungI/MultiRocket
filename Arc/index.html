@@ -115,10 +115,19 @@
         <!-- หน้า Law -->
         <div v-if="what_page == 'Law'" class="container">
             <div v-if="what_law == 'Main'" class="row">
-                <div v-if="!status_law[0]" @click="change_law('law0')" class="col-6"
-                    style="width: 100px; height: 100px; background-color: orange;">กฎหมายการเลือกตั้ง</div>
-                <div v-if="status_law[0]" @click="change_law('law0')" class="col-6"
-                    style="width: 100px; height: 100px; background: purple;">กฎหมายการเลือกตั้ง</div>
+                <div class="col-4" v-if="!status_law[0]">
+                    <video data-aos-anchor-placement="top-bottom" data-aos="fade-right"
+                        @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
+                        id="vid0" width="200" height="200" muted style="margin: 0;" @click="change_law('law0')">
+                        <source src="/Arc/Architecture/solve/flower/ดอกแดงอีกดอก/ดอกแดงสองps.mp4" type="video/mp4">
+                    </video> <br>
+                    <p data-aos-anchor-placement="top-bottom" data-aos="fade-right">กฎหมายการเลือกตั้ง</p>
+                </div>
+                <div class="col-4" v-if="status_law[0]"><img data-aos-anchor-placement="top-bottom" data-aos="fade-right"
+                        @click="change_law('law0')" src="/Arc/Architecture/solve/flower/ดอกแดงอีกดอก/ดอก.png"
+                        style="width: 200px; height: 200px;"><br>
+                    <p data-aos-anchor-placement="top-bottom" data-aos="fade-left">กฎหมายการเลือกตั้ง</p>
+                </div>
                 <div v-if="!status_law[1]" @click="change_law('law1')" class="col-6"
                     style="width: 100px; height: 100px; background-color: green;">กฎหมายลาคลอด</div>
                 <div v-if="status_law[1]" @click="change_law('law1')" class="col-6"
@@ -281,18 +290,18 @@
             <div v-if="what_draft_law == 'draw_law2'" class="row">
                 <div style="margin-top:10;" class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                        <source  src="Architecture/solve/draft law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
+                        <source src="Architecture/solve/draft law/5-กฎหมายเมืองปลอดภัยเพื่อผู้หญิงPrimrose.mp4"
                             type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
                     <!--แก้ layout-->
-                        <p style="margin-left: 125px;" class="topic_text">
-                            {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
-                        </p>
-                        <p style="margin-left: 125px;" class="text">
-                            {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
-                        </p>
+                    <p style="margin-left: 125px;" class="topic_text">
+                        {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
+                    </p>
+                    <p style="margin-left: 125px;" class="text">
+                        {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
+                    </p>
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law3'" class="row">
@@ -383,7 +392,16 @@
             </div>
         </div>
         <!-- หน้า Contact -->
-
+        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ Draft Law -->
+        <img data-aos="fade-up-right" data-aos-anchor-placement="top-bottom"
+            v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )"
+            src="/Arc/Architecture/solve/คนซ้าย.png" class="bg_ladl1">
+        <img data-aos="fade-up-left" data-aos-anchor-placement="top-bottom"
+            v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )"
+            src="/Arc/Architecture/solve/คนขวา.png" class="bg_ladl2">
+        <img v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )"
+            src="/Arc/Architecture/solve/Artboard 2.png" class="bg_ladl3">
+        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ Draft Law -->
         <!-- ปุ่มกด Back -->
         <button
             v-if="(what_page == 'Law' || what_page == 'Draft law') && (what_law != 'Main' || what_draft_law != 'Main' )"

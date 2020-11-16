@@ -75,6 +75,10 @@ button:hover {
     height: var(--p2_H);
 }
 
+.showtext p {
+    font-size: 20px;
+}
+
 
 /* width */
 
@@ -297,7 +301,7 @@ body {
 }
 
 .showtext :hover {
-    font-size: 1.5rem;
+    font-size: 25px;
 }
 
 .prev,

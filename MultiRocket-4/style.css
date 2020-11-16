@@ -31,14 +31,14 @@ button {
     z-index: 99;
     top: -15vh;
     left: 80%;
-    font-family: 'Goldman', cursive;
+    font-family: 'Comfortaa', cursive;
     font-size: 1.2em;
 }
 
 button:hover {
     border: whitesmoke;
     border-style: solid;
-    font-family: 'Goldman', cursive;
+    font-family: 'Comfortaa', cursive;
 }
 
 
@@ -73,6 +73,11 @@ button:hover {
 .p2 {
     transition: 1s;
     height: var(--p2_H);
+}
+
+.showtext p {
+    font-size: 22px;
+    font-family: 'Comfortaa', cursive;
 }
 
 
@@ -297,7 +302,7 @@ body {
 }
 
 .showtext :hover {
-    font-size: 1.5rem;
+    font-size: 25px;
 }
 
 .prev,

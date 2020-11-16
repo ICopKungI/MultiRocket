@@ -393,7 +393,7 @@ html {
 
 .topic_text {
     font-family: var(--topic_or_button_font);
-    color: var(--mood_tone_3);
+    color: var(--mood_tone_5);
     font-size: var(--topic_size);
     font-weight: bold;
 }

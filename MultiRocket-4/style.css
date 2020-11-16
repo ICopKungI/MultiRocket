@@ -31,14 +31,14 @@ button {
     z-index: 99;
     top: -15vh;
     left: 80%;
-    font-family: 'Goldman', cursive;
+    font-family: 'Comfortaa', cursive;
     font-size: 1.2em;
 }
 
 button:hover {
     border: whitesmoke;
     border-style: solid;
-    font-family: 'Goldman', cursive;
+    font-family: 'Comfortaa', cursive;
 }
 
 

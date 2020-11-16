@@ -309,6 +309,32 @@ html {
 
 
 /* หน้า Draf law */
+/*แก้ layout*/
+.vdo1{
+    left: 2vw;
+    top: 7.979502196193265vw;
+}
+.vdo2{
+    margin-left: 0vw;
+    top:15.423133235724745vw;
+}
+.vdo3{
+    left: 10.27745241581259vw;
+    top: 11.978038067349927vw;
+}
+.vdo4{
+    margin-left: 0vw;
+    top: 17.273060029282576vw;
+    width: 883px;
+    height: 747px;
+}
+.vdo5{
+    left: 12.497803806734993vw;
+    top: 15.273060029282576vw;
+    width: 974px;
+    height: 720px;
+}
+
 
 .draf_law_bg_vdo3 {
     position: fixed;

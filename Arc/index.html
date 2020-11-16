@@ -144,31 +144,31 @@
             </div>
             <div v-if="what_law == 'law0'" class="row">
                 <div class="col-7">
-                    <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
+                    <video autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo1">
                         <source src="Architecture/solve/law/Election.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-5">
-                    <p class="topic_text">
+                    <p class="topic_text" id="law_topic1">
                         {{info.Law[0].LawN}}
                     </p>
-                    <p class="text">
+                    <p class="text" id="law_text1">
                         {{info.Law[0].LawMean1}}<br><br> {{info.Law[0].LawMean2}}
                     </p>
                 </div>
             </div>
             <div v-if="what_law == 'law1'" class="row">
                 <div class="col-5">
-                    <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
+                    <video autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo2">
                         <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
-                    <p class="topic_text">
+                    <p class="topic_text" id="law_topic2">
                         {{info.Law[1].LawN}}<br> {{info.Law[1].LawN1}}
                     </p>
-                    <p class="text">
-                        {{info.Law[1].LawMean1}}<br><br> {{info.Law[1].LawMean2}}
+                    <p class="text" id="law_text2">
+                        {{info.Law[1].LawMean1}}{{info.Law[1].LawMean2}}
                     </p>
                 </div>
             </div>

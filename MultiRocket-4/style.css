@@ -44,20 +44,20 @@ button:hover {
 
 /* ------------------------- */
 
-.bp1:hover span {
+.bpp1:hover span {
     display: none
 }
 
-.bp1:hover:before {
+.bpp1:hover:before {
     content: "Sort By \a Gravity";
     white-space: pre;
 }
 
-.bp2:hover span {
+.bpp2:hover span {
     display: none
 }
 
-.bp2:hover:before {
+.bpp2:hover:before {
     content: "Sort By \a Solar";
     white-space: pre;
 }
@@ -1185,7 +1185,6 @@ h1 {}
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-
 }
 
 .login .login__inner .login__content .login__form {
@@ -1195,9 +1194,11 @@ h1 {}
     -webkit-box-pack: center;
     justify-content: center;
 }
-.login__form{
+
+.login__form {
     text-align: center;
 }
+
 .login .login__inner .login__content .login__form .form {
     display: -webkit-box;
     display: flex;
@@ -1275,8 +1276,6 @@ h1 {}
     width: 0;
     height: .1rem;
     background-color: #fff;
-
-
     -webkit-transition: 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) all;
     transition: 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) all;
 }
@@ -1301,12 +1300,6 @@ h1 {}
     transition: 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) all;**/
     pointer-events: none;
 }
-
-
-
-
-
-
 
 
 /* 768px */

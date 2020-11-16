@@ -39,8 +39,7 @@
         <!-- แถบเมนูด้านบน -->
         <nav v-if="what_page != 'Before_Time_To_Bloom'" class="navbar navbar-expand menu">
 
-            <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
-                @click="change_page('Time_To_Bloom')">
+            <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png" @click="change_page('Time_To_Bloom')">
 
             <ul data-aos="fade-down" v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto menu_page">
                 <li class="nav-item">
@@ -64,8 +63,7 @@
             <div class="row Time_To_Bloom_row">
                 <div class="cal-6">
                     <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
-                    <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png"
-                        @click="change_page('Home')">
+                    <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png" @click="change_page('Home')">
                 </div>
                 <div class="cal-6">
                     <video autoplay muted style="margin: 0;" class="Time_To_Bloom_bg_vdo">
@@ -84,8 +82,7 @@
                         <source src="Architecture/solve/homepage/หยดน้ำ1.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6"
-                    style="padding-left: 5.15625vw; padding-right: -5.15625vw;">
+                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6" style="padding-left: 5.15625vw; padding-right: -5.15625vw;">
                     <p class="topic_text home_topic_text">
                         {{info.Home[0].LawName}}
                     </p>
@@ -117,14 +114,10 @@
         <!-- หน้า Law -->
         <div v-if="what_page == 'Law'" class="container">
             <div v-if="what_law == 'Main'" class="row">
-                <div v-if="!status_law[0]" @click="change_law('law0')" class="col-6"
-                    style="width: 100px; height: 100px; background-color: orange;">กฎหมายการเลือกตั้ง</div>
-                <div v-if="status_law[0]" @click="change_law('law0')" class="col-6"
-                    style="width: 100px; height: 100px; background: purple;">กฎหมายการเลือกตั้ง</div>
-                <div v-if="!status_law[1]" @click="change_law('law1')" class="col-6"
-                    style="width: 100px; height: 100px; background-color: green;">กฎหมายลาคลอด</div>
-                <div v-if="status_law[1]" @click="change_law('law1')" class="col-6"
-                    style="width: 100px; height: 100px; background: red;">กฎหมายลาคลอด</div>
+                <div v-if="!status_law[0]" @click="change_law('law0')" class="col-6" style="width: 100px; height: 100px; background-color: orange;">กฎหมายการเลือกตั้ง</div>
+                <div v-if="status_law[0]" @click="change_law('law0')" class="col-6" style="width: 100px; height: 100px; background: purple;">กฎหมายการเลือกตั้ง</div>
+                <div v-if="!status_law[1]" @click="change_law('law1')" class="col-6" style="width: 100px; height: 100px; background-color: green;">กฎหมายลาคลอด</div>
+                <div v-if="status_law[1]" @click="change_law('law1')" class="col-6" style="width: 100px; height: 100px; background: red;">กฎหมายลาคลอด</div>
             </div>
             <div v-if="what_law == 'law0'" class="row">
                 <div class="col-7">
@@ -164,54 +157,39 @@
             <div v-if="what_draft_law == 'Main'" class="row">
 
                 <div class="col-4" v-if="!status_draft_law[0]">
-                    <video @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')" id="vid0" width="200" height="200"
-                         muted style="margin: 0;" @click="change_draw_law('draw_law0')">
+                    <video @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')" id="vid0" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law0')">
                         <source src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกสีขาวps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[0].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draft_law[0]"><img @click="change_draw_law('draw_law0')"
-                        src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกขาว.png"
-                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[0].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[0]"><img @click="change_draw_law('draw_law0')" src="/Arc/Architecture/solve/flower/ดอกขาว/ดอกขาว.png" style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[0].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[1]">
-                    <video @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')" id="vid1" width="200" height="200"
-                         muted style="margin: 0;" @click="change_draw_law('draw_law1')">
+                    <video @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')" id="vid1" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law1')">
                         <source src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วงps-3.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[1].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')"
-                        src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วง.png"
-                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[1].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="/Arc/Architecture/solve/flower/ดอกม่วง/ดอกม่วง.png" style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[1].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[2]">
-                    <video @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')" id="vid2" width="200" height="200"
-                         muted style="margin: 0;" @click="change_draw_law('draw_law2')">
+                    <video @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')" id="vid2" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law2')">
                         <source src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพูps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[2].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')"
-                        src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพู.png"
-                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[2].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')" src="/Arc/Architecture/solve/flower/ดอกชมพู/ดอกชมพู.png" style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[2].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[3]">
-                    <video @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200"
-                         muted style="margin: 0;" @click="change_draw_law('draw_law3')">
+                    <video @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law3')">
                         <source src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/ใบฟ้าบาน.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[3].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')"
-                        src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/เต็มใบฟ้า.png"
-                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="/Arc/Architecture/solve/flower/ดอกน้ำเงิน/เต็มใบฟ้า.png" style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[3].DLName1}}</div>
 
                 <div class="col-4" v-if="!status_draft_law[4]">
-                    <video @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200"
-                         muted style="margin: 0;" @click="change_draw_law('draw_law4')">
+                    <video @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law4')">
                         <source src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดงps.mp4" type="video/mp4">
                     </video> ร่าง{{info.Draftlaw[4].DLName1}}
                 </div>
-                <div class="col-4" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')"
-                        src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง2.png"
-                        style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[4].DLName1}}</div>
+                <div class="col-4" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="/Arc/Architecture/solve/flower/ดอกแดง/ดอกแดง2.png" style="width: 200px; height: 200px;">ร่าง{{info.Draftlaw[4].DLName1}}</div>
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
@@ -301,48 +279,35 @@
                     <nav class="navbar navbar-expand contact_menu">
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#" role="tab" aria-selected="true"
-                                    @click="contact_mean = 0">{{info.Contact[0].CName}}</a>
+                                <a class="nav-link active" data-toggle="pill" href="#" role="tab" aria-selected="true" @click="contact_mean = 0">{{info.Contact[0].CName}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false"
-                                    @click="contact_mean = 1">{{info.Contact[1].CName}}</a>
+                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false" @click="contact_mean = 1">{{info.Contact[1].CName}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false"
-                                    @click="contact_mean = 2">{{info.Contact[2].CName}}</a>
+                                <a class="nav-link" data-toggle="pill" href="#" role="tab" aria-selected="false" @click="contact_mean = 2">{{info.Contact[2].CName}}</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="contact_info">
-                        <img src="Architecture/solve/contact/home.png" class="contact_logo"
-                            style="height: 18px; width: 20px;">
+                        <img src="Architecture/solve/contact/home.png" class="contact_logo" style="height: 18px; width: 20px;">
                         <p>{{info.Contact[contact_mean].Address}}</p>
-                        <img src="Architecture/solve/contact/phone.png" class="contact_logo"
-                            style="height: 16px; width: 14px;">
+                        <img src="Architecture/solve/contact/phone.png" class="contact_logo" style="height: 16px; width: 14px;">
                         <p>{{info.Contact[contact_mean].Phone}}</p>
-                        <img src="Architecture/solve/contact/emall.png" class="contact_logo"
-                            style="height: 12px; width: 17px;">
+                        <img src="Architecture/solve/contact/emall.png" class="contact_logo" style="height: 12px; width: 17px;">
                         <p>{{info.Contact[contact_mean].Email}}</p>
-                        <img src="Architecture/solve/contact/facebook.png" class="contact_logo"
-                            style="height: 18px; width: 18px;">
-                        <p>Facebook: <a :href="info.Contact[contact_mean].LinkFB"
-                                target="_blank">{{info.Contact[contact_mean].FB}}</a></p>
-                        <img src="Architecture/solve/contact/web.png" class="contact_logo"
-                            style="height: 22px; width: 22px;">
-                        <p>Website: <a :href="info.Contact[contact_mean].Web"
-                                target="_blank">{{info.Contact[contact_mean].Web}}</a></p>
+                        <img src="Architecture/solve/contact/facebook.png" class="contact_logo" style="height: 18px; width: 18px;">
+                        <p>Facebook: <a :href="info.Contact[contact_mean].LinkFB" target="_blank">{{info.Contact[contact_mean].FB}}</a></p>
+                        <img src="Architecture/solve/contact/web.png" class="contact_logo" style="height: 22px; width: 22px;">
+                        <p>Website: <a :href="info.Contact[contact_mean].Web" target="_blank">{{info.Contact[contact_mean].Web}}</a></p>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-anchor-placement="top-center" class="col-7 test">
-                    <iframe v-if="contact_mean == 0" class="test"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.088801953883!2d100.75716!3d14.031513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92513d71fa2aabf1!2z4Lih4Li54Lil4LiZ4Li04LiY4Li0IOC4m-C4p-C4teC4k-C4siDguKvguIfguKrguIHguLjguKUg4LmA4Lie4Li34LmI4Lit4LmA4LiU4LmH4LiB4LmB4Lil4Liw4Liq4LiV4Lij4Li1!5e0!3m2!1sth!2sth!4v1603780240501!5m2!1sth!2sth"
+                    <iframe v-if="contact_mean == 0" class="test" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.088801953883!2d100.75716!3d14.031513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92513d71fa2aabf1!2z4Lih4Li54Lil4LiZ4Li04LiY4Li0IOC4m-C4p-C4teC4k-C4siDguKvguIfguKrguIHguLjguKUg4LmA4Lie4Li34LmI4Lit4LmA4LiU4LmH4LiB4LmB4Lil4Liw4Liq4LiV4Lij4Li1!5e0!3m2!1sth!2sth!4v1603780240501!5m2!1sth!2sth"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    <iframe v-if="contact_mean == 1" class="test"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15499.778348702363!2d100.549197!3d13.782214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e74e8b1c0b10fac!2zQWN0aW9uQWlkIFRoYWlsYW5kICjguYHguK3guYfguITguIrguLHguYjguJnguYDguK3guJQg4Lib4Lij4Liw4LmA4LiX4Lio4LmE4LiX4LiiKQ!5e0!3m2!1sth!2sth!4v1603780300411!5m2!1sth!2sth"
+                    <iframe v-if="contact_mean == 1" class="test" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15499.778348702363!2d100.549197!3d13.782214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e74e8b1c0b10fac!2zQWN0aW9uQWlkIFRoYWlsYW5kICjguYHguK3guYfguITguIrguLHguYjguJnguYDguK3guJQg4Lib4Lij4Liw4LmA4LiX4Lio4LmE4LiX4LiiKQ!5e0!3m2!1sth!2sth!4v1603780300411!5m2!1sth!2sth"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    <iframe v-if="contact_mean == 2" class="test"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15497.802108053562!2d100.5661086!3d13.8119642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc6ba2124b2cff05!2sAmnesty%20International%20Thailand!5e0!3m2!1sth!2sth!4v1603780329645!5m2!1sth!2sth"
+                    <iframe v-if="contact_mean == 2" class="test" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15497.802108053562!2d100.5661086!3d13.8119642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc6ba2124b2cff05!2sAmnesty%20International%20Thailand!5e0!3m2!1sth!2sth!4v1603780329645!5m2!1sth!2sth"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
@@ -350,9 +315,7 @@
         <!-- หน้า Contact -->
 
         <!-- ปุ่มกด Back -->
-        <button
-            v-if="(what_page == 'Law' || what_page == 'Draft law') && (what_law != 'Main' || what_draft_law != 'Main' )"
-            @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>
+        <button v-if="(what_page == 'Law' || what_page == 'Draft law') && (what_law != 'Main' || what_draft_law != 'Main' )" @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>
         <!-- ปุ่มกด Back -->
     </div>
 
@@ -376,22 +339,21 @@
             contact_mean: 0,
         },
         methods: {
-            change_page: function (page) {
+            change_page: function(page) {
                 this.what_page = page;
                 this.what_law = 'Main';
                 this.what_draft_law = 'Main';
                 document.title = app.what_page;
                 if (page == "Home") {
                     this.hidden_or_show_scroll_bar(true);
-                    document.documentElement.style.setProperty("--home_img2", 'url("Architecture/Home_page/giflaw2.gif")');
                 } else if (page == "Contact" || page == "Before_Time_To_Bloom" || page == "Time_To_Bloom") {
                     if (page == "Time_To_Bloom") {
                         document.title = "Time To Bloom";
                     }
                     this.hidden_or_show_scroll_bar(false);
-                } else if (page != "Time_To_Bloom") { }
+                } else if (page != "Time_To_Bloom") {}
             },
-            change_law: function (law) {
+            change_law: function(law) {
                 this.what_law = law;
                 if (law == "law0") {
                     this.status_law[0] = true;
@@ -399,7 +361,7 @@
                     this.status_law[1] = true;
                 }
             },
-            change_draw_law: function (draw_law) {
+            change_draw_law: function(draw_law) {
                 this.what_draft_law = draw_law;
                 if (draw_law == "draw_law0") {
                     this.status_draft_law[0] = true;
@@ -413,7 +375,7 @@
                     this.status_draft_law[4] = true;
                 }
             },
-            hidden_or_show_scroll_bar: function (boo) {
+            hidden_or_show_scroll_bar: function(boo) {
                 if (boo) {
                     document.documentElement.style.setProperty("--overflow", 'auto');
                 } else {
@@ -431,12 +393,17 @@
             }
         }
     })
-    var count_down = setInterval(function () {
+    var count_down = setInterval(function() {
         if (document.getElementById("before").ended) { //เช็คว่า vdo หน้าก่อน time to bloom จบยัง
             app.change_page("Time_To_Bloom");
             clearInterval(count_down);
         }
     }, 500);
+    if (navigator.appVersion.indexOf("Win") != -1) {
+        document.documentElement.style.setProperty("--mood_tone_1", '#f3f2f3');
+    } else if (navigator.appVersion.indexOf("Mac") != -1) {
+        document.documentElement.style.setProperty("--mood_tone_1", '#f5f4f5');
+    }
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

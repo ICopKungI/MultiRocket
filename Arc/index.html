@@ -112,15 +112,15 @@
         <!-- หน้า Law -->
         <div v-if="what_page == 'Law'" class="container">
             <div v-if="what_law == 'Main'" class="row justify-content-around">
-                <div class="col-1"></div>
-                <div class="col-4 align-self-center text-center" v-if="!status_law[0]">
+                <div class="col-2"></div>
+                <div class="col align-self-center text-center" v-if="!status_law[0]">
                     <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4" @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')" id="vid6" width="200" height="200" muted style="margin: 0;" @click="change_law('law0')">
                         <!-- <source src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
                             type="video/mp4"> -->
                     </video> <br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 200px; height: 200px;"><br>
+                <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 200px; height: 200px;"><br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
@@ -132,6 +132,7 @@
                 <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 200px; height: 200px;"><br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
+                <div class="col"></div>
 
             </div>
             <div v-if="what_law == 'law0'" class="row">

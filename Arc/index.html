@@ -221,13 +221,13 @@
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 
-                <div class="col align-self-center text-center" v-if="!status_draft_law[4]">
+                <div class="col-4 align-self-center text-center" v-if="!status_draft_law[4]">
                     <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4" @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law4')">
                         <!-- <source src="Architecture/solve/flower/Redflowers/Redflowersps.mp4" type="video/mp4"> -->
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
-                <div class="col align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="Architecture/solve/flower/Redflowers/Redflowers2.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="Architecture/solve/flower/Redflowers/Redflowers2.png" style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
             </div>
@@ -354,7 +354,7 @@
         <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ DraftLaw -->
         <img data-aos="fade-up-right" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="Architecture/solve/Left person.png" class="bg_ladl1">
         <img data-aos="fade-up-left" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="Architecture/solve/Right person.png" class="bg_ladl2">
-        <!-- <img v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="Architecture/solve/Artboard 2.png" class="bg_ladl3"> -->
+        <img v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="Architecture/solve/Artboard 2.png" class="bg_ladl3">
         <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ DraftLaw -->
         <!-- ปุ่มกด Back -->
         <button v-if="(what_page == 'Law' || what_page == 'Draftlaw') && (what_law != 'Main' || what_draft_law != 'Main' )" @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>

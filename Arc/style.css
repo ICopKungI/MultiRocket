@@ -2,7 +2,7 @@
     --logo_size: 125px;
     --button_size_x: 217px;
     --button_size_y: 54px;
-    --mood_tone_1:#f5f4f5;
+    --mood_tone_1: #f5f4f5;
     --mood_tone_2: #fbd8b8;
     --mood_tone_3: #5382bf;
     --mood_tone_4: #f0a28e;
@@ -11,8 +11,8 @@
     --topic_or_button_font: 'Prompt', sans-serif;
     --text_font: 'Bai Jamjuree', sans-serif;
     --menu_size: 20px;
-    --topic_size: 28pt;
-    --text_size: 15pt;
+    --topic_size: 1.9368813810740626vw;
+    --text_size: 1.245138030690469vw;
     --home_img2: url('');
     --home_text2_posision: 14.739583333333334vw !important;
     --button_b_n_posision: 10%;
@@ -36,23 +36,32 @@ html {
     width: 110% !important;
 }
 
-.bg_ladl1, .bg_ladl2, .bg_ladl3{
+.bg_ladl1,
+.bg_ladl2,
+.bg_ladl3 {
     position: fixed;
     background-repeat: no-repeat;
     bottom: -5vh;
 }
-.bg_ladl1{
+
+.bg_ladl1 {
     z-index: 1;
     left: 0;
     height: 37.79351851851852vh;
 }
-.bg_ladl2{
+
+.bg_ladl2 {
     z-index: 1;
     right: 0;
     height: 37.79351851851852vh;
 }
-.bg_ladl3{
+
+.bg_ladl3 {
     z-index: 0;
+}
+
+.col-4 {
+    z-index: 10;
 }
 
 
@@ -252,14 +261,12 @@ html {
 }
 
 .home_topic_text {
-
     padding-top: 25%;
     padding-bottom: 4.537037037037037vh;
     margin: 0;
 }
 
 .home_topic_text2 {
-
     padding-bottom: 36px;
     margin: 0;
 }
@@ -307,89 +314,115 @@ html {
 
 /* หน้า Home*/
 
+
 /* หน้า law */
+
+
 /* กฎหมายการเลือกตั้ง*/
-#law_vdo1{
+
+#law_vdo1 {
     position: fixed;
     top: 20.245370370370374vh;
     left: 9.138020833333332vw;
 }
 
-#law_topic1{
+#law_topic1 {
     position: sticky;
     top: 22.033333333333335vh;
     left: 36.5625vw;
 }
-#law_text1{
+
+#law_text1 {
     position: sticky;
     top: 30.541666666666664vh;
     left: 17.864583333333332vw;
     bottom: 8.981481481481481vh;
     width: 30vw;
 }
+
+
 /* กฎหมายการเลือกตั้ง*/
 
+
 /* กฎหมายการลาคลอด*/
-#law_vdo2{
+
+#law_vdo2 {
     position: fixed;
     top: 20.26388888888889vh;
     left: 15vw;
 }
 
-#law_topic2{
+#law_topic2 {
     position: sticky;
     top: 20.52685185185185vh;
     left: 28.51979166666667vw;
     bottom: 3.888888888888889vh;
 }
-#law_text2{
+
+#law_text2 {
     position: sticky;
     top: 34.541666666666664vh;
     left: 17.864583333333332vw;
     bottom: 8.981481481481481vh;
 }
+
+
 /* กฎหมายการลาคลอด*/
+
+
 /* หน้า law */
 
+
 /* หน้า Draf law */
+
+
 /*แก้ layout*/
-.vdo1{
+
+.vdo1 {
     left: 2vw;
     top: 7.979502196193265vw;
 }
-.vdo2{
+
+.vdo2 {
     margin-left: 0vw;
-    top:380.27px;
+    top: 380.27px;
     width: 1016px;
     height: 630px;
 }
-.vdo3{
+
+.vdo3 {
     left: 10.27745241581259vw;
     top: 11.978038067349927vw;
-
 }
-.vdo4{
+
+.vdo4 {
     margin-left: 0vw;
     top: 17.273060029282576vw;
     width: 883px;
     height: 747px;
 }
-.vdo5{
+
+.vdo5 {
     left: 12.497803806734993vw;
     top: 15.273060029282576vw;
     width: 974px;
     height: 720px;
 }
-.lay_text2{
-    margin-top:2.562225475841874vw;
+
+.lay_text2 {
+    margin-top: 2.562225475841874vw;
 }
-.lay_text3{
-    margin-top:2.562225475841874vw; 
+
+.lay_text3 {
+    margin-top: 2.562225475841874vw;
     margin-left: 3.294289897510981vw;
 }
-.lay_text4{
-    margin-top:2.562225475841874vw;
+
+.lay_text4 {
+    margin-top: 2.562225475841874vw;
 }
+
+
 /*แก้ layout*/
 
 .draf_law_bg_vdo3 {
@@ -398,23 +431,31 @@ html {
     width: 1025px;
     height: 751px;
 }
+
+
 /*ทำแท้งเสรี*/
-#draft_vdo{
+
+#draft_vdo {
     width: 100vw;
     position: fixed;
     top: 22.245370370370374vh;
     left: -5vw;
 }
-#draft_topic_text{
+
+#draft_topic_text {
     position: sticky;
     width: 23vw;
 }
 
-#draft_text{
+#draft_text {
     position: sticky;
     width: 30vw;
 }
+
+
 /*ทำแท้งเสรี*/
+
+
 /* หน้า Draf law */
 
 
@@ -508,14 +549,12 @@ html {
 
 /*หน้า Contact*/
 
-
 .topic_text {
     font-family: var(--topic_or_button_font);
     color: var(--mood_tone_5);
     font-size: var(--topic_size);
     font-weight: bold;
 }
-
 
 .text {
     font-family: var(--text_font);
@@ -530,12 +569,10 @@ html {
     margin-left: var(--button_b_n_posision);
 }
 
-.back{
+.back {
     width: 50px;
     /* opacity:0; */
 }
 
 
 /* ปุ่มด้านล่าง*/
-
-

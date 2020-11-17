@@ -396,8 +396,10 @@ html {
 }
 
 .vdo3 {
-    left: 10.27745241581259vw;
-    top: 11.978038067349927vw;
+    left: 15.104166666666666vw;
+    top: 14.53125vw;
+    width: 53.385416666666664vw;
+    height: 39.114583333333336vw;
 }
 
 .vdo4 {
@@ -419,13 +421,19 @@ html {
 }
 
 .lay_text3 {
-    margin-top: 2.562225475841874vw;
+    margin-top: 2.662225475841874vw;
+    margin-left: 3.294289897510981vw;
+}
+.lay_text3_1{
     margin-left: 3.294289897510981vw;
 }
 
 .lay_text4 {
     margin-top: 2.562225475841874vw;
 }
+
+
+
 
 
 /*แก้ layout*/

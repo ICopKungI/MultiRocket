@@ -380,7 +380,17 @@ html {
     width: 974px;
     height: 720px;
 }
-
+.lay_text2{
+    margin-top:2.562225475841874vw;
+}
+.lay_text3{
+    margin-top:2.562225475841874vw; 
+    margin-left: 3.294289897510981vw;
+}
+.lay_text4{
+    margin-top:2.562225475841874vw;
+}
+/*แก้ layout*/
 
 .draf_law_bg_vdo3 {
     position: fixed;

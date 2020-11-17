@@ -268,11 +268,15 @@
                 <div class="col-7">
                     <!--แก้ layout-->
                     <p class="lay_text3 topic_text">
-                        {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
+                        {{info.Draftlaw[2].DLName1}}</p>
+                    <p class="lay_text3 topic_text" style="font-size: 1.6vw; margin-top:0; margin-left:0;">
+                        {{info.Draftlaw[2].DLName2}}</p>
+
+                    <p class="lay_text3_1 text" style="text-indent: 40px;">
+                        {{info.Draftlaw[2].DLMean1}}
                     </p>
-                    <p class="lay_text3_1 text">
-                        {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
-                    </p>
+                    <p class="lay_text3_1 text" style="text-indent: 40px;">
+                        {{info.Draftlaw[2].DLMean2}}</p>
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law3'" class="row">

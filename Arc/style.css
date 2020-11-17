@@ -41,24 +41,24 @@ html {
 .bg_ladl3 {
     position: fixed;
     background-repeat: no-repeat;
-    bottom: -5vh;
+    bottom: -2.8125vw;
 }
 
 .bg_ladl1 {
     z-index: 1;
     left: 0;
-    height: 37.79351851851852vh;
+    height: 21.258854166666666vw;
 }
 
 .bg_ladl2 {
     z-index: 1;
     right: 0;
-    height: 37.79351851851852vh;
+    height: 21.258854166666666vw;
 }
 
 .bg_ladl3 {
     z-index: 0;
-    height: 23.88888888888889vh;
+    height: 13.4375vw;
     width: 100%;
 }
 
@@ -102,7 +102,7 @@ html {
     left: 0;
     right: 0;
     width: 100% !important;
-    padding-top: 4.814814814814815vh !important;
+    padding-top: 2.7083333333333335vw !important;
     /* padding-top: 52px !important; */
     padding-bottom: 0 !important;
     /* padding-left: 306px !important;
@@ -113,16 +113,16 @@ html {
 }
 
 .menu_page {
-    margin-top: -9.25925925925926vh !important;
+    margin-top: -5.208333333333333vw !important;
 }
 
 .container {
-    margin-top: 16.203703703703702vh;
+    margin-top: 9.114583333333334vw;
 }
 
 .row {
     width: 100%;
-    height: 80vh;
+    height: 45.0vw;
 }
 
 .button {
@@ -142,7 +142,7 @@ html {
 
 .logo_png {
     width: 6.614583333333333vw;
-    height: 13.88888888888889vh;
+    height: 7.8125vw;
     /* width: 127px;
     height: 150px; */
     cursor: pointer;
@@ -174,7 +174,7 @@ html {
 
 .Time_To_Bloom_container {
     /* padding-top: 202px; */
-    padding-top: 18.703703703703702vh;
+    padding-top: 10.520833333333334vw;
     margin-top: 0 !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -191,10 +191,10 @@ html {
     /* width: 704px;
     height: 917.69px; */
     width: 36.666666666666664vw;
-    height: 84.9712962962963vh;
+    height: 47.79635416666667vw;
     /* margin-top: -200px !important; */
     /* margin-right: -163px !important; */
-    margin-top: -18.51851851851852vh !important;
+    margin-top: -10.416666666666666vw !important;
     margin-right: -8.489583333333334vw !important;
     /* right: 290px; */
     /* top: 0px; */
@@ -207,7 +207,7 @@ html {
     display: block;
     /* width: 704px;
     height: 917.69px; */
-    height: 45vh;
+    height: 25.3125vw;
     margin: auto;
     z-index: -1;
     /* padding-top: 45px; */
@@ -221,7 +221,7 @@ html {
     text-align: left;
     line-height: 83.7px;
     padding-bottom: 3.125vw;
-    padding-top: 12.685185185185185vh;
+    padding-top: 7.135416666666667vw;
     padding-right: 8.489583333333334vw;
     /* padding-bottom: 60px;
     padding-top: 137px;
@@ -231,10 +231,10 @@ html {
 .time_to_bloom {
     /*buuton*/
     cursor: pointer;
-    background-size: 16.666666666666668vw 7.407407407407407vh;
+    background-size: 16.666666666666668vw 4.166666666666667vw;
     background-position: center;
     width: 16.666666666666668vw;
-    height: 7.407407407407407vh;
+    height: 4.166666666666667vw;
     border: 0px;
     border-radius: 10px;
     position: relative;
@@ -256,7 +256,7 @@ html {
 
 .home_bg_vdo {
     width: 31.09375vw;
-    height: 64.04907407407407vh;
+    height: 36.02760416666667vw;
 }
 
 .home_gif1 {
@@ -265,7 +265,7 @@ html {
 
 .home_topic_text {
     padding-top: 25%;
-    padding-bottom: 4.537037037037037vh;
+    padding-bottom: 2.5520833333333335vw;
     margin: 0;
 }
 
@@ -279,14 +279,14 @@ html {
     left: 17.1875vw;
     /* right: 17.1875vw; */
     width: 65.625vw;
-    height: 77.22222222222223vh;
+    height: 43.4375vw;
 }
 
 .home_gif2 {
     /* background-image: var(--home_img2);  */
-    background-size: 90% 95vh;
+    background-size: 90% 53.4375vw;
     width: 100%;
-    height: 80vh;
+    height: 45.0vw;
     left: 0;
     right: 0;
     background-position: center;
@@ -295,7 +295,7 @@ html {
 }
 
 .home_text2 {
-    padding-top: 8.333333333333334vh;
+    padding-top: 4.6875vw;
     padding-left: 14.739583333333334vw !important;
     padding-right: 14.895833333333334vw !important;
 }
@@ -325,21 +325,21 @@ html {
 
 #law_vdo1 {
     position: fixed;
-    top: 20.245370370370374vh;
+    top: 11.388020833333336vw;
     left: 9.138020833333332vw;
 }
 
 #law_topic1 {
     position: sticky;
-    top: 22.033333333333335vh;
+    top: 12.39375vw;
     left: 36.5625vw;
 }
 
 #law_text1 {
     position: sticky;
-    top: 30.541666666666664vh;
+    top: 17.1796875vw;
     left: 17.864583333333332vw;
-    bottom: 8.981481481481481vh;
+    bottom: 5.052083333333333vw;
     width: 30vw;
 }
 
@@ -351,22 +351,22 @@ html {
 
 #law_vdo2 {
     position: fixed;
-    top: 20.26388888888889vh;
+    top: 11.3984375vw;
     left: 15vw;
 }
 
 #law_topic2 {
     position: sticky;
-    top: 20.52685185185185vh;
+    top: 11.546354166666665vw;
     left: 28.51979166666667vw;
-    bottom: 3.888888888888889vh;
+    bottom: 2.1875vw;
 }
 
 #law_text2 {
     position: sticky;
-    top: 34.541666666666664vh;
+    top: 19.4296875vw;
     left: 17.864583333333332vw;
-    bottom: 8.981481481481481vh;
+    bottom: 5.052083333333333vw;
 }
 
 
@@ -441,7 +441,7 @@ html {
 #draft_vdo {
     width: 100vw;
     position: fixed;
-    top: 22.245370370370374vh;
+    top: 12.513020833333336vw;
     left: -5vw;
 }
 
@@ -466,11 +466,11 @@ html {
 
 .test {
     width: 37.083333333333336vw;
-    height: 65.74074074074075vh;
+    height: 36.97916666666667vw;
 }
 
 .contact_container {
-    padding-top: 6.203703703703703vh !important;
+    padding-top: 3.4895833333333326vw !important;
     /* margin-left: 338px !important;
     margin-right: 338px !important;
     padding-left: 0 !important;
@@ -478,7 +478,7 @@ html {
 }
 
 .contact {
-    height: 33.88888889vh;
+    height: 19.062500000624997vw;
     width: 27.8125vw;
     background-color: var(--mood_tone_3);
     padding: 0 !important;
@@ -526,7 +526,7 @@ html {
 }
 
 .contact_info {
-    padding-top: 6.2037037037vh;
+    padding-top: 3.48958333333125vw;
     padding-left: 1.77083333vw;
     padding-right: 1.45833333vw;
     color: white;

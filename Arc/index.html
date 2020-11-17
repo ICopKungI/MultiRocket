@@ -47,7 +47,7 @@
                     <a class="nav-link button" @click="change_page('Law')">Law</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" @click="change_page('Draft law')">Draft law</a>
+                    <a class="nav-link button" @click="change_page('Draftlaw')">Draftlaw</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link button" @click="change_page('Contact')">Contact</a>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div data-aos-anchor-placement="top-center" data-aos="fade-right" class="col-6">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo">
-                        <source src="Architecture/solve/homepage/Water drop 1.mp4" type="video/mp4">
+                        <source src="Architecture/solve/homepage/Waterdrop1.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6" style="padding-left: 5.15625vw; padding-right: -5.15625vw;">
@@ -94,7 +94,7 @@
         <div data-aos="fade-up" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'">
 
             <video autoplay muted style="margin: 0;" class="home_bg_vdo2">
-                <source src="Architecture/solve/homepage/Frame 3.mp4" type="video/mp4">
+                <source src="Architecture/solve/homepage/Frame3.mp4" type="video/mp4">
             </video>
             <div v-if="what_page == 'Home'" class="container">
                 <div data-aos-anchor-placement="top-center" data-aos="fade-down" class="home_text2">
@@ -115,21 +115,21 @@
                 <div class="col-1"></div>
                 <div class="col-4 align-self-center text-center" v-if="!status_law[0]">
                     <video @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')" id="vid6" width="200" height="200" muted style="margin: 0;" @click="change_law('law0')">
-                    <source src="/Arc/Architecture/solve/flower/Another red flower/Another red flowerps.mp4"
-                        type="video/mp4">
-                </video> <br>
+                        <source src="/Arc/Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
+                            type="video/mp4">
+                    </video> <br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="/Arc/Architecture/solve/flower/Another red flower/Another red flower.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="/Arc/Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 200px; height: 200px;"><br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
                     <video @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')" id="vid7" width="200" height="200" muted style="margin: 0;" @click="change_law('law1')">
-                    <source src="/Arc/Architecture/solve/flower/Black flower2/Black flowerps2.mp4" type="video/mp4">
-                </video> <br>
+                        <source src="/Arc/Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" type="video/mp4">
+                    </video> <br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
-                <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="/Arc/Architecture/solve/flower/Black flower2/Black flower2.png" style="width: 200px; height: 200px;"><br>
+                <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="/Arc/Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 200px; height: 200px;"><br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
 
@@ -137,8 +137,8 @@
             <div v-if="what_law == 'law0'" class="row">
                 <div class="col-7">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo1">
-                    <source src="Architecture/solve/law/Election.mp4" type="video/mp4">
-                </video>
+                        <source src="Architecture/solve/law/Election.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="col-5">
                     <p class="topic_text" id="law_topic1">
@@ -152,8 +152,8 @@
             <div v-if="what_law == 'law1'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo2">
-                    <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4">
-                </video>
+                        <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="col-7">
                     <p class="topic_text" id="law_topic2">
@@ -167,37 +167,36 @@
         </div>
         <!-- หน้า Law -->
 
-        <!-- หน้า Draft law -->
-        <div v-if="what_page == 'Draft law'" class="container">
+        <!-- หน้า Draftlaw -->
+        <div v-if="what_page == 'Draftlaw'" class="container">
             <div v-if="what_draft_law == 'Main'" class="row align-items-center">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
                     <video @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')" id="vid0" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law0')">
-                        <source src="/Arc/Architecture/solve/flower/White flowers/White flowersps.mp4" type="video/mp4">
+                        <source src="/Arc/Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4" type="video/mp4">
                     </video> <br>
 
                     <p>ร่าง{{info.Draftlaw[0].DLName1}}
                     </p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[0]"><img data-aos-anchor-placement="top-center" data-aos="fade-right" @click="change_draw_law('draw_law0')" src="/Arc/Architecture/solve/flower/White flowers/White flowers.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[0]"><img @click="change_draw_law('draw_law0')" src="/Arc/Architecture/solve/flower/Whiteflowers/Whiteflowers.png" style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[0].DLName1}}</p>
 
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[1]">
                     <video @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')" id="vid1" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law1')">
-                        <source src="/Arc/Architecture/solve/flower/Purple flowers/Purple flowers-3.mp4"
-                            type="video/mp4">
+                        <source src="/Arc/Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4" type="video/mp4">
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img data-aos-anchor-placement="top-center" data-aos="fade-down" @click="change_draw_law('draw_law1')" src="/Arc/Architecture/solve/flower/Purple flowers/Purple flowers.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="/Arc/Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
                     <video @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')" id="vid2" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law2')">
-                        <source src="/Arc/Architecture/solve/flower/Pink flowers/Pink flowersps.mp4" type="video/mp4">
+                        <source src="/Arc/Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4" type="video/mp4">
                     </video> <br>
 
                     <p class="Draft">
@@ -205,7 +204,7 @@
                     </p>
 
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[2]"><img data-aos-anchor-placement="top-center" data-aos="fade-left" @click="change_draw_law('draw_law2')" src="/Arc/Architecture/solve/flower/Pink flowers/Pink flowers.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')" src="/Arc/Architecture/solve/flower/Pinkflowers/Pinkflowers.png" style="width: 200px; height: 200px;"><br>
 
                     <p>ร่าง{{info.Draftlaw[2].DLName1}}
                     </p>
@@ -214,28 +213,28 @@
                 <div class="col-2"></div>
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[3]">
                     <video @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')" id="vid3" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law3')">
-                        <source src="/Arc/Architecture/solve/flower/Blue flowers/Blue flowersps.mp4" type="video/mp4">
+                        <source src="/Arc/Architecture/solve/flower/Blueflowers/Blueflowersps.mp4" type="video/mp4">
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="/Arc/Architecture/solve/flower/Blue flowers/Blue flowers.png" style="width: 200px; height: 200px;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="/Arc/Architecture/solve/flower/Blueflowers/Blueflowers.png" style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 
                 <div class="col align-self-center text-center" v-if="!status_draft_law[4]">
                     <video @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')" id="vid4" width="200" height="200" muted style="margin: 0;" @click="change_draw_law('draw_law4')">
-                        <source src="/Arc/Architecture/solve/flower/Red flowers/Red flowersps.mp4" type="video/mp4">
+                        <source src="/Arc/Architecture/solve/flower/Redflowers/Redflowersps.mp4" type="video/mp4">
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
-                <div class="col align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="/Arc/Architecture/solve/flower/Red flowers/Red flowers2.png" style="width: 200px; height: 200px;"><br>
+                <div class="col align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="/Arc/Architecture/solve/flower/Redflowers/Redflowers2.png" style="width: 200px; height: 200px;"><br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
                     <video autoplay muted style="margin: 0;" class="vdo1 home_bg_vdo2" id="draft_vdo">
-                        <source src="Architecture/solve/draft law/Free abortion law.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draftlaw/Freeabortionlaw.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-5">
@@ -251,7 +250,7 @@
             <div v-if="what_draft_law == 'draw_law1'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="vdo2 home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/Married with children 1.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draftlaw/Married with children 1.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
@@ -267,7 +266,7 @@
             <div v-if="what_draft_law == 'draw_law2'" class="row">
                 <div style="margin-top:10;" class="col-5">
                     <video autoplay muted style="margin: 0;" class="vdo3 home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/Safe city laws for women.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draftlaw/Safe city laws for women.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
@@ -284,8 +283,7 @@
             <div v-if="what_draft_law == 'draw_law3'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="vdo4 home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/Dress law in various professions.mp4"
-                            type="video/mp4">
+                        <source src="Architecture/solve/draftlaw/Dress law in various professions.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
@@ -301,7 +299,7 @@
             <div v-if="what_draft_law == 'draw_law4'" class="row">
                 <div class="col-5">
                     <video autoplay muted style="margin: 0;" class="vdo5 home_bg_vdo2">
-                        <source src="Architecture/solve/draft law/prostitute.mp4" type="video/mp4">
+                        <source src="Architecture/solve/draftlaw/prostitute.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="col-7">
@@ -315,7 +313,7 @@
                 </div>
             </div>
         </div>
-        <!-- หน้า Draft law -->
+        <!-- หน้า Draftlaw -->
 
         <!-- หน้า Contact -->
         <div v-if="what_page == 'Contact'" class="container contact_container">
@@ -358,13 +356,13 @@
             </div>
         </div>
         <!-- หน้า Contact -->
-        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ Draft Law -->
-        <img data-aos="fade-up-right" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Left person.png" class="bg_ladl1">
-        <img data-aos="fade-up-left" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Right person.png" class="bg_ladl2">
-        <img v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draft law' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Artboard 2.png" class="bg_ladl3">
-        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ Draft Law -->
+        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ DraftLaw -->
+        <img data-aos="fade-up-right" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Left person.png" class="bg_ladl1">
+        <img data-aos="fade-up-left" data-aos-anchor-placement="top-bottom" v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Right person.png" class="bg_ladl2">
+        <img v-if="(what_page == 'Law' && what_law == 'Main') || (what_page == 'Draftlaw' && what_draft_law == 'Main' )" src="/Arc/Architecture/solve/Artboard 2.png" class="bg_ladl3">
+        <!-- รูป ผญ. 2 คนซ้ายขวาหน้า Law กับ DraftLaw -->
         <!-- ปุ่มกด Back -->
-        <button v-if="(what_page == 'Law' || what_page == 'Draft law') && (what_law != 'Main' || what_draft_law != 'Main' )" @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>
+        <button v-if="(what_page == 'Law' || what_page == 'Draftlaw') && (what_law != 'Main' || what_draft_law != 'Main' )" @click="change_law('Main'), change_draw_law('Main')" id="Btn_top">Back</button>
         <!-- ปุ่มกด Back -->
     </div>
 

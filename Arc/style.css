@@ -11,7 +11,8 @@
     --topic_or_button_font: 'Prompt', sans-serif;
     --text_font: 'Bai Jamjuree', sans-serif;
     --menu_size: 20px;
-    --topic_size: 1.9368813810740626vw;
+    --topic_size: 2.2135787212275vw;
+    --topic2_size:1.5218353708439063vw;
     --text_size: 1.245138030690469vw;
     --home_img2: url('');
     --home_text2_posision: 14.739583333333334vw !important;
@@ -381,12 +382,12 @@ html {
 
 /*แก้ layout*/
 
-.vdo1 {
-    left: 2vw;
-    top: 7.979502196193265vw;
-    /*width: ;
-    height: ;*/
-}
+/*.vdo1{
+    margin-left: 50px !important;
+    top: 1.979502196193265vw;
+    width: ;
+    height: ;
+}*/
 
 .vdo2 {
     margin-left: 0vw;
@@ -415,7 +416,10 @@ html {
     width: 974px;
     height: 720px;
 }
-
+.lay_text1 {
+    margin-top: 2.662225475841874vw;
+   /* margin-left: 3.294289897510981vw;*/
+}
 .lay_text2 {
     margin-top: 2.562225475841874vw;
 }
@@ -430,6 +434,21 @@ html {
 
 .lay_text4 {
     margin-top: 2.562225475841874vw;
+}
+.topic2{
+    position:absolute;
+    margin-top: -4%;
+    line-height: 2vw;
+    font-family: var(--topic_or_button_font);
+    color: var(--mood_tone_5);
+    font-weight: bold;
+    font-size: var(--topic2_size); 
+}
+.text1{
+    position:absolute;
+    margin-top: 4.5vw;
+    font-family: var(--text_font);
+    font-size: var(--text_size);
 }
 
 
@@ -452,7 +471,7 @@ html {
     width: 100vw;
     position: fixed;
     top: 12.513020833333336vw;
-    left: -5vw;
+    left: 5vw;
 }
 
 #draft_topic_text {

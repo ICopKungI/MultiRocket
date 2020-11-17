@@ -451,17 +451,17 @@ html {
     width: 100vw;
     position: fixed;
     top: 12.513020833333336vw;
-    left: -5vw;
+
 }
 
 #draft_topic_text {
     position: sticky;
-    width: 23vw;
+    width: 35vw;
 }
 
 #draft_text {
     position: sticky;
-    width: 30vw;
+    width: 36vw;
 }
 
 

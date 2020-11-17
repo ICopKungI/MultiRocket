@@ -325,22 +325,21 @@ html {
 
 #law_vdo1 {
     position: fixed;
-    top: 13.388020833333336vw;
+    top: 12.388020833333336vw;
     left: 9.138020833333332vw;
 }
 
 #law_topic1 {
     position: sticky;
-    top: 12.39375vw;
+    top: 10.39375vw;
     left: 36.5625vw;
 }
 
 #law_text1 {
     position: sticky;
-    top: 17.1796875vw;
+    top: 16.1796875vw;
     left: 17.864583333333332vw;
     bottom: 5.052083333333333vw;
-    width: 30vw;
 }
 
 

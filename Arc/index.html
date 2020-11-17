@@ -116,7 +116,7 @@
             </video> <br>
             <p>กฎหมายการเลือกตั้ง</p>
         </div>
-        <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 1vw;"><br>
+        <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 3.4vw;"><br>
             <p>กฎหมายการเลือกตั้ง</p>
         </div>
         <div class="col align-self-center text-center" v-if="!status_law[1]">
@@ -125,7 +125,7 @@
             </video> <br>
             <p>กฎหมายลาคลอด</p>
         </div>
-        <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 2vw; margin-top: .5vw;"><br>
+        <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 5vw; margin-top: .5vw;"><br>
             <p>กฎหมายลาคลอด</p>
         </div>
         <div class="col"></div>
@@ -152,8 +152,8 @@
                 <!-- <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4"> -->
             </video>
         </div>
-        <div class="col-7">
-            <p class="topic_text" id="law_topic2">
+        <div class="col-7" style="left: -4vw;">
+            <p class="topic_text" id="law_topic2" style="font-size: 2.418vw; width: 40vw;">
                 {{info.Law[1].LawN}}<br> {{info.Law[1].LawN1}}
             </p>
             <p class="text" id="law_text2">
@@ -188,7 +188,7 @@
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 1vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
                     <p >ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
@@ -215,7 +215,7 @@
                     </video> <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="Architecture/solve/flower/Blueflowers/Blueflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 1vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="Architecture/solve/flower/Blueflowers/Blueflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 

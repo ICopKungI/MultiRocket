@@ -105,64 +105,65 @@
         </div>
         <!-- หน้า Home -->
 
-        <!-- หน้า Law -->
-        <div v-if="what_page == 'Law'" class="container">
-            <div v-if="what_law == 'Main'" class="row justify-content-around">
-                <div class="col-2"></div>
-                <div class="col align-self-center text-center" v-if="!status_law[0]">
-                    <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4" @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')" id="vid6" width="200" height="200" muted  @click="change_law('law0')">
-                        <!-- <source src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
-                            type="video/mp4"> -->
-                    </video> <br>
-                    <p>กฎหมายการเลือกตั้ง</p>
-                </div>
-                <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 1vw;"><br>
-                    <p>กฎหมายการเลือกตั้ง</p>
-                </div>
-                <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')" id="vid7" width="200" height="200" muted style="margin: 0;" @click="change_law('law1')">
-                        <!-- <source src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" type="video/mp4"> -->
-                    </video> <br>
-                    <p>กฎหมายลาคลอด</p>
-                </div>
-                <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 2vw; margin-top: .5vw;"><br>
-                    <p>กฎหมายลาคลอด</p>
-                </div>
-                <div class="col"></div>
-
-            </div>
-            <div v-if="what_law == 'law0'" class="row">
-                <div class="col-7">
-                    <video src="Architecture/solve/law/Election.mp4" autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo1">
-                        <!-- <source src="Architecture/solve/law/Election.mp4" type="video/mp4"> -->
-                    </video>
-                </div>
-                <div class="col-5">
-                    <p class="topic_text" id="law_topic1">
-                        {{info.Law[0].LawN}}
-                    </p>
-                    <p class="text" id="law_text1">
-                        {{info.Law[0].LawMean1}}<br><br> {{info.Law[0].LawMean2}}
-                    </p>
-                </div>
-            </div>
-            <div v-if="what_law == 'law1'" class="row">
-                <div class="col-5">
-                    <video src="Architecture/solve/law/Maternity leave1.mp4" autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo2">
-                        <!-- <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4"> -->
-                    </video>
-                </div>
-                <div class="col-7">
-                    <p class="topic_text" id="law_topic2">
-                        {{info.Law[1].LawN}}<br> {{info.Law[1].LawN1}}
-                    </p>
-                    <p class="text" id="law_text2">
-                        {{info.Law[1].LawMean1}}{{info.Law[1].LawMean2}}
-                    </p>
-                </div>
-            </div>
+<!-- หน้า Law -->
+<div v-if="what_page == 'Law'" class="container">
+    <div v-if="what_law == 'Main'" class="row justify-content-around">
+        <div class="col-2"></div>
+        <div class="col align-self-center text-center" v-if="!status_law[0]">
+            <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4" @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')" id="vid6" width="200" height="200" muted style="margin-bottom: 3.1vw;" @click="change_law('law0')">
+                <!-- <source src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
+                    type="video/mp4"> -->
+            </video> <br>
+            <p>กฎหมายการเลือกตั้ง</p>
         </div>
-        <!-- หน้า Law -->
+        <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 1vw;"><br>
+            <p>กฎหมายการเลือกตั้ง</p>
+        </div>
+        <div class="col align-self-center text-center" v-if="!status_law[1]">
+            <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')" id="vid7" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
+                <!-- <source src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" type="video/mp4"> -->
+            </video> <br>
+            <p>กฎหมายลาคลอด</p>
+        </div>
+        <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 2vw; margin-top: .5vw;"><br>
+            <p>กฎหมายลาคลอด</p>
+        </div>
+        <div class="col"></div>
+
+    </div>
+    <div v-if="what_law == 'law0'" class="row">
+        <div class="col-7">
+            <video src="Architecture/solve/law/Election.mp4" autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo1">
+                <!-- <source src="Architecture/solve/law/Election.mp4" type="video/mp4"> -->
+            </video>
+        </div>
+        <div class="col-5">
+            <p class="topic_text" id="law_topic1">
+                {{info.Law[0].LawN}}
+            </p>
+            <p class="text" id="law_text1">
+                {{info.Law[0].LawMean1}}<br><br> {{info.Law[0].LawMean2}}
+            </p>
+        </div>
+    </div>
+    <div v-if="what_law == 'law1'" class="row">
+        <div class="col-5">
+            <video src="Architecture/solve/law/Maternity leave1.mp4" autoplay muted style="margin: 0;" class="home_bg_vdo2" id="law_vdo2">
+                <!-- <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4"> -->
+            </video>
+        </div>
+        <div class="col-7">
+            <p class="topic_text" id="law_topic2">
+                {{info.Law[1].LawN}}<br> {{info.Law[1].LawN1}}
+            </p>
+            <p class="text" id="law_text2">
+                {{info.Law[1].LawMean1}}{{info.Law[1].LawMean2}}
+            </p>
+        </div>
+    </div>
+</div>
+<!-- หน้า Law -->
+
 
         <!-- หน้า Draftlaw -->
         <div v-if="what_page == 'Draftlaw'" class="container">

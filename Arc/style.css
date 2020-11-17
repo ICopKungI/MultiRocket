@@ -216,10 +216,10 @@ html {
 .time_to_bloom_text {
     font-family: var(--topic_or_button_font);
     margin: 0;
-    font-size: 80.7px;
-    letter-spacing: 2px;
+    font-size: 4.203125vw;
+    letter-spacing: 0.10416666666666667vw;
     text-align: left;
-    line-height: 83.7px;
+    line-height: 4.359375vw;
     padding-bottom: 3.125vw;
     padding-top: 7.135416666666667vw;
     padding-right: 8.489583333333334vw;
@@ -238,7 +238,7 @@ html {
     border: 0px;
     border-radius: 10px;
     position: relative;
-    left: 74px;
+    left: 3.8541666666666665vw;
     /* padding-right: 241px; */
 }
 
@@ -384,13 +384,15 @@ html {
 .vdo1 {
     left: 2vw;
     top: 7.979502196193265vw;
+    /*width: ;
+    height: ;*/
 }
 
 .vdo2 {
     margin-left: 0vw;
-    top: 380.27px;
-    width: 1016px;
-    height: 630px;
+    top: 15.805729166666666vw;
+    width: 52.916666666666664vw;
+    height: 32.8125vw;
 }
 
 .vdo3 {

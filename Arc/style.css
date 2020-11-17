@@ -2,11 +2,11 @@
     --logo_size: 125px;
     --button_size_x: 217px;
     --button_size_y: 54px;
-    --mood_tone_1: #f5f4f5;
-    --mood_tone_2: #fbd8b8;
-    --mood_tone_3: #5382bf;
-    --mood_tone_4: #f0a28e;
-    --mood_tone_5: #e84225;
+    --mood_tone_1: #f2f2f2;
+    --mood_tone_2: #f6d8bc;
+    --mood_tone_3: #5a7fbb;
+    --mood_tone_4: #ed6c4b;
+    --mood_tone_5: #d74e34;
     --button_color: #b7a9a6;
     --topic_or_button_font: 'Prompt', sans-serif;
     --text_font: 'Bai Jamjuree', sans-serif;
@@ -326,22 +326,22 @@ html {
 
 #law_vdo1 {
     position: fixed;
-    top: 11.388020833333336vw;
+    top: 12.388020833333336vw;
     left: 9.138020833333332vw;
 }
 
 #law_topic1 {
     position: sticky;
-    top: 12.39375vw;
+    top: 10.39375vw;
     left: 36.5625vw;
 }
 
 #law_text1 {
     position: sticky;
-    top: 17.1796875vw;
+    top: 16.1796875vw;
     left: 17.864583333333332vw;
     bottom: 5.052083333333333vw;
-    width: 30vw;
+
 }
 
 
@@ -391,14 +391,14 @@ html {
 
 .vdo2 {
     margin-left: 0vw;
-    top: 24.4vw;
+    top: 17.805729166666666vw;
     width: 52.916666666666664vw;
     height: 32.8125vw;
 }
 
 .vdo3 {
     left: 15.104166666666666vw;
-    top: 14.53125vw;
+    top: 15.53125vw;
     width: 53.385416666666664vw;
     height: 39.114583333333336vw;
 }
@@ -425,11 +425,11 @@ html {
 }
 
 .lay_text3 {
-    margin-top: 2.662225475841874vw;
+    margin-top: 5.662225475841874vw;
     margin-left: 3.294289897510981vw;
 }
 .lay_text3_1{
-    margin-left: 3.294289897510981vw;
+
 }
 
 .lay_text4 {
@@ -442,7 +442,7 @@ html {
     font-family: var(--topic_or_button_font);
     color: var(--mood_tone_5);
     font-weight: bold;
-    font-size: var(--topic2_size); 
+    font-size: var(--topic2_size);
 }
 .text1{
     position:absolute;

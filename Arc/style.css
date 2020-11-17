@@ -58,9 +58,12 @@ html {
 
 .bg_ladl3 {
     z-index: 0;
+    height: 23.88888888888889vh;
+    width: 100%;
 }
 
-.col-4 {
+.col-4,
+.col {
     z-index: 10;
 }
 

@@ -210,12 +210,15 @@
             <div v-if="what_draft_law == 'Main'" class="row align-items-center">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
-                    <video src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4"
+                    <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img0')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0"
+                        @click="change_draw_law('draw_law0')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
                         id="vid0" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law0')">
-                        <!-- <source src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law0')"></video>  -->
+                    <br>
 
                     <p>ร่าง{{info.Draftlaw[0].DLName1}}
                     </p>
@@ -231,8 +234,8 @@
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[1]">
                     <img src="Architecture/solve/flower/Purpleflowers/Purpleseed.png"
                         @mouseover="Blooming_flowers_gif(true, 'img1')"
-                        @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1" @click="change_draw_law('draw_law1')"
-                        width="200" height="250">
+                        @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1"
+                        @click="change_draw_law('draw_law1')" width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
                         @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
@@ -250,13 +253,13 @@
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
                     <img src="Architecture/solve/flower/Pinkflowers/Pinkseed.png"
                         @mouseover="Blooming_flowers_gif(true, 'img2')"
-                        @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2" @click="change_draw_law('draw_law2')"
-                        width="200" height="250">
+                        @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2"
+                        @click="change_draw_law('draw_law2')" width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
                         @click="change_draw_law('draw_law2')"></video>  -->
-                        <br>
+                    <br>
 
                     <p class="Draft" style="margin-left: 2.5vw;">
                         ร่าง{{info.Draftlaw[2].DLName1}}
@@ -276,8 +279,8 @@
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[3]">
                     <img src="Architecture/solve/flower/Blueflowers/Blueseed.png"
                         @mouseover="Blooming_flowers_gif(true, 'img3')"
-                        @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3" @click="change_draw_law('draw_law3')"
-                        width="200" height="250">
+                        @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3"
+                        @click="change_draw_law('draw_law3')" width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')"
                         id="vid3" width="200" height="200" muted style="margin: 0;"
@@ -295,13 +298,13 @@
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[4]">
                     <img src="Architecture/solve/flower/Redflowers/Lastseed.png"
                         @mouseover="Blooming_flowers_gif(true, 'img4')"
-                        @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4" @click="change_draw_law('draw_law4')"
-                        width="200" height="250">
+                        @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4"
+                        @click="change_draw_law('draw_law4')" width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')"
                         id="vid4" width="200" height="200" muted style="margin: 0;"
                         @click="change_draw_law('draw_law4')"></video>  -->
-                        <br>
+                    <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img
@@ -516,7 +519,7 @@
             time_out: "",
             flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
             flower_png: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.png", "Architecture/solve/flower/Purpleflowers/Purpleflowers.png", "Architecture/solve/flower/Pinkflowers/Pinkflowers.png", "Architecture/solve/flower/Blueflowers/Blueflowers.png", "Architecture/solve/flower/Redflowers/Redflowers2.png", "Architecture/solve/flower/Anotherredflower/Anotherredflower.png", "Architecture/solve/flower/Blackflower2/Blackflower2.png"],
-            seed_png: ["Architecture/solve/flower/Whiteflowers/.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
+            seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
         },
         methods: {
             change_page: function (page) {
@@ -525,14 +528,15 @@
                 this.what_law = 'Main';
                 this.what_draft_law = 'Main';
                 document.title = app.what_page;
-                if (page == "Home") {
+                if (this.what_page == "Home") {
                     this.hidden_or_show_scroll_bar(true);
-                } else if (page == "Contact" || page == "Before_Time_To_Bloom" || page == "Time_To_Bloom") {
-                    if (page == "Time_To_Bloom") {
+                } else if (this.what_page == "Contact" || this.what_page == "Before_Time_To_Bloom" || this.what_page == "Time_To_Bloom") {
+                    if (this.what_page == "Time_To_Bloom") {
                         document.title = "Time To Bloom";
                     }
                     this.hidden_or_show_scroll_bar(false);
-                } else {
+                }else{
+                
                     this.hidden_or_show_scroll_bar(false);
                 }
             },
@@ -575,12 +579,11 @@
                 }
             },
             Blooming_flowers_gif(status, id) {
-                console.log(parseInt(id.slice(3)));
                 var index = parseInt(id.slice(3));
                 var img = document.getElementById(id);
                 if (status) {
                     img.src = this.flower_gif[index];
-                    this.time_out = setTimeout(function () {img.src = app.flower_png[index];  }, 8500);
+                    this.time_out = setTimeout(function () { img.src = app.flower_png[index]; }, 8500);
                 } else {
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];
@@ -594,6 +597,8 @@
             clearInterval(count_down);
         }
     }, 500);
+
+
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

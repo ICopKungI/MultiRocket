@@ -277,7 +277,7 @@ html {
 
 .home_bg_vdo2 {
     position: fixed;
-    left: 17.1875vw;
+    left: 18vw;
     /* right: 17.1875vw; */
     width: 65.625vw;
     height: 43.4375vw;
@@ -411,10 +411,10 @@ html {
 }
 
 .vdo5 {
-    left: 16.497803806734993vw;
+    left: 10.497803806734993vw;
     top: 17.273060029282576vw;
-    width: 974px;
-    height: 720px;
+    width: 60vw;
+    height: 37.5vw;
 }
 .lay_text1 {
     margin-top: 2.662225475841874vw;

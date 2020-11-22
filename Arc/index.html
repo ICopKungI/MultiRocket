@@ -274,12 +274,15 @@
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[3]">
-                    <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
+                    <img src="Architecture/solve/flower/Blueflowers/Blueseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img3')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3" @click="change_draw_law('draw_law3')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')"
                         id="vid3" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law3')">
-                        <!-- <source src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law3')"></video>  -->
+                    <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img

@@ -123,10 +123,10 @@
             <div v-if="what_law == 'Main'" class="row justify-content-around">
                 <div class="col-2"></div>
                 <div class="col align-self-center text-center" v-if="!status_law[0]">
-                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png"
+                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif"
                         @mouseover="Blooming_flowers_gif(true, 'img5')"
                         @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')"
-                        width="200" height="250">
+                        width="200" height="250" onload="app.myFunction('img5', 5)">
                     <!-- <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid5')" @mouseleave="Blooming_flowers(false, 'vid5')"
                         id="vid5" width="200" height="200" muted style="margin-bottom: 3.1vw;"
@@ -141,10 +141,10 @@
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png"
+                    <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif"
                         @mouseover="Blooming_flowers_gif(true, 'img6')"
                         @mouseleave="Blooming_flowers_gif(false, 'img6')" id="img6" @click="change_law('law1')"
-                        width="200" height="250">
+                        width="200" height="250" onload="app.myFunction('img6', 6)">
                     <!-- <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
                         @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
                         id="vid6" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
@@ -517,6 +517,7 @@
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
             time_out: "",
+            load_gif: [true, true, true, true, true, true, true],
             flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
             flower_png: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.png", "Architecture/solve/flower/Purpleflowers/Purpleflowers.png", "Architecture/solve/flower/Pinkflowers/Pinkflowers.png", "Architecture/solve/flower/Blueflowers/Blueflowers.png", "Architecture/solve/flower/Redflowers/Redflowers2.png", "Architecture/solve/flower/Anotherredflower/Anotherredflower.png", "Architecture/solve/flower/Blackflower2/Blackflower2.png"],
             seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
@@ -535,8 +536,8 @@
                         document.title = "Time To Bloom";
                     }
                     this.hidden_or_show_scroll_bar(false);
-                }else{
-                
+                } else {
+
                     this.hidden_or_show_scroll_bar(false);
                 }
             },
@@ -588,6 +589,13 @@
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];
                 }
+            },
+            myFunction(id, index) {
+                if (this.load_gif[index]) {
+                    var img = document.getElementById(id);
+                    img.src = this.seed_png[index];
+                    this.load_gif[index] = false;
+                }
             }
         }
     })
@@ -597,7 +605,6 @@
             clearInterval(count_down);
         }
     }, 500);
-
 
 </script>
 

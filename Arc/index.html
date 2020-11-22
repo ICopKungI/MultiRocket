@@ -130,11 +130,15 @@
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
+                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img7')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img7')" id="img7" @click="change_law('law1')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
                         @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')"
                         id="vid7" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
-                        <!-- <source src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" type="video/mp4"> -->
-                    </video> <br>
+                     </video>  -->
+                    <br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 5vw; margin-top: .5vw;"><br>
@@ -476,6 +480,7 @@
             status_law: [false, false],
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
+            time_out:"",
         },
         methods: {
             change_page: function (page) {
@@ -531,6 +536,17 @@
                 } else {
                     vid.pause();
                     vid.currentTime = 0;
+                }
+            },
+            Blooming_flowers_gif(status, id) {
+                console.log(parseInt(id.slice(3)));
+                var img = document.getElementById(id);
+                if (status) {
+                    img.src = "Architecture/solve/flower/Blackflower2/Blackflower.gif";
+                    this.time_out = setTimeout(function () { img.src = "Architecture/solve/flower/Blackflower2/Blackflower2.png"; }, 8500);
+                } else {
+                    clearTimeout(this.time_out);
+                    img.src = "Architecture/solve/flower/Blackflower2/Blackseed2.png";
                 }
             }
         }

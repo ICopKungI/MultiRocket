@@ -229,12 +229,15 @@
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[1]">
-                    <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
+                    <img src="Architecture/solve/flower/Purpleflowers/Purpleseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img1')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1" @click="change_draw_law('draw_law1')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
                         @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law1')">
-                        <!-- <source src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law1')"></video>  -->
+                    <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img
@@ -245,12 +248,15 @@
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
-                    <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
+                    <img src="Architecture/solve/flower/Pinkflowers/Pinkseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img2')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2" @click="change_draw_law('draw_law2')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law2')">
-                        <!-- <source src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law2')"></video>  -->
+                        <br>
 
                     <p class="Draft" style="margin-left: 2.5vw;">
                         ร่าง{{info.Draftlaw[2].DLName1}}
@@ -284,12 +290,15 @@
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[4]">
-                    <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
+                    <img src="Architecture/solve/flower/Redflowers/Lastseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img4')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4" @click="change_draw_law('draw_law4')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')"
                         id="vid4" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law4')">
-                        <!-- <source src="Architecture/solve/flower/Redflowers/Redflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law4')"></video>  -->
+                        <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img
@@ -568,7 +577,7 @@
                 var img = document.getElementById(id);
                 if (status) {
                     img.src = this.flower_gif[index];
-                    this.time_out = setTimeout(function () {img.src = app.flower_png[index];  }, 2500);
+                    this.time_out = setTimeout(function () {img.src = app.flower_png[index];  }, 8500);
                 } else {
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];

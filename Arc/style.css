@@ -12,7 +12,7 @@
     --text_font: 'Bai Jamjuree', sans-serif;
     --menu_size: 20px;
     --topic_size: 2.2135787212275vw;
-    --topic2_size:1.5218353708439063vw;
+    --topic2_size: 1.5218353708439063vw;
     --text_size: 1.245138030690469vw;
     --home_img2: url('');
     --home_text2_posision: 14.739583333333334vw !important;
@@ -297,12 +297,13 @@ html {
 
 .home_text2 {
     padding-top: 4.6875vw;
-    padding-left: 14.739583333333334vw !important;
-    padding-right: 14.895833333333334vw !important;
+    /* padding-left: 14.739583333333334vw !important; */
+    /* padding-right: 14.895833333333334vw !important; */
 }
 
 .home_text2 .text {
-    width: 691px !important;
+    /* width: 691px !important; */
+    margin: auto;
 }
 
 .home_gif2 .container {
@@ -311,8 +312,9 @@ html {
 }
 
 .home_topic_text2 {
-    width: 691px !important;
+    /* width: 691px !important; */
     text-align: center;
+    padding-left: 6vw;
 }
 
 
@@ -341,7 +343,6 @@ html {
     top: 16.1796875vw;
     left: 17.864583333333332vw;
     bottom: 5.052083333333333vw;
-
 }
 
 
@@ -382,6 +383,7 @@ html {
 
 /*แก้ layout*/
 
+
 /*.vdo1{
     margin-left: 50px !important;
     top: 1.979502196193265vw;
@@ -416,27 +418,28 @@ html {
     width: 60vw;
     height: 37.5vw;
 }
+
 .lay_text1 {
     margin-top: 2.662225475841874vw;
-   /* margin-left: 3.294289897510981vw;*/
+    /* margin-left: 3.294289897510981vw;*/
 }
+
 .lay_text2 {
     margin-top: 2.562225475841874vw;
 }
 
 .lay_text3 {
     margin-top: 5.662225475841874vw;
-
 }
-.lay_text3_1{
 
-}
+.lay_text3_1 {}
 
 .lay_text4 {
     margin-top: 2.562225475841874vw;
 }
-.topic2{
-    position:absolute;
+
+.topic2 {
+    position: absolute;
     margin-top: -4%;
     line-height: 2vw;
     font-family: var(--topic_or_button_font);
@@ -444,15 +447,13 @@ html {
     font-weight: bold;
     font-size: var(--topic2_size);
 }
-.text1{
-    position:absolute;
+
+.text1 {
+    position: absolute;
     margin-top: 4.5vw;
     font-family: var(--text_font);
     font-size: var(--text_size);
 }
-
-
-
 
 
 /*แก้ layout*/
@@ -608,94 +609,3 @@ html {
 
 
 /* ปุ่มด้านล่าง*/
-
-/* เมล็ด */
-
-/*กฎหมายการเลือกตั้ง*/
-.flower_5{
-
-}
-.gif_5{
-
-}
-.seed_5{
-
-}
-/*กฎหมายการเลือกตั้ง*/
-
-
-
-/*กฎหมายลาคลอด*/
-.flower_6{
-
-}
-.gif_6{
-
-}
-.seed_6{
-
-}
-/*กฎหมายลาคลอด*/
-
-
-
-/*ร่าง*/
-
-.flower_0{
-
-}
-.gif_0{
-
-}
-.seed_0{
-
-}
-
-/*--------------------------------------------*/
-.flower_1{
-
-}
-.gif_1{
-
-}
-.seed_1{
-
-}
-
-
-/*---------------------------------------------*/
-.flower_2{
-
-}
-.gif_2{
-
-}
-.seed_2{
-
-}
-
-/*---------------------------------------------*/
-.flower_3{
-
-}
-.gif_3{
-
-}
-.seed_3{
-
-}
-
-/*---------------------------------------------*/
-.flower_4{
-
-}
-.gif_4{
-
-}
-.seed_4{
-
-}
-/*ร่าง*/
-
-
-/* เมล็ด */

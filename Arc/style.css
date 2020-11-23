@@ -614,14 +614,17 @@ html {
 
 /*กฎหมายการเลือกตั้ง*/
 .flower_5{
+    margin-top: -15vw;
     width: 50px;
     height: 50px;
 }
 .gif_5{
+    margin-top: -15vw;
     height: 12vw;
     width: 10vw;
 }
 .seed_5{
+    margin-top: -15vw;
     height: 5vw;
     width: 5vw;
     margin-bottom: 2vw;
@@ -632,14 +635,17 @@ html {
 
 /*กฎหมายลาคลอด*/
 .flower_6{
+    margin-top: -15vw;
     width: 60px;
     height: 60px;
 }
 .gif_6{
+    margin-top: -15vw;
     height: 10vw;
     width: 12vw;
 }
 .seed_6{
+    margin-top: -15vw;
     height: 5vw;
     width: 5vw;
     margin-bottom: 2vw;
@@ -661,6 +667,7 @@ html {
 .seed_0{
     height: 5vw;
     width: 5vw;
+    margin: 5vw;
 
 }
 
@@ -676,6 +683,7 @@ html {
 .seed_1{
     height: 4vw;
     width: 4vw;
+    margin: 5vw;
 }
 
 
@@ -683,6 +691,7 @@ html {
 .flower_2{
     width: 60px;
     height: 70px;
+    
 }
 .gif_2{
     height: 10vw;
@@ -691,36 +700,53 @@ html {
 .seed_2{
     height: 5vw;
     width: 5vw;
+    margin: 5vw;
 }
 
 /*---------------------------------------------*/
 .flower_3{
     width: 60px;
     height: 60px;
+    margin-top: -15vw;
 }
 .gif_3{
     height: 10vw;
     width: 12vw;
+    margin-top: -15vw;
 }
 .seed_3{
     height: 5vw;
     width: 5vw;
+    margin-top: -15vw;
 }
 
 /*---------------------------------------------*/
 .flower_4{
     width: 60px;
     height: 60px;
+    margin-top: -15vw;
 }
 .gif_4{
     height: 10vw;
     width: 12vw;
+    margin-top: -15vw;
 }
 .seed_4{
     height: 5vw;
     width: 5vw;
+    margin-top: -15vw;
 }
 /*ร่าง*/
+/*text_seed*/
+.text_seed{
+    margin-top: -2vw;
+}
+.text_seed_1{
+    margin-top: -3vw;
+}
+.text_seed_2{
+    margin-top: -2vw;
+}
 
 
 /* เมล็ด */

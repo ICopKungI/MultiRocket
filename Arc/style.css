@@ -719,12 +719,12 @@ html {
 .gif_3{
     height: 10vw;
     width: 12vw;
-    margin-top: -14vw;
+    margin-top: -24vw;
 }
 .seed_3{
     height: 3vw;
     width: 3vw;
-    margin-top: -14vw;
+    margin-top: -24vw;
 }
 
 /*---------------------------------------------*/
@@ -736,12 +736,12 @@ html {
 .gif_4{
     height: 10vw;
     width: 12vw;
-    margin-top: -14vw;
+    margin-top: -24vw;
 }
 .seed_4{
     height: 3vw;
     width: 3vw;
-    margin-top: -14vw;
+    margin-top: -24vw;
 }
 /*ร่าง*/
 /*text_seed*/
@@ -749,7 +749,7 @@ html {
     margin-top: -2vw;
 }
 .text_seed_1{
-    margin-top: -3vw;
+    margin-top: -8vw;
 }
 .text_seed_2{
     margin-top: -2vw;
@@ -771,10 +771,10 @@ html {
     margin-top: -9vw;
 }
 .img_fow_3{
-    margin-top: -10vw;
+    margin-top: -20vw;
 }
 .img_fow_4{
-    margin-top: -11.5vw;
+    margin-top: -21.5vw;
 }
 .text_fow{
     margin-top: -0.5vw;

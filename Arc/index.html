@@ -29,6 +29,11 @@
 <body>
 
     <div id="app">
+        <img src="Architecture/solve/flower/Whiteflowers/Whiteflowers.gif" id="load_gif0" style="display: none;">
+        <img src="Architecture/solve/flower/Purpleflowers/Purpleflowers.gif" id="load_gif1" style="display: none;">
+        <img src="Architecture/solve/flower/Pinkflowers/Pinkflowers.gif" id="load_gif2" style="display: none;">
+        <img src="Architecture/solve/flower/Blueflowers/Blueflowers.gif" id="load_gif3" style="display: none;">
+        <img src="Architecture/solve/flower/Redflowers/Redflowers.gif" id="load_gif4" style="display: none;">
         <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif" id="load_gif5" style="display: none;">
         <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif" id="load_gif6" style="display: none;">
         <!-- หน้าก่อนเข้าหน้า Home -->
@@ -607,10 +612,9 @@
         }
     }, 500);
     setTimeout(function () { 
-        // for (let index = 0; index < app.flower_gif.length; index++) {
-            document.getElementById("load_gif"+5).remove();
-            document.getElementById("load_gif"+6).remove();
-        // }
+        for (let index = 0; index < app.flower_gif.length; index++) {
+            document.getElementById("load_gif"+index).remove();
+        }
      }, 2000);
 
 </script>

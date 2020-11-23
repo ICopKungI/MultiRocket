@@ -10,11 +10,15 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -26,6 +30,16 @@
 
     <div id="app">
 
+        <!---โหลดGif--->
+        <img src="Architecture/solve/flower/Whiteflowers/Whiteflowers.gif" id="load_gif0" style="display: none;">
+        <img src="Architecture/solve/flower/Purpleflowers/Purpleflowers.gif" id="load_gif1" style="display: none;">
+        <img src="Architecture/solve/flower/Pinkflowers/Pinkflowers.gif" id="load_gif2" style="display: none;">
+        <img src="Architecture/solve/flower/Blueflowers/Blueflowers.gif" id="load_gif3" style="display: none;">
+        <img src="Architecture/solve/flower/Redflowers/Redflowers.gif" id="load_gif4" style="display: none;">
+        <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif" id="load_gif5" style="display: none;">
+        <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif" id="load_gif6" style="display: none;">
+        <!---โหลดGif--->
+ 
         <!-- หน้าก่อนเข้าหน้า Home -->
         <div v-if="what_page == 'Before_Time_To_Bloom'">
             <video src="Architecture/Page_before entering_home page/time to bloom.mp4" autoplay muted style="margin: 0;"
@@ -41,7 +55,8 @@
             <img src="Architecture/logoweb.png" class="navbar-brand navbar-nav logo_png"
                 @click="change_page('Time_To_Bloom')">
 
-            <ul data-aos="fade-down" v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto menu_page">
+            <ul data-aos="fade-down" v-if="what_page != 'Time_To_Bloom'" class="navbar-nav ml-auto menu_page"
+                style="font-weight: bold;">
                 <li class="nav-item">
                     <a class="nav-link button" @click="change_page('Home')">Home</a>
                 </li>
@@ -62,7 +77,8 @@
         <div v-if="what_page == 'Time_To_Bloom'" class="container Time_To_Bloom_container">
             <div class="row Time_To_Bloom_row">
                 <div class="cal-6">
-                    <p class="time_to_bloom_text">Discover all<br>about law<br>for women<br>in Thailand</p>
+                    <p class="time_to_bloom_text" style="font-weight: bold;">Discover all<br>about law<br>for
+                        women<br>in Thailand</p>
                     <img class="time_to_bloom" src="Architecture/Time_To_Bloom_page/time_to_bloom.png"
                         @click="change_page('Home')">
                 </div>
@@ -78,32 +94,33 @@
         <!-- หน้า Home -->
         <div v-if="what_page == 'Home'" class="container">
             <div class="row">
-                <video data-aos-anchor-placement="top-center" data-aos="fade-right"
-                    src="Architecture/solve/homepage/Waterdrop1.mp4" autoplay muted style="margin: 0;"
+                <video data-aos-anchor-placement="top-bottom" data-aos="fade-right"
+                    src="Architecture/solve/homepage/Waterdrop1.mp4" autoplay muted style="margin: 0; left: -4vw;"
                     class="col-6 home_bg_vdo"></video>
-                <div data-aos-anchor-placement="top-center" data-aos="fade-left" class="col-6"
-                    style="padding-left: 5.15625vw; padding-right: -5.15625vw;">
-                    <p class="topic_text home_topic_text" style="color: #5382bf;">
+                <div data-aos-anchor-placement="top-bottom" data-aos="fade-left" class="col-6"
+                    style="padding-right: -5.15625vw;">
+                    <p class="topic_text home_topic_text" style="color: #5382bf; font-size: 2.417999vw; width: 40vw;">
                         {{info.Home[0].LawName}}
                     </p>
-                    <p class="text">
+                    <p class="text" style="width: 31.5vw;">
                         {{info.Home[0].Mean}}
                     </p>
                 </div>
             </div>
         </div>
 
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center" v-if="what_page == 'Home'">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" v-if="what_page == 'Home'">
 
             <video src="Architecture/solve/homepage/Frame3.mp4" autoplay muted style="margin: 0;" class="home_bg_vdo2">
                 <!-- <source src="Architecture/solve/homepage/Frame3.mp4" type="video/mp4"> -->
             </video>
             <div v-if="what_page == 'Home'" class="container">
-                <div data-aos-anchor-placement="top-center" data-aos="fade-down" class="home_text2">
-                    <p class="topic_text home_topic_text2" style="color: #5382bf;">
+                <div data-aos-anchor-placement="top-bottom" data-aos="fade-down" class="home_text2">
+                    <p class="topic_text home_topic_text2"
+                        style="color: #5382bf; font-size: 2.418vw;     margin-left: -1.3vw;">
                         {{info.Home[1].LawName}}
                     </p>
-                    <p class="text">
+                    <p class="text" style="right: 20vw; width: 35vw;position: fixed;left: 14vw;">
                         {{info.Home[1].Mean}}
                     </p>
                 </div>
@@ -116,31 +133,38 @@
             <div v-if="what_law == 'Main'" class="row justify-content-around">
                 <div class="col-2"></div>
                 <div class="col align-self-center text-center" v-if="!status_law[0]">
-                    <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
-                        @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
-                        id="vid6" width="200" height="200" muted style="margin-bottom: 3.1vw;"
+                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img5')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
+                        @mouseover="Blooming_flowers(true, 'vid5')" @mouseleave="Blooming_flowers(false, 'vid5')"
+                        id="vid5" width="200" height="200" muted style="margin-bottom: 3.1vw;"
                         @click="change_law('law0')">
-                        <!-- <source src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
-                    type="video/mp4"> -->
-                    </video> <br>
+                    </video>  -->
+                    <br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')"
                         src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png"
-                        style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 1vw;"><br>
+                        style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 3.4vw;"><br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
-                        @mouseover="Blooming_flowers(true, 'vid7')" @mouseleave="Blooming_flowers(false, 'vid7')"
-                        id="vid7" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
-                        <!-- <source src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4" type="video/mp4"> -->
-                    </video> <br>
+                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img6')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img6')" id="img6" @click="change_law('law1')"
+                        width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
+                        @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
+                        id="vid6" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
+                     </video>  -->
+                    <br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')"
                         src="Architecture/solve/flower/Blackflower2/Blackflower2.png"
-                        style="width: 160px; height: 160px; margin-bottom: 2vw; margin-top: .5vw;"><br>
+                        style="width: 160px; height: 160px; margin-bottom: 5vw; margin-top: .5vw;"><br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
                 <div class="col"></div>
@@ -153,13 +177,16 @@
                         <!-- <source src="Architecture/solve/law/Election.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-5">
-                    <p class="topic_text" id="law_topic1">
+                <div class="col-5" style="left: -7vw;">
+                    <p class="topic_text" id="law_topic1" style="font-size: 2.418vw; width: 40vw;">
                         {{info.Law[0].LawN}}
                     </p>
-                    <p class="text" id="law_text1">
-                        {{info.Law[0].LawMean1}}<br><br> {{info.Law[0].LawMean2}}
+                    <p class="text" id="law_text1" style="width: 39vw; margin-left: -5vw; text-indent: 40px; ">
+                        {{info.Law[0].LawMean1}}
                     </p>
+                    <p class="text" id="law_text1"
+                        style="width: 37vw; margin-left: -5vw; text-indent: 40px;  top: 23vw; ">
+                        {{info.Law[0].LawMean2}}</p>
                 </div>
             </div>
             <div v-if="what_law == 'law1'" class="row">
@@ -169,13 +196,19 @@
                         <!-- <source src="Architecture/solve/law/Maternity leave1.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-7">
-                    <p class="topic_text" id="law_topic2">
-                        {{info.Law[1].LawN}}<br> {{info.Law[1].LawN1}}
+                <div class="col-7" style="left: -4vw;">
+                    <p class="topic_text" id="law_topic2" style="font-size: 2.418vw; width: 40vw;">
+                        {{info.Law[1].LawN}}
                     </p>
-                    <p class="text" id="law_text2">
-                        {{info.Law[1].LawMean1}}{{info.Law[1].LawMean2}}
+                    <p class="topic_text" id="law_topic2" style="font-weight:lighter; font-size: 1.8vw; top: 10vw;">
+                        {{info.Law[1].LawN1}}</p>
+
+
+                    <p class="text" id="law_text2" style="text-indent: 40px; top: 10vw;">
+                        {{info.Law[1].LawMean1}}
                     </p>
+                    <p class="text" id="law_text2" style="text-indent: 40px; width: 35vw;">
+                        {{info.Law[1].LawMean2}}</p>
                 </div>
             </div>
         </div>
@@ -187,12 +220,15 @@
             <div v-if="what_draft_law == 'Main'" class="row align-items-center">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
-                    <video src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4"
+                    <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img0')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0"
+                        @click="change_draw_law('draw_law0')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
                         id="vid0" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law0')">
-                        <!-- <source src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law0')"></video>  -->
+                    <br>
 
                     <p>ร่าง{{info.Draftlaw[0].DLName1}}
                     </p>
@@ -206,28 +242,34 @@
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[1]">
-                    <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
+                    <img src="Architecture/solve/flower/Purpleflowers/Purpleseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img1')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1"
+                        @click="change_draw_law('draw_law1')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
                         @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law1')">
-                        <!-- <source src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law1')"></video>  -->
+                    <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img
                         @click="change_draw_law('draw_law1')"
                         src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png"
-                        style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 1vw;"><br>
+                        style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
-                    <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
+                    <img src="Architecture/solve/flower/Pinkflowers/Pinkseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img2')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2"
+                        @click="change_draw_law('draw_law2')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law2')">
-                        <!-- <source src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law2')"></video>  -->
+                    <br>
 
                     <p class="Draft" style="margin-left: 2.5vw;">
                         ร่าง{{info.Draftlaw[2].DLName1}}
@@ -245,28 +287,34 @@
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[3]">
-                    <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
+                    <img src="Architecture/solve/flower/Blueflowers/Blueseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img3')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3"
+                        @click="change_draw_law('draw_law3')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')"
                         id="vid3" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law3')">
-                        <!-- <source src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law3')"></video>  -->
+                    <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img
                         @click="change_draw_law('draw_law3')"
                         src="Architecture/solve/flower/Blueflowers/Blueflowers.png"
-                        style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 1vw;"><br>
+                        style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[4]">
-                    <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
+                    <img src="Architecture/solve/flower/Redflowers/Lastseed.png"
+                        @mouseover="Blooming_flowers_gif(true, 'img4')"
+                        @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4"
+                        @click="change_draw_law('draw_law4')" width="200" height="250">
+                    <!-- <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')"
                         id="vid4" width="200" height="200" muted style="margin: 0;"
-                        @click="change_draw_law('draw_law4')">
-                        <!-- <source src="Architecture/solve/flower/Redflowers/Redflowersps.mp4" type="video/mp4"> -->
-                    </video> <br>
+                        @click="change_draw_law('draw_law4')"></video>  -->
+                    <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
                 <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img
@@ -277,21 +325,23 @@
             </div>
             <div v-if="what_draft_law == 'draw_law0'" class="row">
                 <div class="col-7">
-                    <video src="Architecture/solve/draftlaw/Freeabortionlaw1.mp4" autoplay muted style="margin: 0;"
+                    <video src="Architecture/solve/draftlaw/Freeabortionlaw2.mp4" autoplay muted style="margin: 0;"
                         class="vdo1 home_bg_vdo2" id="draft_vdo">
                         <!-- <source src="Architecture/solve/draftlaw/Freeabortionlaw.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-5">
-                    <p class="lay_text1 topic_text" id="draft_topic_text">
+                <div class="col-5" style="left: -6vw; top: 2vw;">
+                    <p class="lay_text1 topic_text" id="draft_topic_text" style="font-size: 2.418vw; top: 13vw;">
                         {{info.Draftlaw[0].DLName1}}
                     </p>
-                    <p class="topic2">
-                        {{info.Draftlaw[0].DLName2}}
                     </p>
-                    <p class="text1 text" id="draft_text">
+                    <p class="lay_text1 topic_text" id="draft_topic_text"
+                        style="width: 30vw; font-weight:lighter; margin-top: -1vw; font-size: 1.8vw;">
+                        {{info.Draftlaw[0].DLName2}}</p>
+                    <p class="text" id="draft_text" style="text-indent: 40px;width: 33vw;  top: -10vw;">
                         {{info.Draftlaw[0].DLMean1}}
                     </p>
+
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law1'" class="row">
@@ -302,9 +352,12 @@
                     </video>
                 </div>
                 <div class="col-7">
-                    <p class="lay_text2 topic_text" style="width: 30vw; position: sticky;">
-                        {{info.Draftlaw[1].DLName1}}<br>{{info.Draftlaw[1].DLName2}}
+                    <p class="lay_text2 topic_text" style="width: 30vw; position: sticky; font-size: 2.418vw;">
+                        {{info.Draftlaw[1].DLName1}}
                     </p>
+                    <p class="lay_text2 topic_text"
+                        style="width: 27vw; position: sticky;font-weight:lighter; margin-top: -1vw; font-size: 1.8vw;">
+                        {{info.Draftlaw[1].DLName2}}</p>
                     <p class="text" style="width: 37vw; margin-top: 1.562225475841874vw; position: sticky;">
                         {{info.Draftlaw[1].DLMean1}}
                     </p>
@@ -317,14 +370,18 @@
                         <!-- <source src="Architecture/solve/draftlaw/Safe city laws for women.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-7" >
+                <div class="col-7">
                     <!--แก้ layout-->
-                    <p class="lay_text3 topic_text">
-                        {{info.Draftlaw[2].DLName1}}<br> {{info.Draftlaw[2].DLName2}}
+                    <p class="lay_text3 topic_text" style="position: sticky; font-size: 2.4vw;width: 40vw;">
+                        {{info.Draftlaw[2].DLName1}}
                     </p>
-                    <p class="lay_text3_1 text">
-                        {{info.Draftlaw[2].DLMean1}}<br><br> {{info.Draftlaw[2].DLMean2}}
+                    <p class="lay_text3 topic_text"
+                        style="font-weight: lighter; margin-top: -1vw; font-size: 1.6vw; width: 50vw;">
+                        {{info.Draftlaw[2].DLName2}}</p>
+                    <p class="lay_text3_1 text" style="text-indent: 40px;">
+                        {{info.Draftlaw[2].DLMean1}}<br>
                     </p>
+                    <p class="lay_text3_1 text" style="text-indent: 40px;">{{info.Draftlaw[2].DLMean2}}</p>
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law3'" class="row">
@@ -334,14 +391,19 @@
                         <!-- <source src="Architecture/solve/draftlaw/Dress law in various professions.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-7" style="left: -2vw;">
-                    <p class="lay_text4 topic_text" style="width: 39vw;text-indent: 40px; margin-top:0;  margin-left: -2vw; font-size: 2.418vw;">
+                <div class="col-7" style="left: -2vw; top: 2vw;">
+                    <p class="lay_text4 topic_text"
+                        style="width: 50vw;text-indent: 40px; margin-top:0;  margin-left: -2vw; font-size: 2.418vw;">
                         {{info.Draftlaw[3].DLName1}}
                     </p>
-                    <p class="lay_text4 topic_text" style="width: 38vw;text-indent: 40px; margin-top:0; margin-left: -2vw;">{{info.Draftlaw[3].DLName2}}</p>
-                    <p class="text" style="width: 38vw;text-indent: 40px;">
-                        {{info.Draftlaw[3].DLMean1}}<br><br> {{info.Draftlaw[3].DLMean2}}
+                    <p class="lay_text4 topic_text"
+                        style="width: 37vw;text-indent: 40px; margin-top:0; margin-left: -2vw; font-weight: lighter; margin-top: -1vw; font-size: 1.6vw;">
+                        {{info.Draftlaw[3].DLName2}}</p>
+                    <p class="text" style="width: 37vw;text-indent: 40px; ">
+                        {{info.Draftlaw[3].DLMean1}}<br>
                     </p>
+                    <p class="text" style="width: 37vw;text-indent: 40px;">{{info.Draftlaw[3].DLMean2}}</p>
+
                 </div>
             </div>
             <div v-if="what_draft_law == 'draw_law4'" class="row">
@@ -351,12 +413,17 @@
                         <!-- <source src="Architecture/solve/draftlaw/prostitute.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <div class="col-7">
-                    <p class="lay_text5 topic_text" >
-                        {{info.Draftlaw[4].DLName1}}<br>{{info.Draftlaw[4].DLName2}}
+                <div class="col-7" style="left: -2vw;">
+                    <p class="lay_text5 topic_text" style="margin-bottom: 0;">
+                        {{info.Draftlaw[4].DLName1}}
                     </p>
-                    <p class="text">
-                        {{info.Draftlaw[4].DLMean1}}<br><br> {{info.Draftlaw[4].DLMean2}}
+                    <p class="lay_text5 topic_text" style="font-weight: lighter; font-size: 1.8vw;">
+                        {{info.Draftlaw[4].DLName2}}</p>
+                    <p class="text" style="width: 38vw;text-indent: 40px; ">
+                        {{info.Draftlaw[4].DLMean1}}
+                    </p>
+                    <p class="text" style="width: 38vw;text-indent: 40px; ">
+                        {{info.Draftlaw[4].DLMean2}}
                     </p>
                 </div>
             </div>
@@ -366,7 +433,8 @@
         <!-- หน้า Contact -->
         <div v-if="what_page == 'Contact'" class="container contact_container">
             <div class="row">
-                <div data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" class="col-5 contact">
+                <div data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" class="col-5 contact"
+                    style="right: 3vw;">
                     <nav class="navbar navbar-expand contact_menu">
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item">
@@ -403,7 +471,8 @@
                                 target="_blank">{{info.Contact[contact_mean].Web}}</a></p>
                     </div>
                 </div>
-                <div data-aos="fade-left" data-aos-anchor-placement="top-center" class="col-7 test">
+                <div data-aos="fade-left" data-aos-anchor-placement="top-center" class="col-7 test"
+                    style="left: -3.8vw;">
                     <iframe v-if="contact_mean == 0" class="test"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.088801953883!2d100.75716!3d14.031513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92513d71fa2aabf1!2z4Lih4Li54Lil4LiZ4Li04LiY4Li0IOC4m-C4p-C4teC4k-C4siDguKvguIfguKrguIHguLjguKUg4LmA4Lie4Li34LmI4Lit4LmA4LiU4LmH4LiB4LmB4Lil4Liw4Liq4LiV4Lij4Li1!5e0!3m2!1sth!2sth!4v1603780240501!5m2!1sth!2sth"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -457,6 +526,10 @@
             status_law: [false, false],
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
+            time_out: "",
+            flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
+            flower_png: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.png", "Architecture/solve/flower/Purpleflowers/Purpleflowers.png", "Architecture/solve/flower/Pinkflowers/Pinkflowers.png", "Architecture/solve/flower/Blueflowers/Blueflowers.png", "Architecture/solve/flower/Redflowers/Redflowers2.png", "Architecture/solve/flower/Anotherredflower/Anotherredflower.png", "Architecture/solve/flower/Blackflower2/Blackflower2.png"],
+            seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
         },
         methods: {
             change_page: function (page) {
@@ -465,14 +538,15 @@
                 this.what_law = 'Main';
                 this.what_draft_law = 'Main';
                 document.title = app.what_page;
-                if (page == "Home") {
+                if (this.what_page == "Home") {
                     this.hidden_or_show_scroll_bar(true);
-                } else if (page == "Contact" || page == "Before_Time_To_Bloom" || page == "Time_To_Bloom") {
-                    if (page == "Time_To_Bloom") {
+                } else if (this.what_page == "Contact" || this.what_page == "Before_Time_To_Bloom" || this.what_page == "Time_To_Bloom") {
+                    if (this.what_page == "Time_To_Bloom") {
                         document.title = "Time To Bloom";
                     }
                     this.hidden_or_show_scroll_bar(false);
                 } else {
+
                     this.hidden_or_show_scroll_bar(false);
                 }
             },
@@ -513,6 +587,17 @@
                     vid.pause();
                     vid.currentTime = 0;
                 }
+            },
+            Blooming_flowers_gif(status, id) {
+                var index = parseInt(id.slice(3));
+                var img = document.getElementById(id);
+                if (status) {
+                    img.src = this.flower_gif[index];
+                    this.time_out = setTimeout(function () { img.src = app.flower_png[index]; }, 7250);
+                } else {
+                    clearTimeout(this.time_out);
+                    img.src = this.seed_png[index];
+                }
             }
         }
     })
@@ -522,6 +607,12 @@
             clearInterval(count_down);
         }
     }, 500);
+    setTimeout(function () { 
+        for (let index = 0; index < app.flower_gif.length; index++) {
+            document.getElementById("load_gif"+index).remove();
+        }
+     }, 6000);
+
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

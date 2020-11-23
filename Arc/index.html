@@ -29,7 +29,8 @@
 <body>
 
     <div id="app">
-
+        <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif" id="load_gif5" style="display: none;">
+        <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif" id="load_gif6" style="display: none;">
         <!-- หน้าก่อนเข้าหน้า Home -->
         <div v-if="what_page == 'Before_Time_To_Bloom'">
             <video src="Architecture/Page_before entering_home page/time to bloom.mp4" autoplay muted style="margin: 0;"
@@ -123,10 +124,10 @@
             <div v-if="what_law == 'Main'" class="row justify-content-around">
                 <div class="col-2"></div>
                 <div class="col align-self-center text-center" v-if="!status_law[0]">
-                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif"
+                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png"
                         @mouseover="Blooming_flowers_gif(true, 'img5')"
                         @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')"
-                        width="200" height="250" onload="app.myFunction('img5', 5)">
+                        width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid5')" @mouseleave="Blooming_flowers(false, 'vid5')"
                         id="vid5" width="200" height="200" muted style="margin-bottom: 3.1vw;"
@@ -141,10 +142,10 @@
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif"
+                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png"
                         @mouseover="Blooming_flowers_gif(true, 'img6')"
                         @mouseleave="Blooming_flowers_gif(false, 'img6')" id="img6" @click="change_law('law1')"
-                        width="200" height="250" onload="app.myFunction('img6', 6)">
+                        width="200" height="250">
                     <!-- <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
                         @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
                         id="vid6" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
@@ -605,6 +606,12 @@
             clearInterval(count_down);
         }
     }, 500);
+    setTimeout(function () { 
+        // for (let index = 0; index < app.flower_gif.length; index++) {
+            document.getElementById("load_gif"+5).remove();
+            document.getElementById("load_gif"+6).remove();
+        // }
+     }, 2000);
 
 </script>
 

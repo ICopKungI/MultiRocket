@@ -667,12 +667,13 @@ html {
 .gif_0{
     height: 10vw;
     width: 12vw;
-    margin: 1.5vw;
+    margin-top: -8.5vw;
 }
 .seed_0{
     height: 3vw;
     width: 3vw;
-    margin: 5vw;
+    margin-top: -8vw;
+
 }
 
 /*--------------------------------------------*/
@@ -683,12 +684,12 @@ html {
 .gif_1{
     height: 10vw;
     width: 12vw;
-    margin: 1.5vw;
+    margin-top: -8.5vw;
 }
 .seed_1{
     height: 3vw;
     width: 3vw;
-    margin: 5vw;
+    margin-top: -8vw;
 }
 
 
@@ -701,46 +702,46 @@ html {
 .gif_2{
     height: 10vw;
     width: 12vw;
-    margin: 1.5vw;
+    margin-top: -8.5vw;
 }
 .seed_2{
     height: 3vw;
     width: 3vw;
-    margin: 5vw;
+    margin-top: -8vw;
 }
 
 /*---------------------------------------------*/
 .flower_3{
     height: 3vw;
     width: 3vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 .gif_3{
     height: 10vw;
     width: 12vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 .seed_3{
     height: 3vw;
     width: 3vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 
 /*---------------------------------------------*/
 .flower_4{
     height: 3vw;
     width: 3vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 .gif_4{
     height: 10vw;
     width: 12vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 .seed_4{
     height: 3vw;
     width: 3vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 /*ร่าง*/
 /*text_seed*/
@@ -753,6 +754,36 @@ html {
 .text_seed_2{
     margin-top: -2vw;
 }
-
+/*รูปดอก*/
+.img_fow{
+    margin-top: -10.5vw;
+}
+.text_fow_00{
+    margin-top: 1vw;
+}
+.img_fow_1{
+    margin-top: -8.5vw;
+}
+.text_fow_01{
+    margin-top: 1vw;
+}
+.img_fow_2{
+    margin-top: -9vw;
+}
+.img_fow_3{
+    margin-top: -10vw;
+}
+.img_fow_4{
+    margin-top: -11.5vw;
+}
+.text_fow{
+    margin-top: -0.5vw;
+}
+.text_fow_1{
+    margin-top: 0.2vw;
+}
+.text_fow_2{
+    margin-top: 0.3vw;
+}
 
 /* เมล็ด */

@@ -33,9 +33,9 @@ html {
     overflow: var(--overflow);
 }
 
-/* .row {
+.row {
     width: 110% !important;
-} */
+}
 
 .bg_ladl1,
 .bg_ladl2,

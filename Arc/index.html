@@ -29,6 +29,8 @@
 <body>
 
     <div id="app">
+
+        <!---โหลดGif--->
         <img src="Architecture/solve/flower/Whiteflowers/Whiteflowers.gif" id="load_gif0" style="display: none;">
         <img src="Architecture/solve/flower/Purpleflowers/Purpleflowers.gif" id="load_gif1" style="display: none;">
         <img src="Architecture/solve/flower/Pinkflowers/Pinkflowers.gif" id="load_gif2" style="display: none;">
@@ -36,6 +38,8 @@
         <img src="Architecture/solve/flower/Redflowers/Redflowers.gif" id="load_gif4" style="display: none;">
         <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif" id="load_gif5" style="display: none;">
         <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif" id="load_gif6" style="display: none;">
+        <!---โหลดGif--->
+ 
         <!-- หน้าก่อนเข้าหน้า Home -->
         <div v-if="what_page == 'Before_Time_To_Bloom'">
             <video src="Architecture/Page_before entering_home page/time to bloom.mp4" autoplay muted style="margin: 0;"
@@ -523,7 +527,6 @@
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
             time_out: "",
-            load_gif: [true, true, true, true, true, true, true],
             flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
             flower_png: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.png", "Architecture/solve/flower/Purpleflowers/Purpleflowers.png", "Architecture/solve/flower/Pinkflowers/Pinkflowers.png", "Architecture/solve/flower/Blueflowers/Blueflowers.png", "Architecture/solve/flower/Redflowers/Redflowers2.png", "Architecture/solve/flower/Anotherredflower/Anotherredflower.png", "Architecture/solve/flower/Blackflower2/Blackflower2.png"],
             seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
@@ -595,13 +598,6 @@
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];
                 }
-            },
-            myFunction(id, index) {
-                if (this.load_gif[index]) {
-                    var img = document.getElementById(id);
-                    img.src = this.seed_png[index];
-                    this.load_gif[index] = false;
-                }
             }
         }
     })
@@ -615,7 +611,7 @@
         for (let index = 0; index < app.flower_gif.length; index++) {
             document.getElementById("load_gif"+index).remove();
         }
-     }, 2000);
+     }, 6000);
 
 </script>
 

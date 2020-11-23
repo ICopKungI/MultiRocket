@@ -614,13 +614,17 @@ html {
 
 /*กฎหมายการเลือกตั้ง*/
 .flower_5{
-
+    width: 50px;
+    height: 50px;
 }
 .gif_5{
-
+    height: 12vw;
+    width: 10vw;
 }
 .seed_5{
-
+    height: 5vw;
+    width: 5vw;
+    margin-bottom: 2vw;
 }
 /*กฎหมายการเลือกตั้ง*/
 
@@ -628,13 +632,17 @@ html {
 
 /*กฎหมายลาคลอด*/
 .flower_6{
-
+    width: 60px;
+    height: 60px;
 }
 .gif_6{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_6{
-
+    height: 5vw;
+    width: 5vw;
+    margin-bottom: 2vw;
 }
 /*กฎหมายลาคลอด*/
 
@@ -643,58 +651,74 @@ html {
 /*ร่าง*/
 
 .flower_0{
-
+    width: 60px;
+    height: 70px;
 }
 .gif_0{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_0{
+    height: 5vw;
+    width: 5vw;
 
 }
 
 /*--------------------------------------------*/
 .flower_1{
-
+    width: 60px;
+    height: 70px;
 }
 .gif_1{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_1{
-
+    height: 4vw;
+    width: 4vw;
 }
 
 
 /*---------------------------------------------*/
 .flower_2{
-
+    width: 60px;
+    height: 70px;
 }
 .gif_2{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_2{
-
+    height: 5vw;
+    width: 5vw;
 }
 
 /*---------------------------------------------*/
 .flower_3{
-
+    width: 60px;
+    height: 60px;
 }
 .gif_3{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_3{
-
+    height: 5vw;
+    width: 5vw;
 }
 
 /*---------------------------------------------*/
 .flower_4{
-
+    width: 60px;
+    height: 60px;
 }
 .gif_4{
-
+    height: 10vw;
+    width: 12vw;
 }
 .seed_4{
-
+    height: 5vw;
+    width: 5vw;
 }
 /*ร่าง*/
 

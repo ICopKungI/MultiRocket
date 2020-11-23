@@ -35,8 +35,8 @@
         <img src="Architecture/solve/flower/Purpleflowers/Purpleflowers.gif" id="load_gif1" style="display: none;">
         <img src="Architecture/solve/flower/Pinkflowers/Pinkflowers.gif" id="load_gif2" style="display: none;">
         <img src="Architecture/solve/flower/Blueflowers/Blueflowers.gif" id="load_gif3" style="display: none;">
-        <img src="Architecture/solve/flower/Redflowers/Redflowers.gif" id="load_gif4" style="display: none;">
-        <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower.gif" id="load_gif5" style="display: none;">
+        <img src="Architecture/solve/flower/Redflowers/Redflowers2.gif" id="load_gif4" style="display: none;">
+        <img src="Architecture/solve/flower/Anotherredflower/Anotherredflower2.gif" id="load_gif5" style="display: none;">
         <img src="Architecture/solve/flower/Blackflower2/Blackflower.gif" id="load_gif6" style="display: none;">
         <!---โหลดGif--->
 
@@ -125,7 +125,7 @@
             <div v-if="what_law == 'Main'" class="row justify-content-around">
                 <div class="col-2"></div>
                 <div class="col align-self-center text-center" v-if="!status_law[0]">
-                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png" @mouseover="Blooming_flowers_gif(true, 'img5')" @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png" @mouseover="Blooming_flowers_gif(true, 'img5')" @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')" class="seed_5">
                     <!-- <video src="Architecture/solve/flower/Anotherredflower/Anotherredflowerps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid5')" @mouseleave="Blooming_flowers(false, 'vid5')"
                         id="vid5" width="200" height="200" muted style="margin-bottom: 3.1vw;"
@@ -134,11 +134,11 @@
                     <br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
-                <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;  margin-bottom: 3.4vw;"><br>
+                <div class="col align-self-center text-center" v-if="status_law[0]"><img @click="change_law('law0')" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png" style="width: 8.1828vw; height: 10.4361vw;"><br>
                     <p>กฎหมายการเลือกตั้ง</p>
                 </div>
                 <div class="col align-self-center text-center" v-if="!status_law[1]">
-                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png" @mouseover="Blooming_flowers_gif(true, 'img6')" @mouseleave="Blooming_flowers_gif(false, 'img6')" id="img6" @click="change_law('law1')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Blackflower2/Blackseed2.png" @mouseover="Blooming_flowers_gif(true, 'img6')" @mouseleave="Blooming_flowers_gif(false, 'img6')" id="img6" @click="change_law('law1')"  class="seed_6">
                     <!-- <video src="Architecture/solve/flower/Blackflower2/Blackflowerps2.mp4"
                         @mouseover="Blooming_flowers(true, 'vid6')" @mouseleave="Blooming_flowers(false, 'vid6')"
                         id="vid6" width="200" height="250" muted style="margin: 0;" @click="change_law('law1')">
@@ -146,7 +146,7 @@
                     <br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
-                <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px; margin-bottom: 5vw; margin-top: .5vw;"><br>
+                <div class="col align-self-center text-center" v-if="status_law[1]"><img @click="change_law('law1')" src="Architecture/solve/flower/Blackflower2/Blackflower2.png" style="width: 160px; height: 160px;  "><br>
                     <p>กฎหมายลาคลอด</p>
                 </div>
                 <div class="col"></div>
@@ -199,7 +199,7 @@
             <div v-if="what_draft_law == 'Main'" class="row align-items-center">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
-                    <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png" @mouseover="Blooming_flowers_gif(true, 'img0')" @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0" @click="change_draw_law('draw_law0')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png" @mouseover="Blooming_flowers_gif(true, 'img0')" @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0" @click="change_draw_law('draw_law0')" class="seed_0">
                     <!-- <video src="Architecture/solve/flower/Whiteflowers/Whiteflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid0')" @mouseleave="Blooming_flowers(false, 'vid0')"
                         id="vid0" width="200" height="200" muted style="margin: 0;"
@@ -215,7 +215,7 @@
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[1]">
-                    <img src="Architecture/solve/flower/Purpleflowers/Purpleseed.png" @mouseover="Blooming_flowers_gif(true, 'img1')" @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1" @click="change_draw_law('draw_law1')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Purpleflowers/Purpleseed.png" @mouseover="Blooming_flowers_gif(true, 'img1')" @mouseleave="Blooming_flowers_gif(false, 'img1')" id="img1" @click="change_draw_law('draw_law1')" class="seed_1">
                     <!-- <video src="Architecture/solve/flower/Purpleflowers/Purpleflowers-3.mp4"
                         @mouseover="Blooming_flowers(true, 'vid1')" @mouseleave="Blooming_flowers(false, 'vid1')"
                         id="vid1" width="200" height="200" muted style="margin: 0;"
@@ -223,12 +223,12 @@
                     <br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw;"><br>
                     <p>ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
-                    <img src="Architecture/solve/flower/Pinkflowers/Pinkseed.png" @mouseover="Blooming_flowers_gif(true, 'img2')" @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2" @click="change_draw_law('draw_law2')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Pinkflowers/Pinkseed.png" @mouseover="Blooming_flowers_gif(true, 'img2')" @mouseleave="Blooming_flowers_gif(false, 'img2')" id="img2" @click="change_draw_law('draw_law2')" class="seed_2">
                     <!-- <video src="Architecture/solve/flower/Pinkflowers/Pinkflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid2')" @mouseleave="Blooming_flowers(false, 'vid2')"
                         id="vid2" width="200" height="200" muted style="margin: 0;"
@@ -240,7 +240,7 @@
                     </p>
 
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')" src="Architecture/solve/flower/Pinkflowers/Pinkflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 1vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[2]"><img @click="change_draw_law('draw_law2')" src="Architecture/solve/flower/Pinkflowers/Pinkflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; "><br>
 
                     <p>ร่าง{{info.Draftlaw[2].DLName1}}
                     </p>
@@ -248,7 +248,7 @@
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[3]">
-                    <img src="Architecture/solve/flower/Blueflowers/Blueseed.png" @mouseover="Blooming_flowers_gif(true, 'img3')" @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3" @click="change_draw_law('draw_law3')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Blueflowers/Blueseed.png" @mouseover="Blooming_flowers_gif(true, 'img3')" @mouseleave="Blooming_flowers_gif(false, 'img3')" id="img3" @click="change_draw_law('draw_law3')" class="seed_3">
                     <!-- <video src="Architecture/solve/flower/Blueflowers/Blueflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid3')" @mouseleave="Blooming_flowers(false, 'vid3')"
                         id="vid3" width="200" height="200" muted style="margin: 0;"
@@ -256,12 +256,12 @@
                     <br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="Architecture/solve/flower/Blueflowers/Blueflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; margin-bottom: 2vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[3]"><img @click="change_draw_law('draw_law3')" src="Architecture/solve/flower/Blueflowers/Blueflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw; "><br>
                     <p>ร่าง{{info.Draftlaw[3].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[4]">
-                    <img src="Architecture/solve/flower/Redflowers/Lastseed.png" @mouseover="Blooming_flowers_gif(true, 'img4')" @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4" @click="change_draw_law('draw_law4')" width="200" height="250">
+                    <img src="Architecture/solve/flower/Redflowers/Lastseed.png" @mouseover="Blooming_flowers_gif(true, 'img4')" @mouseleave="Blooming_flowers_gif(false, 'img4')" id="img4" @click="change_draw_law('draw_law4')" class="seed_4">
                     <!-- <video src="Architecture/solve/flower/Redflowers/Redflowersps.mp4"
                         @mouseover="Blooming_flowers(true, 'vid4')" @mouseleave="Blooming_flowers(false, 'vid4')"
                         id="vid4" width="200" height="200" muted style="margin: 0;"
@@ -269,7 +269,7 @@
                     <br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
-                <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="Architecture/solve/flower/Redflowers/Redflowers2.png" style="width: 7.41667vw; height: 9.41667vw;; margin-bottom: 0vw;"><br>
+                <div class="col-4 align-self-center text-center" v-if="status_draft_law[4]"><img @click="change_draw_law('draw_law4')" src="Architecture/solve/flower/Redflowers/Redflowers2.png" style="width: 7.41667vw; height: 9.41667vw;; "><br>
                     <p>ร่าง{{info.Draftlaw[4].DLName1}}</p>
                 </div>
             </div>
@@ -445,8 +445,7 @@
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
             time_out: "",
-            flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
-            flower_png: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.png", "Architecture/solve/flower/Purpleflowers/Purpleflowers.png", "Architecture/solve/flower/Pinkflowers/Pinkflowers.png", "Architecture/solve/flower/Blueflowers/Blueflowers.png", "Architecture/solve/flower/Redflowers/Redflowers2.png", "Architecture/solve/flower/Anotherredflower/Anotherredflower.png", "Architecture/solve/flower/Blackflower2/Blackflower2.png"],
+            flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers.gif", "Architecture/solve/flower/Blueflowers/Blueflowers.gif", "Architecture/solve/flower/Redflowers/Redflowers2.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower2.gif", "Architecture/solve/flower/Blackflower2/Blackflower.gif"],
             seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
         },
         methods: {
@@ -509,19 +508,13 @@
             Blooming_flowers_gif(status, id) {
                 var index = parseInt(id.slice(3));
                 var img = document.getElementById(id);
-                // img.classList.remove('seed_'+index);
+                img.classList.remove('seed_'+index);
                 if (status) {
-                    // img.classList.add('gif_'+index);
+                    img.classList.add('gif_'+index);
                     img.src = this.flower_gif[index];
-                    this.time_out = setTimeout(function () { 
-                        // img.classList.remove('gif_'+index);
-                        img.src = app.flower_png[index];  
-                        // img.classList.add('flower_'+index);
-                    }, 7250);
                 } else {
-                    // img.classList.remove('flower_'+index);
-                    // img.classList.add('seed_'+index);
-                    clearTimeout(this.time_out);
+                    img.classList.remove('gif_'+index);
+                    img.classList.add('seed_'+index);
                     img.src = this.seed_png[index];
                 }
             }

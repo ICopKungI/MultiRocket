@@ -7,26 +7,22 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" style="background-color: black;">
         <div @mouseover="hover = true" @mouseleave="hover = false">
-        <video v-if="hover"  id="vid" width="1280" height="720" autoplay muted style="margin: 0;">
-            <source src="test.mp4" type="video/mp4">
-            Kimetsu no yaiba movie Official Trailer.
-            <!-- <source src="http://www.it.kmitl.ac.th/~it61070345/Architecture_Gif/Kimetsu%20no%20yaiba%20movie%20Official%20Trailer.mp4" type="video/mp4">
-            Kimetsu no yaiba movie Official Trailer. -->
-        </video>
-        <img v-if="!hover"  src="/Arc/Architecture/logoweb.png"></div>
-    </div>
+            <img v-if="!hover" src="Architecture/solve/flower/Anotherredflower/Anotherredflower.png">
+            <img v-if="hover" src="test.gif"></div>
+        </div>
 </body>
 <script>
-    var vid = document.getElementById("vid");
-    vid.volume = 0.5;
-    vid.play();
+    // var vid = document.getElementById("vid");
+    // vid.volume = 0.5;
+    // vid.play();
     let app = new Vue({
         el: '#app',
         data: {
-            hover:false
-        }})
+            hover: false
+        }
+    })
 </script>
 
 </html>

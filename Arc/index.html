@@ -509,12 +509,18 @@
             Blooming_flowers_gif(status, id) {
                 var index = parseInt(id.slice(3));
                 var img = document.getElementById(id);
+                // img.classList.remove('seed_'+index);
                 if (status) {
+                    // img.classList.add('gif_'+index);
                     img.src = this.flower_gif[index];
-                    this.time_out = setTimeout(function() {
-                        img.src = app.flower_png[index];
+                    this.time_out = setTimeout(function () { 
+                        // img.classList.remove('gif_'+index);
+                        img.src = app.flower_png[index];  
+                        // img.classList.add('flower_'+index);
                     }, 7250);
                 } else {
+                    // img.classList.remove('flower_'+index);
+                    // img.classList.add('seed_'+index);
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];
                 }

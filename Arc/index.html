@@ -596,10 +596,12 @@
                     // img.classList.add('gif_'+index);
                     img.src = this.flower_gif[index];
                     this.time_out = setTimeout(function () { 
+                        // img.classList.remove('gif_'+index);
                         img.src = app.flower_png[index];  
                         // img.classList.add('flower_'+index);
                     }, 7250);
                 } else {
+                    // img.classList.remove('flower_'+index);
                     // img.classList.add('seed_'+index);
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];

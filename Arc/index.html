@@ -593,7 +593,7 @@
                 var img = document.getElementById(id);
                 if (status) {
                     img.src = this.flower_gif[index];
-                    this.time_out = setTimeout(function () { img.src = app.flower_png[index]; }, 8500);
+                    this.time_out = setTimeout(function () { img.src = app.flower_png[index]; }, 7250);
                 } else {
                     clearTimeout(this.time_out);
                     img.src = this.seed_png[index];

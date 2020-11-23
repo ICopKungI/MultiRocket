@@ -614,10 +614,12 @@ html {
 
 /*กฎหมายการเลือกตั้ง*/
 .flower_5{
-
+    height: 3vw;
+    width: 3vw;
 }
 .gif_5{
-
+    height: 15vw;
+    width: 18vw;
 }
 .seed_5{
 
@@ -628,7 +630,8 @@ html {
 
 /*กฎหมายลาคลอด*/
 .flower_6{
-
+    height: 3vw;
+    width: 3vw;
 }
 .gif_6{
 

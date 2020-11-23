@@ -124,7 +124,7 @@
         <div v-if="what_page == 'Law'" class="container">
             <div v-if="what_law == 'Main'" class="row justify-content-around">
                 <div class="col-2"></div>
-                <div class="col align-self-center text-center" v-if="!status_law[0]">
+                <div class="col align-self-center text-center" v-if="!status_law[0]" style="margin-left: 3vw;">
                     <!-- <img src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png" @mouseover="Blooming_flowers_gif(true, 'img5')" @mouseleave="Blooming_flowers_gif(false, 'img5')" id="img5" @click="change_law('law0')" class="seed_5"> -->
                     <img v-if="!hover_5" src="Architecture/solve/flower/Anotherredflower/Anotherredseed.png" @mouseover="change_hover(5, true)" @click="change_law('law0')" class="seed_5">
                     <img v-if="hover_5" src="Architecture/solve/flower/Anotherredflower/Anotherredflower4.gif" @mouseleave="change_hover(5, false)" @click="change_law('law0')" class="gif_5">
@@ -200,7 +200,7 @@
 
         <!-- หน้า Draftlaw -->
         <div v-if="what_page == 'Draftlaw'" class="container">
-            <div v-if="what_draft_law == 'Main'" class="row align-items-center">
+            <div v-if="what_draft_law == 'Main'" class="row align-items-center" style="margin-left: -3vw;">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
                     <!-- <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png" @mouseover="Blooming_flowers_gif(true, 'img0')" @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0" @click="change_draw_law('draw_law0')" class="seed_0"> -->

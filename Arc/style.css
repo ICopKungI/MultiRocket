@@ -623,6 +623,7 @@ html {
 .seed_5{
     height: 5vw;
     width: 5vw;
+    margin-bottom: 2vw;
 }
 /*กฎหมายการเลือกตั้ง*/
 
@@ -640,6 +641,7 @@ html {
 .seed_6{
     height: 5vw;
     width: 5vw;
+    margin-bottom: 2vw;
 }
 /*กฎหมายลาคลอด*/
 
@@ -657,6 +659,7 @@ html {
 .seed_0{
     height: 5vw;
     width: 5vw;
+
 }
 
 /*--------------------------------------------*/

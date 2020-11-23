@@ -610,24 +610,28 @@ html {
 
 /* อิอิอิปุ่มด้านล่าง*/
 
+
+
+
 /* เมล็ด */
 
 /*กฎหมายการเลือกตั้ง*/
 .flower_5{
     margin-top: -15vw;
-    width: 50px;
-    height: 50px;
+    width: 3vw;
+    height: 3vw;
 }
 .gif_5{
-    margin-top: -15vw;
-    height: 12vw;
-    width: 10vw;
+    margin-top: -18vw;
+    height: 18vw;
+    width: 15vw;
+
 }
 .seed_5{
     margin-top: -15vw;
-    height: 5vw;
-    width: 5vw;
-    margin-bottom: 2vw;
+    height: 3vw;
+    width: 3vw;
+
 }
 /*กฎหมายการเลือกตั้ง*/
 
@@ -636,8 +640,8 @@ html {
 /*กฎหมายลาคลอด*/
 .flower_6{
     margin-top: -15vw;
-    width: 60px;
-    height: 60px;
+    height: 2vw;
+    width: 2vw;
 }
 .gif_6{
     margin-top: -15vw;
@@ -646,8 +650,8 @@ html {
 }
 .seed_6{
     margin-top: -15vw;
-    height: 5vw;
-    width: 5vw;
+    height: 2vw;
+    width: 2vw;
     margin-bottom: 2vw;
 }
 /*กฎหมายลาคลอด*/
@@ -657,56 +661,59 @@ html {
 /*ร่าง*/
 
 .flower_0{
-    width: 60px;
-    height: 70px;
+    height: 3vw;
+    width: 3vw;
 }
 .gif_0{
     height: 10vw;
     width: 12vw;
+    margin: 1.5vw;
 }
 .seed_0{
-    height: 5vw;
-    width: 5vw;
+    height: 3vw;
+    width: 3vw;
     margin: 5vw;
 
 }
 
 /*--------------------------------------------*/
 .flower_1{
-    width: 60px;
-    height: 70px;
+    height: 3vw;
+    width: 3vw;
 }
 .gif_1{
     height: 10vw;
     width: 12vw;
+    margin: 1.5vw;
 }
 .seed_1{
-    height: 4vw;
-    width: 4vw;
+    height: 3vw;
+    width: 3vw;
     margin: 5vw;
 }
 
 
 /*---------------------------------------------*/
 .flower_2{
-    width: 60px;
-    height: 70px;
-    
+    height: 3vw;
+    width: 3vw;
+
 }
 .gif_2{
     height: 10vw;
     width: 12vw;
+    margin: 1.5vw;
 }
 .seed_2{
-    height: 5vw;
-    width: 5vw;
+    height: 3vw;
+    width: 3vw;
     margin: 5vw;
 }
 
 /*---------------------------------------------*/
 .flower_3{
-    width: 60px;
-    height: 60px;
+    height: 3vw;
+    width: 3vw;
     margin-top: -15vw;
 }
 .gif_3{
@@ -715,15 +722,15 @@ html {
     margin-top: -15vw;
 }
 .seed_3{
-    height: 5vw;
-    width: 5vw;
+    height: 3vw;
+    width: 3vw;
     margin-top: -15vw;
 }
 
 /*---------------------------------------------*/
 .flower_4{
-    width: 60px;
-    height: 60px;
+    height: 3vw;
+    width: 3vw;
     margin-top: -15vw;
 }
 .gif_4{
@@ -732,8 +739,8 @@ html {
     margin-top: -15vw;
 }
 .seed_4{
-    height: 5vw;
-    width: 5vw;
+    height: 3vw;
+    width: 3vw;
     margin-top: -15vw;
 }
 /*ร่าง*/

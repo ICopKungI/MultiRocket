@@ -200,7 +200,7 @@
 
         <!-- หน้า Draftlaw -->
         <div v-if="what_page == 'Draftlaw'" class="container">
-            <div v-if="what_draft_law == 'Main'" class="row align-items-center" style="margin-left: -3vw;">
+            <div v-if="what_draft_law == 'Main'" class="row align-items-center" style="margin-left: -3vw; padding-top: 3vw;">
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[0]">
                     <!-- <img src="Architecture/solve/flower/Whiteflowers/Whiteseed.png" @mouseover="Blooming_flowers_gif(true, 'img0')" @mouseleave="Blooming_flowers_gif(false, 'img0')" id="img0" @click="change_draw_law('draw_law0')" class="seed_0"> -->
@@ -232,7 +232,7 @@
                     <p class="text_seed">ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
                 <div class="img_fow_2 col-4 align-self-center text-center" v-if="status_draft_law[1]"><img @click="change_draw_law('draw_law1')" src="Architecture/solve/flower/Purpleflowers/Purpleflowers.png" style="width: 8.416666666666666vw; height: 8.416666666666666vw;"><br>
-                    <p class="text_fow_1" >ร่าง{{info.Draftlaw[1].DLName1}}</p>
+                    <p class="text_fow_1">ร่าง{{info.Draftlaw[1].DLName1}}</p>
                 </div>
 
                 <div class="col-4 align-self-center text-center" v-if="!status_draft_law[2]">
@@ -385,7 +385,7 @@
 
         <!-- หน้า Contact -->
         <div v-if="what_page == 'Contact'" class="container contact_container">
-            <div class="row">
+            <div class="row" style="margin-left: 3vw;">
                 <div data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" class="col-5 contact" style="right: 3vw;">
                     <nav class="navbar navbar-expand contact_menu">
                         <ul class="nav nav-pills" role="tablist">
@@ -458,13 +458,13 @@
             status_draft_law: [false, false, false, false, false],
             contact_mean: 0,
             time_out: "",
-            hover_0:false,
-            hover_1:false,
-            hover_2:false,
-            hover_3:false,
-            hover_4:false,
-            hover_5:false,
-            hover_6:false,
+            hover_0: false,
+            hover_1: false,
+            hover_2: false,
+            hover_3: false,
+            hover_4: false,
+            hover_5: false,
+            hover_6: false,
             flower_gif: ["Architecture/solve/flower/Whiteflowers/Whiteflowers1.gif", "Architecture/solve/flower/Purpleflowers/Purpleflowers1.gif", "Architecture/solve/flower/Pinkflowers/Pinkflowers1.gif", "Architecture/solve/flower/Blueflowers/Blueflowers1.gif", "Architecture/solve/flower/Redflowers/Redflowers3.gif", "Architecture/solve/flower/Anotherredflower/Anotherredflower4.gif", "Architecture/solve/flower/Blackflower2/Blackflower1.gif"],
             seed_png: ["Architecture/solve/flower/Whiteflowers/Whiteseed.png", "Architecture/solve/flower/Purpleflowers/Purpleseed.png", "Architecture/solve/flower/Pinkflowers/Pinkseed.png", "Architecture/solve/flower/Blueflowers/Blueseed.png", "Architecture/solve/flower/Redflowers/Lastseed.png", "Architecture/solve/flower/Anotherredflower/Anotherredseed.png", "Architecture/solve/flower/Blackflower2/Blackseed2.png"]
         },
@@ -529,29 +529,29 @@
                 var index = parseInt(id.slice(3));
                 var img = document.getElementById(id);
                 if (status) {
-                    img.classList.remove('seed_'+index);
-                    img.classList.add('gif_'+index);
+                    img.classList.remove('seed_' + index);
+                    img.classList.add('gif_' + index);
                     img.src = this.flower_gif[index];
                 } else {
-                    img.classList.remove('gif_'+index);
-                    img.classList.add('seed_'+index);
+                    img.classList.remove('gif_' + index);
+                    img.classList.add('seed_' + index);
                     img.src = this.seed_png[index];
                 }
             },
             change_hover(index, status) {
                 if (index == 0) {
                     this.hover_0 = status;
-                }else if (index == 1) {
+                } else if (index == 1) {
                     this.hover_1 = status;
-                }else if (index == 2) {
+                } else if (index == 2) {
                     this.hover_2 = status;
-                }else if (index == 3) {
+                } else if (index == 3) {
                     this.hover_3 = status;
-                }else if (index == 4) {
+                } else if (index == 4) {
                     this.hover_4 = status;
-                }else if (index == 5) {
+                } else if (index == 5) {
                     this.hover_5 = status;
-                }else if (index == 6) {
+                } else if (index == 6) {
                     this.hover_6 = status;
                 }
             }
